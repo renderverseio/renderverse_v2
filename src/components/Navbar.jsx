@@ -175,6 +175,7 @@ export default function Navbar() {
           </Flex>
         </Box>
         <Flex
+          display={{ base: "none", md: "flex" }}
           justifyContent={"flex-end"}
           w="50%"
           alignItems="center"

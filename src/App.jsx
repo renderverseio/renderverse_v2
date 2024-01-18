@@ -1,10 +1,14 @@
-import { Box, ChakraProvider } from "@chakra-ui/react";
-import Navbar from "./components/Navbar";
+import { theme } from "./config/theme";
 import Index from "./pages/Index";
+import Navbar from "./components/Navbar";
+
+import { Box, ChakraProvider } from "@chakra-ui/react";
+import Roadmap from "./pages/Roadmap";
+import EcoSystem from "./pages/EcoSystem";
 
 function App() {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Box
         backgroundImage={`radial-gradient(circle, #ffffff, #fcfcff, #f8faff, #f3f7ff, #eef5ff);`}
         minH="100vh"
@@ -16,6 +20,8 @@ function App() {
           mx="auto"
         >
           <Index />
+          <Roadmap />
+          <EcoSystem />
         </Box>
       </Box>
     </ChakraProvider>
