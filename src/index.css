@@ -1,0 +1,20 @@
+.gradient_text {
+  /** TEXT GRADIENT */
+  color: #3559e0;
+  background-image: -webkit-radial-gradient(circle, #3559e0 0%, #0f2167 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
