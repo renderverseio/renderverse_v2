@@ -1,5 +1,5 @@
 import Tilt from "react-parallax-tilt";
-import Snap from "../assets/snap.png";
+import Snap from "../assets/home_image.png";
 import { Box, Flex, Grid, Heading, Image, Text } from "@chakra-ui/react";
 
 import L1 from "../assets/logos/vendure.svg";
