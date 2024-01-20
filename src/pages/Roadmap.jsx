@@ -76,12 +76,7 @@ function Lines({ alignLeft }) {
               fill="freeze"
               repeatCount="indefinite"
             >
-              <mpath
-                autoReverse={"true"}
-                from={100}
-                to={0}
-                xlinkHref="#theMotionPath"
-              ></mpath>
+              <mpath from={100} to={0} xlinkHref="#theMotionPath"></mpath>
             </animateMotion>
           </circle>
         </g>

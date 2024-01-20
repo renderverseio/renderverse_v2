@@ -44,7 +44,7 @@ const data = [
 ];
 
 // eslint-disable-next-line react/prop-types
-function Roll({ alignLeft, title, note1, note2, desc, i }) {
+function Roll({ alignLeft, title, note1, note2, i }) {
   return (
     <Flex
       py={6}

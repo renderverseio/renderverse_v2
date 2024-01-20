@@ -84,7 +84,8 @@ export default function Index() {
           <Flex>
             <Box
               fontSize={{ base: "md", lg: "xl", xl: "2xl" }}
-              p={2}
+              py={2}
+              px={6}
               borderRadius="md"
               cursor={"pointer"}
               _hover={{
