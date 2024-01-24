@@ -6,99 +6,79 @@ import {
 import {
   Box,
   Flex,
-  FormControl,
-  FormLabel,
   Grid,
-  Image,
-  Input,
   Text,
+  Image
 } from "@chakra-ui/react";
-import { FaForward } from "react-icons/fa";
 
-export default function ChatAssistants({
-  setPerson,
-  setIndex,
-  input,
-  setInput,
-  setIsSelected,
-  generatePrompt,
-}) {
+import React from "react";
+
+import ProptTypes from 'prop-types'
+
+const ChatAssistants = ({
+  setAssistantIndex,
+  setAssistant,
+  setIsAssistantSelected,
+}) => {
   return (
-    <FormControl bg="white" boxShadow={"lg"} borderRadius="lg" mt={12} p={4}>
-      <FormLabel
-        variant={"unstyled"}
-        p={4}
-        fontSize={{ base: "md" }}
-        fontWeight="bold"
-      >
-        Choose your AI assitance
-      </FormLabel>
-      <Grid
-        rowGap={"2rem"}
-        columnGap="2rem"
-        gridTemplateColumns={{
-          base: "1fr",
-          lg: "1fr 1fr",
-          xl: "1fr 1fr 1fr 1fr",
-        }}
-        p={5}
-      >
-        {chatAssitantsAvatarsOptionsData.map((o, i) => (
-          <Flex
-            border={"1px"}
-            borderRadius={"lg"}
-            boxShadow={"lg"}
-            p={0}
-            m={0}
-            onClick={() => {
-              setPerson(o);
-              setIndex(i);
-              setIsSelected(true);
-            }}
-            cursor={"pointer"}
-            alignItems={"center"}
-            columnGap={"1rem"}
-            key={i}
-          >
-            <Image
-              borderRadius="md"
-              borderRightRadius={"none"}
-              minW="64px"
-              minH="64px"
-              maxW="64px"
-              maxH="64px"
-              objectFit={"cover"}
-              src={chatAssitantsAvatarsData[i]}
-            ></Image>
-            <Text>{o}</Text>
-          </Flex>
-        ))}
-      </Grid>
-
-      <FormControl border="1px" borderRadius={"lg"} boxShadow={"lg"}>
-        <Input
-          value={input}
-          onChange={(i) => setInput(i.target.value)}
-          placeholder="send"
+    <React.Fragment>
+      <Box bg="white" boxShadow={"lg"} borderRadius="lg" mt={12} p={4}>
+        <Text
           variant={"unstyled"}
           p={4}
-          fontSize={{ base: "md" }}
+          fontSize={{ base: "md", md: "lg", xl: "xl" }}
           fontWeight="bold"
-          onKeyDown={(e) => {
-            if (e.key === "Enter") generatePrompt();
-          }}
-        />
-        <Box
-          cursor={"pointer"}
-          pos="absolute"
-          zIndex={999}
-          right={{ base: "8%", lg: "4%", xl: "2%" }}
-          top={"30%"}
-          onClick={() => generateMusic()}
         >
-          <FaForward size={32} />
-        </Box>
-      </FormControl>
-    </FormControl>
+          Choose your AI assitance
+        </Text>
+        <Grid
+          rowGap={"2rem"}
+          columnGap="2rem"
+          gridTemplateColumns={{
+            base: "1fr",
+            lg: "1fr 1fr",
+            xl: "1fr 1fr 1fr 1fr",
+          }}
+          p={5}
+        >
+          {chatAssitantsAvatarsOptionsData.map((o, i) => (
+            <Flex
+              border={"1px"}
+              borderRadius={"lg"}
+              boxShadow={"lg"}
+              onClick={() => {
+                setAssistant(o);
+                setAssistantIndex(i);
+                setIsAssistantSelected(true);
+              }}
+              cursor={"pointer"}
+              alignItems={"center"}
+              columnGap={"1rem"}
+              key={i}
+            >
+              <Image
+                borderRadius="md"
+                borderRightRadius={"none"}
+                minW="64px"
+                minH="64px"
+                maxW="64px"
+                maxH="64px"
+                objectFit={"cover"}
+                src={chatAssitantsAvatarsData[i]}
+              ></Image>
+              <Text>{o}</Text>
+            </Flex>
+          ))}
+        </Grid>
+      </Box>
+    </React.Fragment>
   );
 }
+
+
+ChatAssistants.propTypes = {
+  setPerson: ProptTypes.func,
+  setIndex: ProptTypes.func,
+  setIsSelected: ProptTypes.func
+}
+export default ChatAssistants

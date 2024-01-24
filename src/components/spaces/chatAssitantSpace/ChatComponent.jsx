@@ -1,16 +1,27 @@
-import { Box, Grid, GridItem } from "@chakra-ui/react";
+import { chatAssitantsAvatarsData } from "@/data/spaces/chatAssitantData";
+import { Flex, Box, FormControl, Grid, GridItem, Input, Text, Image } from "@chakra-ui/react";
+import { FaForward, FaUser } from "react-icons/fa";
 
-export default function ChatComponent({ promp, loaded, person }) {
+function ChatComponent({
+  chatPrompts,
+  typing,
+  assistant,
+  assistantIndex,
+  input,
+  setInput,
+  generateChatPrompt,
+}) {
   return (
-    <Grid>
+    <Grid bg="white" my={5} p={4} boxShadow={"lg"} borderRadius={"lg"}>
       <GridItem pos="relative">
-        <Box my={5} px={4} pt={4} display={"flex"} flexDirection="column">
-          {promp.map((p, i) => (
+        <Box display={"flex"} flexDirection="column">
+          {chatPrompts.map((p, i) => (
             <Box columnGap={"2rem"} key={i} display="flex">
               {i % 2 === 0 && (
                 <Box
                   display={"flex"}
                   alignItems="center"
+
                   justifyContent={"flex-end"}
                 >
                   <FaUser size={32} />
@@ -21,7 +32,6 @@ export default function ChatComponent({ promp, loaded, person }) {
                 my={4}
                 p={3}
                 borderRadius="md"
-                fontWeight={"bold"}
                 width="100%"
                 mx="auto"
                 fontSize={{ base: "sm" }}
@@ -41,7 +51,7 @@ export default function ChatComponent({ promp, loaded, person }) {
                     maxW="48px"
                     maxH="48px"
                     objectFit={"contain"}
-                    src={chatAssitantsAvatarsData[index]}
+                    src={chatAssitantsAvatarsData[assistantIndex]}
                   ></Image>
                 </Box>
               )}
@@ -50,7 +60,7 @@ export default function ChatComponent({ promp, loaded, person }) {
         </Box>
       </GridItem>
       <GridItem>
-        {loaded ? (
+        {typing && (
           <Flex
             pb={8}
             fontSize={{ base: "sm", lg: "lg" }}
@@ -60,16 +70,35 @@ export default function ChatComponent({ promp, loaded, person }) {
             columnGap={".5rem"}
           >
             <Text fontSize={{ base: "md" }} fontWeight="bold">
-              {person} is typing
+              {assistant} is typing...
             </Text>
-            <div className="typing">
-              <div className="dot"></div>
-              <div className="dot"></div>
-              <div className="dot"></div>
-            </div>
           </Flex>
-        ) : null}
+        )}
       </GridItem>
+      <FormControl border="1px" borderRadius={"lg"} boxShadow={"lg"}>
+        <Input
+          value={input}
+          onChange={(i) => setInput(i.target.value)}
+          placeholder="send"
+          variant={"unstyled"}
+          p={4}
+          fontSize={{ base: "md" }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") generateChatPrompt();
+          }}
+        />
+        <Box
+          cursor={"pointer"}
+          pos="absolute"
+          zIndex={999}
+          right={{ base: "8%", lg: "4%", xl: "2%" }}
+          top={"30%"}
+          onClick={() => generateChatPrompt()}
+        >
+          <FaForward size={32} />
+        </Box>
+      </FormControl>
     </Grid>
   );
 }
+export default ChatComponent;

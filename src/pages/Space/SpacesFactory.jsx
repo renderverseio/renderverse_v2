@@ -34,7 +34,7 @@ function SpaceFactory() {
   return spacesData.map((s, k) => {
     if (s.link === params.space)
       return (
-        <Box>
+        <Box key={k}>
           <Navbar />
           <Container
             py={12}
@@ -48,7 +48,7 @@ function SpaceFactory() {
               "2xl": "60%",
             }}
           >
-            <s.component key={k} />
+            <s.component />
           </Container>
         </Box>
       );
