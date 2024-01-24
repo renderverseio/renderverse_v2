@@ -1,13 +1,13 @@
 import { Box } from "@chakra-ui/react";
 
-import Footer from "./footer";
-import Navbar from "../components/Navbar";
+import Navbar from "@/components/common/Navbar";
+import Footer from "@/components/common/Footer";
 
-import Index from "./Index";
-import Roadmap from "./Roadmap";
-import EcoSystem from "./EcoSystem";
-import OurMission from "./OurMission";
-import SlideSection from "./SlideSection";
+import Main from "@/components/home/Main";
+import Roadmap from "@/components/home/Roadmap";
+import EcoSystem from "@/components/home/EcoSystem";
+import OurMission from "@/components/home/OurMission";
+import SlideSection from "@/components/home/SlideSection";
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
         maxW={{ base: "100%", md: "90%", lg: "85%", xl: "80%", "2xl": "65%" }}
         mx="auto"
       >
-        <Index />
+        <Main />
         <Roadmap />
         <EcoSystem />
       </Box>

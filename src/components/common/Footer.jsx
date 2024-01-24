@@ -8,7 +8,8 @@ import {
   Heading,
   Button,
 } from "@chakra-ui/react";
-import Logo from "../assets/logo.svg";
+
+import Logo from "@/assets/logo.svg";
 
 export default function Footer() {
   return (

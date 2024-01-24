@@ -1,7 +1,9 @@
-import { Box, Button, Flex, Heading, Image } from "@chakra-ui/react";
-import Logo from "../assets/logo.svg";
+import Logo from "@/assets/logo.svg";
+
 import MobileDropDown from "./MobileDropDown";
 import Poper from "./Popper";
+
+import { Box, Button, Flex, Heading, Image } from "@chakra-ui/react";
 
 export default function Navbar() {
   const menuItems = [

@@ -1,14 +1,14 @@
 import Tilt from "react-parallax-tilt";
-import Snap from "../assets/home_image.png";
+import Snap from "@/assets/home_image.png";
 import { Box, Flex, Grid, Heading, Image, Text } from "@chakra-ui/react";
 
-import L1 from "../assets/logos/vendure.svg";
-import L2 from "../assets/logos/jina.svg";
-import L3 from "../assets/logos/textualize.svg";
-import L4 from "../assets/logos/chakraui.svg";
-import L5 from "../assets/logos/supabase.svg";
+import L1 from "@/assets/logos/vendure.svg";
+import L2 from "@/assets/logos/jina.svg";
+import L3 from "@/assets/logos/textualize.svg";
+import L4 from "@/assets/logos/chakraui.svg";
+import L5 from "@/assets/logos/supabase.svg";
 
-export default function Index() {
+export default function Main() {
   const logos = [L1, L2, L3, L4, L5];
   return (
     <Grid

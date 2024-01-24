@@ -7,7 +7,8 @@ import {
   Image,
   Grid,
 } from "@chakra-ui/react";
-import OurMissionLogo from "../assets/ourmission.webp";
+
+import OurMissionLogo from "@/assets/ourmission.webp";
 
 export default function OurMission() {
   return (
