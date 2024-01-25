@@ -11,7 +11,8 @@ import ChatAssistants from "@/components/spaces/chatAssitantSpace/ChatAssistants
 import PrevChatsComponent from "@/components/spaces/chatAssitantSpace/PrevChatsComponents";
 import ChatAssistantHistoryDialog from "@/components/spaces/chatAssitantSpace/ChatAssitantHistoryDialog";
 
-import { useWallet } from "@/hooks/space/useWallet";
+import { useWallet } from "@/hooks/common/useWallet";
+
 
 
 export default function ChatAssistantSpace() {

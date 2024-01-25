@@ -1,135 +1,13 @@
 import Logo from "@/assets/logo.svg";
-
-import MobileDropDown from "./MobileDropDown";
-import Poper from "./Popper";
+import WalletMenuDropDown from "../dropdowns/WalletMenuDropDown";
+import MobileMenuDropDown from "../dropdowns/MobileMenuDropDown";
+import DesktopMenuDropDown from "../dropdowns/DesktopMenuDropDown";
 
 import { Box, Flex, Heading, Image } from "@chakra-ui/react";
 
-import WalletPopOverWrapper from "./Wallet/WalletPopOverWrapper";
-
+import { desktopMenuItems } from "@/data/home/navbarData";
 
 export default function Navbar() {
-  const menuItems = [
-    {
-      menu: "Pricing",
-      options: [],
-    },
-    {
-      menu: "Use Cases",
-      options: [
-        {
-          icon: "",
-          title: "Art Generator",
-          subText: "Create Smooth slides with smooth animations",
-        },
-        {
-          icon: "",
-          title: "AI Trading tools",
-          subText: "Take your social media presence to next level",
-        },
-        {
-          icon: "",
-          title: "CryptoGPT extensions",
-          subText: "Help your students to grasp complex concepts easily",
-        },
-        {
-          icon: "",
-          title: "Inference Models",
-          subText: "Interactive Infographics on your website / blog",
-        },
-      ],
-    },
-    {
-      menu: "Products",
-      options: [
-        {
-          icon: "",
-          title: "Spaces",
-          subText: "Create Smooth slides with smooth animations",
-        },
-        {
-          icon: "",
-          title: "Models",
-          subText: "Take your social media presence to next level",
-        },
-        {
-          icon: "",
-          title: "API",
-          subText: "Help your students to grasp complex concepts easily",
-        },
-        {
-          icon: "",
-          title: "GPU Infrastructure",
-          subText: "Interactive Infographics on your website / blog",
-        },
-        {
-          icon: "",
-          title: "Plugins",
-          subText: "Interactive Infographics on your website / blog",
-        },
-        {
-          icon: "",
-          title: "Extensions Content",
-          subText: "Interactive Infographics on your website / blog",
-        },
-      ],
-    },
-    {
-      menu: "Resources",
-      options: [
-        {
-          icon: "",
-          title: "Blog",
-          subText: "Create Smooth slides with smooth animations",
-        },
-        {
-          icon: "",
-          title: "Documentation",
-          subText: "Take your social media presence to next level",
-        },
-        {
-          icon: "",
-          title: "Tutorials",
-          subText: "Help your students to grasp complex concepts easily",
-        },
-        {
-          icon: "",
-          title: "userstories",
-          subText: "Interactive Infographics on your website / blog",
-        },
-        {
-          icon: "",
-          title: "changelong",
-          subText: "Interactive Infographics on your website / blog",
-        },
-      ],
-    },
-    {
-      menu: "Socials",
-      options: [
-        {
-          icon: "",
-          title: "Twitter",
-          subText: "",
-        },
-        {
-          icon: "",
-          title: "Telegram",
-          subText: "",
-        },
-        {
-          icon: "",
-          title: "Discord",
-          subText: "",
-        },
-        {
-          icon: "",
-          title: "Email",
-          subText: "",
-        },
-      ],
-    },
-  ];
   return (
     <Box minH={{ base: "10vh" }}>
       <Flex
@@ -150,7 +28,7 @@ export default function Navbar() {
           w={{ base: "auto", md: "none" }}
           display={{ base: "block", md: "none" }}
         >
-          <MobileDropDown />
+          <MobileMenuDropDown />
         </Box>
         <Box w="100%" display={{ base: "none", md: "block" }}>
           <Flex
@@ -158,7 +36,7 @@ export default function Navbar() {
             alignItems="center"
             columnGap={"1rem"}
           >
-            {menuItems.map((menu, i) => (
+            {desktopMenuItems.map((menu, i) => (
               <Box
                 justifyContent={"center"}
                 alignItems="center"
@@ -166,15 +44,15 @@ export default function Navbar() {
                 key={i}
                 cursor="pointer"
               >
-                <Poper menu={menu.menu} options={menu.options} />
-                {i !== menuItems.length - 1 ? (
+                <DesktopMenuDropDown menu={menu.menu} options={menu.options} />
+                {i !== desktopMenuItems.length - 1 && (
                   <Box
                     marginLeft={"1rem"}
                     minH="12px"
                     maxH="12px"
                     borderLeft={"2px solid gray"}
                   ></Box>
-                ) : null}
+                )}
               </Box>
             ))}
           </Flex>
@@ -185,7 +63,7 @@ export default function Navbar() {
           alignItems="center"
           columnGap={"1rem"}
         >
-          <WalletPopOverWrapper />
+          <WalletMenuDropDown />
         </Flex>
       </Flex>
     </Box>

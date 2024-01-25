@@ -1,3 +1,4 @@
+
 import {
   Popover,
   PopoverTrigger,
@@ -8,18 +9,20 @@ import {
   Box,
   Image,
   Flex
-
 } from "@chakra-ui/react";
 
 import { useState } from "react";
-import { useWallet } from "@/hooks/space/useWallet";
+import { useWallet } from "@/hooks/common/useWallet";
+import { useCredits } from "@/hooks/common/useCredits";
 import { useNavigate } from "react-router";
 
-import BNB from '@/assets/chart_spaces/binance.png'
-import WalletMenu from "../WalletMenu";
-import { useCredits } from "@/hooks/space/ImageGeneration/useCredits";
 
-export default function WalletPopOverWrapper() {
+import BNB from '@/assets/exchange_logos/binance.png'
+
+
+import WalletMenu from "@/components/common/WalletMenu";
+
+export default function WalletMenuDropDown() {
 
   const navigate = useNavigate();
 
@@ -43,6 +46,7 @@ export default function WalletPopOverWrapper() {
     value: `${balance} BNB`,
     credits: credits
   }
+
   const menuButtons = [
     {
       key: `Spaces`,
@@ -95,3 +99,4 @@ export default function WalletPopOverWrapper() {
     </Popover>
   );
 }
+

@@ -10,7 +10,7 @@ import {
   Icon,
 } from "@chakra-ui/react";
 
-export default function Poper({ menu, options }) {
+export default function DesktopMenuDropDown({ menu, options }) {
   return (
     <Popover trigger="hover" boxShadow={"none"} outline="none" border="none">
       <PopoverTrigger>

@@ -1,3 +1,5 @@
+import { mobileMenuItems } from "@/data/home/navbarData";
+
 import {
   Popover,
   PopoverTrigger,
@@ -10,17 +12,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-export default function MobileDropDown() {
-  const menuItems = [
-    `Pricing`,
-    `Dashboard`,
-    `Templates`,
-    `Documentation`,
-    `Tutorials`,
-    `Blog`,
-    `User Stories`,
-    `Changelog`,
-  ];
+export default function MobileMenuDropDown() {
   return (
     <Popover boxShadow={"none"} outline="none" border="none">
       <PopoverTrigger>
@@ -41,10 +33,10 @@ export default function MobileDropDown() {
         <PopoverArrow />
         <Flex mx={4} justifyContent={"flex-end"}>
           <Grid>
-            {menuItems.map((menuItem, i) => (
+            {mobileMenuItems.map((menuItem, i) => (
               <Box
                 borderTopRadius={i === 0 ? "lg" : "none"}
-                borderBottomRadius={i === menuItems.length - 1 ? "lg" : "none"}
+                borderBottomRadius={i === mobileMenuItems.length - 1 ? "lg" : "none"}
                 bg={i === 0 ? "gray.100" : "white"}
                 px={{ base: 8 }}
                 display={"flex"}
@@ -53,7 +45,7 @@ export default function MobileDropDown() {
                 flexDir="column"
                 p={{ base: 4 }}
                 borderBottom={
-                  i === menuItems.length - 1 ? null : `1px solid #F1F0E8`
+                  i === mobileMenuItems.length - 1 ? null : `1px solid #F1F0E8`
                 }
                 key={i}
                 cursor="pointer"

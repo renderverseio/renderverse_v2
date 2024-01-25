@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 
 import Logo from "@/assets/logo.svg";
+import { footerData } from "@/data/home/footerData";
 
 export default function Footer() {
   return (
@@ -55,7 +56,7 @@ export default function Footer() {
             justifyContent={"space-evenly"}
             w="100%"
           >
-            {data.map((d, i) => (
+            {footerData.map((d, i) => (
               <Flex flexDir={"column"} key={i}>
                 <Text my={2} color="white" fontWeight={"bold"}>
                   {d.title}
@@ -78,28 +79,3 @@ export default function Footer() {
   );
 }
 
-const data = [
-  {
-    title: "Product",
-    options: [
-      "Pricing",
-      "Editor",
-      "Templates",
-      "Features",
-      "Embedding",
-      "Resources",
-    ],
-  },
-  {
-    title: "Documentation",
-    options: ["Tutorials", "Blog", "User Stories", "Changelog", "Integrations"],
-  },
-  {
-    title: "VS Code Extension",
-    options: ["IntelliJ Plugin", "About"],
-  },
-  {
-    title: "Our Mission",
-    options: ["Twitter", "YouTube", "Imprint", "Legal"],
-  },
-];

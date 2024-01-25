@@ -1,11 +1,9 @@
 import {
   Box,
   Button,
-  Divider,
   Flex,
   Grid,
   GridItem,
-  TableContainer,
   Text,
 } from "@chakra-ui/react";
 
@@ -13,44 +11,42 @@ import { useState } from "react";
 
 import axios from "axios";
 
+import { useCredits } from "@/hooks/common/useCredits";
+import { useWallet } from "@/hooks/common/useWallet";
+import { useTokenTimeExchange } from "@/hooks/space/common/useTokenTimeExchange";
+
 import DescriptionBox from "@/components/spaces/DescriptionBox";
 import CreditsCheckerComponent from "@/components/spaces/CreditsCheckerComponent";
 import TokenResultsTableBuilder from "@/components/spaces/TokenResultsTableBuilder";
-
-import { useWallet } from "@/hooks/common/useWallet";
-import { useCredits } from "@/hooks/common/useCredits";
-import { useTokenTimeExchange } from "@/hooks/space/common/useTokenTimeExchange";
 import TokenTimeExchangeOptionsForm from "@/components/spaces/TokenTimeExchangeOptionsForm";
 
 
-export default function PumpFinderSpace() {
-  const { address, isConnected, connectWallet, } = useWallet()
-  const { hasCredits } = useCredits({ address, isConnected })
-  const { tf, exchange, img, setImg, setTf, setExchange } = useTokenTimeExchange()
+export default function TokenAnaylzerSpace() {
+
+  const { isConnected, connectWallet, address } = useWallet()
+  const { hasCredits } = useCredits({ isConnected, address })
+  const { tf, img, exchange, setTf, setImg, setExchange } = useTokenTimeExchange()
 
   const [loaded, setLoaded] = useState(false);
   const [isSearched, setIsSearched] = useState(false);
-  const [pumpCoins, setPumpCoins] = useState([]);
+  const [trendyCoins, setTrendyCoins] = useState([]);
 
-
-  function exchangePumpCoins() {
+  function getTrendyCoins() {
     setLoaded(true);
     setIsSearched(true);
     axios
-      .post("https://opai.renderverse.io/chart-pump", {
+      .post("https://opai.renderverse.io/chart-scans", {
         exchange: exchange,
         wallet_address: address,
+        tf: tf,
       })
       .then((res) => {
-        setPumpCoins(res.data);
+        console.log(res.data);
+        setTrendyCoins([...res.data.topList]);
         setLoaded(false);
         setIsSearched(false);
       })
-      .catch((e) => {
-        console.log(e);
-        setLoaded(false);
-        setIsSearched(false);
-      });
+      .catch((e) => console.log(e));
   }
 
   return (
@@ -63,12 +59,13 @@ export default function PumpFinderSpace() {
         borderRadius="md"
       >
         <DescriptionBox
-          title={`AI TOKEN PUMP ANALYZER`}
-          desc={`The tool operates in real-time, continuously monitoring market
-          fluctuations and price movements to promptly identify any
-          irregularities that may suggest a token pump.`} />
+          title={`AI TOKEN ANALYZER`}
+          desc={`Integrating sentiment analysis algorithms, the tool gauges the
+          overall market sentiment related to specific coins. This information
+          can be valuable for understanding community perceptions and
+          potential market trends.`}
+        />
       </Box>
-
       {isConnected ? (
         <Box mt={12}>
           <Grid
@@ -87,7 +84,7 @@ export default function PumpFinderSpace() {
               setTf={setTf}
             />
             <CreditsCheckerComponent
-              onClick={exchangePumpCoins}
+              onClick={getTrendyCoins}
               onClickText={"Analyze"}
               hasCredits={hasCredits}
             />
@@ -103,6 +100,7 @@ export default function PumpFinderSpace() {
                 border="2px"
               >
                 <Text
+                  fontWeight="bold"
                   fontSize={{ base: "xs" }}
                 >
                   {exchange} Trendy Coins
@@ -117,21 +115,27 @@ export default function PumpFinderSpace() {
                   )}
                 </Box>
               ) : (
-                <Grid gridTemplateColumns={{ base: "1fr", lg: "1fr " }}>
-                  <Box overflow={"scroll"}>
-                    <Box>
-                      {pumpCoins.length !== 0 && (
-                        <TableContainer>
-                          <TokenResultsTableBuilder
-                            headers={["Coin", "New 24 High", "Time"]}
-                            body={pumpCoins}
-                            bodykeys={['coin', 'high', 'time']}
-                          />
-                        </TableContainer>
-                      )}
-                    </Box>
-                  </Box>
-                  <Divider />
+                <Grid gridTemplateColumns={{ base: "1fr" }}>
+                  {trendyCoins.length !== 0 && (
+                    <TokenResultsTableBuilder
+                      headers={[
+                        "Coin",
+                        "Time frame",
+                        "Global Score ",
+                        "Reversal Score",
+                        "Continuation Score",
+                      ]
+                      }
+                      body={trendyCoins}
+                      bodykeys={[
+                        "coin",
+                        "tf",
+                        "globalScore",
+                        "reversalScore",
+                        "continuationScore"
+                      ]}
+                    />
+                  )}
                 </Grid>
               )}
             </GridItem>
@@ -139,13 +143,10 @@ export default function PumpFinderSpace() {
         </Box>
       ) : (
         <Flex mt={12} justifyContent={"center"}>
-          <Button
-            onClick={connectWallet}
-          >
-            Connect Wallet
-          </Button>
+          <Button onClick={connectWallet}>Connect Wallet</Button>
         </Flex>
-      )}
-    </Box>
+      )
+      }
+    </Box >
   );
 }
