@@ -1,8 +1,8 @@
 import { theme } from "./config/theme";
 
-import Home from "./pages/Home/Index";
-import Spaces from "./pages/Spaces";
-import SpaceFactory from "./pages/Space/SpacesFactory";
+import Home from "@/pages/Home/Home";
+import Spaces from "@/pages/Spaces/Spaces";
+import SpaceFactory from "@/pages/Space/SpacesFactory";
 
 import { Box, ChakraProvider } from "@chakra-ui/react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
