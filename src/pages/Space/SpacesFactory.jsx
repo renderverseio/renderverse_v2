@@ -3,8 +3,9 @@ import axios from "axios";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 
-import Spaces from "../Spaces";
+import Spaces from "@/pages/Spaces/Spaces";
 import spacesData from "@/data/spaces/spacesData";
+
 import Navbar from "@/components/common/Navbar";
 import { Box, Container } from "@chakra-ui/react";
 
