@@ -1,10 +1,5 @@
 import { Box, Flex, Grid } from "@chakra-ui/react";
 
-import { bsc } from "wagmi/chains";
-
-import { useWeb3Modal } from "@web3modal/react";
-import { useAccount, useBalance, useDisconnect } from "wagmi";
-
 import { useCredits } from "@/hooks/space/ImageGeneration/useCredits";
 import { useImageGenerator } from "@/hooks/space/ImageGeneration/useImageGenerator";
 
@@ -15,19 +10,9 @@ import ImageGenerationForm from "../../../components/spaces/imageGenerationSpace
 import { Button } from "react-scroll";
 
 export default function ImageGenerationSpace() {
-  const { disconnect } = useDisconnect();
-  const { address, isConnected } = useAccount();
-  const { open, setDefaultChain } = useWeb3Modal();
-  const { data: balance, isFetched: balanceFeteched } = useBalance({
-    address,
-  });
-
-  function connectWallet() {
-    open();
-    setDefaultChain(bsc);
-  }
-
+  const { address, connectWallet, isConnected, disconnect } = useWallet()
   const { credits, hasCredits } = useCredits({ address, isConnected });
+
   const { generateImage, imgSrc, input, setInput, status } = useImageGenerator({
     address,
   });

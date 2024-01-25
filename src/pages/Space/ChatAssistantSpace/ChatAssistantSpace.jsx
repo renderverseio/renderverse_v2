@@ -1,35 +1,21 @@
 import { Box, Button, Flex } from "@chakra-ui/react";
 
-import { bsc } from "wagmi/chains";
-import { useWeb3Modal } from "@web3modal/react";
-import { useAccount, useBalance, useDisconnect } from "wagmi";
 
 import React, { useRef, useState, useEffect } from "react";
 
 import { spacesRequests } from "@/requests/spaces/SpacesRequests";
 
-// import SpaceNavbar from "../../components/spaces/SpaceNavbar";
-// import ConnectWalletButton from "../../components/common/ConnectWalletButton";
-//
 import ChatComponent from "@/components/spaces/chatAssitantSpace/ChatComponent";
 import DescriptionBox from "@/components/spaces/DescriptionBox";
 import ChatAssistants from "@/components/spaces/chatAssitantSpace/ChatAssistants";
 import PrevChatsComponent from "@/components/spaces/chatAssitantSpace/PrevChatsComponents";
 import ChatAssistantHistoryDialog from "@/components/spaces/chatAssitantSpace/ChatAssitantHistoryDialog";
 
+import { useWallet } from "@/hooks/space/useWallet";
+
 
 export default function ChatAssistantSpace() {
-  const { disconnect } = useDisconnect();
-  const { address, isConnected } = useAccount();
-  const { open, setDefaultChain } = useWeb3Modal();
-  const { data: balance, isFetched: balanceFeteched } = useBalance({
-    address,
-  });
-
-  function connectWallet() {
-    open();
-    setDefaultChain(bsc);
-  }
+  const { address, connectWallet, isConnected, disconnect } = useWallet()
 
   const [input, setInput] = useState("");
 

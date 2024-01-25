@@ -55,6 +55,15 @@ const generatedChats = async ({ address }) => {
         wallet_address: address,
       }
     )
+
+}
+
+const getCoinTrackerCoins = async ({ exchange, address }) => {
+  return await axios
+    .post("https://opai.renderverse.io/chart-coinstracker", {
+      exchange: exchange,
+      wallet_address: address,
+    })
 }
 
 export const spacesRequests = {
@@ -63,5 +72,6 @@ export const spacesRequests = {
   generatedImages,
   generatedChats,
   generateChatPrompt,
+  getCoinTrackerCoins
 }
 

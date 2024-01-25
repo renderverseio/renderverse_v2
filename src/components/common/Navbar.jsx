@@ -3,7 +3,10 @@ import Logo from "@/assets/logo.svg";
 import MobileDropDown from "./MobileDropDown";
 import Poper from "./Popper";
 
-import { Box, Button, Flex, Heading, Image } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image } from "@chakra-ui/react";
+
+import WalletPopOverWrapper from "./Wallet/WalletPopOverWrapper";
+
 
 export default function Navbar() {
   const menuItems = [
@@ -179,11 +182,10 @@ export default function Navbar() {
         <Flex
           display={{ base: "none", md: "flex" }}
           justifyContent={"flex-end"}
-          w="50%"
           alignItems="center"
           columnGap={"1rem"}
         >
-          <Button>Connect Wallet</Button>
+          <WalletPopOverWrapper />
         </Flex>
       </Flex>
     </Box>
