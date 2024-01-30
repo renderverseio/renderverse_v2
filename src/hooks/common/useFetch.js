@@ -8,6 +8,7 @@ function useFetchData(fetchFunction, deps) {
   const [status, setStatus] = useState(TStatus.idle)
 
   useEffect(() => {
+
     async function fetchData() {
       setStatus(TStatus.fetching)
       try {
@@ -21,7 +22,10 @@ function useFetchData(fetchFunction, deps) {
         setStatus(TStatus.error)
       }
     }
+
     fetchData();
+
+
     return () => {
       setData(null)
       setError(null)

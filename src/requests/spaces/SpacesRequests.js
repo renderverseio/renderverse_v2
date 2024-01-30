@@ -66,12 +66,33 @@ const getCoinTrackerCoins = async ({ exchange, address }) => {
     })
 }
 
+const getPumpCoins = async ({ exchange, address }) => {
+  return await axios
+    .post("https://opai.renderverse.io/chart-pump", {
+      exchange: exchange,
+      wallet_address: address,
+    })
+}
+
+const getTokenAnalyzerCoins = async ({ exchange, address, tf }) => {
+  return await axios
+    .post("https://opai.renderverse.io/chart-scans", {
+      exchange: exchange,
+      wallet_address: address,
+      tf: tf,
+    })
+}
+
+
 export const spacesRequests = {
   getCredits,
   generateImage,
   generatedImages,
   generatedChats,
   generateChatPrompt,
-  getCoinTrackerCoins
+  getCoinTrackerCoins,
+  getPumpCoins,
+  getTokenAnalyzerCoins
+
 }
 

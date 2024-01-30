@@ -5,14 +5,13 @@ import React, { useRef, useState, useEffect } from "react";
 
 import { spacesRequests } from "@/requests/spaces/SpacesRequests";
 
-import ChatComponent from "@/components/spaces/chatAssitantSpace/ChatComponent";
-import DescriptionBox from "@/components/spaces/DescriptionBox";
-import ChatAssistants from "@/components/spaces/chatAssitantSpace/ChatAssistants";
-import PrevChatsComponent from "@/components/spaces/chatAssitantSpace/PrevChatsComponents";
-import ChatAssistantHistoryDialog from "@/components/spaces/chatAssitantSpace/ChatAssitantHistoryDialog";
 
 import { useWallet } from "@/hooks/common/useWallet";
 
+import ChatComponent from "@/components/space/chat_assitant_space/ChatComponent/ChatComponent";
+import ChatAssistantsComponent from "@/components/space/chat_assitant_space/ChatAssistantComponent/ChatAssitantsComponents";
+import PrevChatsComponent from "@/components/space/chat_assitant_space/PrevChatsComponent/PrevChatsComponent";
+import ChatAssistantHistoryDialog from "@/components/space/chat_assitant_space/ChatAssitantsHistoryDialog/ChatAssitantHistoryDialog";
 
 
 export default function ChatAssistantSpace() {
@@ -106,21 +105,10 @@ export default function ChatAssistantSpace() {
         viewHistory={viewHistory}
         setModalIsOpen={setModalIsOpen}
       />
-      {/* <SpaceNavbar
-        disconnect={() => disconnect()}
-        balance={balanceFeteched ? balance.formatted : ""}
-        address={address ? address : ""}
-        isConnected={isConnected}
-      /> */}
-
       <Box ref={ref} pos="relative">
-        <DescriptionBox
-          title={`👨🏻‍🎤 ChatGPT Assistant 👨🏻‍🎤`}
-          desc={`AI Assistant powered By ${assistant}`}
-        />
         {isConnected && <Flex rowGap={"2rem"} flexDir={"column"}>
           {!isAssistantSelected && (
-            <ChatAssistants
+            <ChatAssistantsComponent
               setAssistantIndex={setAssistantIndex}
               setIsAssistantSelected={setIsAssistantSelected}
               setAssistant={setAssistant}
@@ -145,6 +133,7 @@ export default function ChatAssistantSpace() {
                 chatPrompts={chatPrompts}
                 typing={typing}
                 assistant={assistant}
+                assistantIndex={assistantIndex}
               />
             </Box>
           )}
@@ -156,20 +145,6 @@ export default function ChatAssistantSpace() {
             getMonthChats={getMonthChats}
           />
         </Flex>}
-        <Box mt={12}>
-          {!isConnected && <Flex justifyContent={"center"}>
-            <Button onClick={connectWallet}>
-              Connect Wallet
-            </Button>
-          </Flex>
-          }
-          {isConnected && <Flex justifyContent={"center"}>
-            <Button onClick={disconnect}>
-              Disconnect
-            </Button>
-          </Flex>
-          }
-        </Box>
       </Box>
     </React.Fragment >
   );

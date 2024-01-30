@@ -1,13 +1,14 @@
 import { Box, Button, Flex, Grid, GridItem, Input, Text } from "@chakra-ui/react";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import axios from "axios";
 
 import { useWallet } from "@/hooks/common/useWallet";
 import { useCredits } from "@/hooks/common/useCredits";
-import CreditsCheckerComponent from "@/components/spaces/CreditsCheckerComponent";
-import DescriptionBox from "@/components/spaces/DescriptionBox";
+
+import SearchLoader from '@/components/spaces/SpacesLoader/SearchLoader';
+import CreditsCheckerComponent from '@/components/spaces/CreditsCheckerComponent/CreditsCheckerComponent';
 
 
 export default function ExtendedPromptSpace() {
@@ -43,12 +44,6 @@ export default function ExtendedPromptSpace() {
 
   return (
     <Box>
-      <DescriptionBox title={`Extended Prompt`}
-        desc={`A prompt generation from text app utilizes natural language
-          processing techniques to generate creative writing prompts based on
-          user input. Users can provide keywords, themes, or specific
-          preferences.`} />
-
       {isConnected && (
         <Box mt={12}>
           <Grid

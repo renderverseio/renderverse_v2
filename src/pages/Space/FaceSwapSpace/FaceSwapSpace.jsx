@@ -11,8 +11,11 @@ import {
 
 import axios from "axios";
 
-import DescriptionBox from "@/components/spaces/DescriptionBox";
-import CreditsCheckerComponent from "@/components/spaces/CreditsCheckerComponent";
+import SearchLoader from '@/components/spaces/SpacesLoader/SearchLoader';
+import TokenTableHeader from '@/components/spaces/TokenTableHeader/TokenTableHeader';
+import CreditsCheckerComponent from '@/components/spaces/CreditsCheckerComponent/CreditsCheckerComponent';
+import TokenResultsTableBuilder from '@/components/spaces/TokenResultsTableBuilder/TokenResultsTableBuilder';
+import TokenTimeExchangeOptionsForm from '@/components/spaces/TokenTimeExchangeOptionsForm/TokenTimeExchangeOptionsForm';
 
 import { useState } from "react";
 import { useWallet } from "@/hooks/common/useWallet";
@@ -58,16 +61,6 @@ export default function FaceSwapSpace() {
 
   return (
     <Box>
-      <DescriptionBox
-        title={`Face Swap`}
-        desc={`
-          The algorithm then replaces the facial features of one individual
-          with those of another. This process involves overlaying the features
-          of one face onto the image of another while maintaining the original
-          images lighting, color, and texture. prompt to be generated based
-          on.`}
-      />
-
       {isConnected && (
         <Box mt={12}>
           <Grid

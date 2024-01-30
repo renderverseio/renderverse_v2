@@ -1,29 +1,34 @@
-import { Box } from "@chakra-ui/react";
+import MainSection from "./sections/MainSection/MainSection";
+import PartnersSection from "./sections/PartnersSection/PartnersSection";
+import EcoSystemSection from "./sections/EcoSystemSection/EcoSystemSection";
+import OurMissionSection from "./sections/OurMissionSection/OurMissionSection";
+import HightLightSection from "./sections/HighLightSection/HighLightSection";
+import RoadmapSection from "./sections/RoadmapSection/RoadmapSection";
 
-import Navbar from "@/components/common/Navbar";
-import Footer from "@/components/common/Footer";
+import HomeContainer from "@/components/containers/HomeContainer/HomeContainer";
 
-import Main from "@/components/home/Main";
-import Roadmap from "@/components/home/Roadmap";
-import EcoSystem from "@/components/home/EcoSystem";
-import OurMission from "@/components/home/OurMission";
-import SlideSection from "@/components/home/SlideSection";
+import Navbar from "@/components/common/Navbar/Navbar";
+import Footer from "@/components/common/Footer/Footer";
+
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <Box
-        p={{ base: 4, md: 8 }}
-        maxW={{ base: "100%", md: "90%", lg: "85%", xl: "80%", "2xl": "65%" }}
-        mx="auto"
-      >
-        <Main />
-        <Roadmap />
-        <EcoSystem />
-      </Box>
-      <SlideSection />
-      <OurMission />
+      <HomeContainer children={
+        <>
+          <MainSection />
+          <PartnersSection />
+          <EcoSystemSection />
+        </>
+      } />
+      <HightLightSection />
+      <HomeContainer children={
+        <>
+          <RoadmapSection />
+        </>
+      } />
+      <OurMissionSection />
       <Footer />
     </>
   );

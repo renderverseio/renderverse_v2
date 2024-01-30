@@ -19,9 +19,10 @@ import { useWallet } from "@/hooks/common/useWallet";
 import { useCredits } from "@/hooks/common/useCredits";
 import { useEffect, useState } from "react";
 
-import DescriptionBox from "@/components/spaces/DescriptionBox";
-import CreditsCheckerComponent from "@/components/spaces/CreditsCheckerComponent";
-import TokenResultsTableBuilder from "@/components/spaces/TokenResultsTableBuilder";
+import SearchLoader from '@/components/spaces/SpacesLoader/SearchLoader';
+import CreditsCheckerComponent from '@/components/spaces/CreditsCheckerComponent/CreditsCheckerComponent';
+import TokenResultsTableBuilder from "@/components/spaces/TokenResultsTableBuilder/TokenResultsTableBuilder";
+
 
 export default function ChatGPTPromptSpace() {
   const { address, disconnect, connectWallet, isConnected } = useWallet()
@@ -72,12 +73,6 @@ export default function ChatGPTPromptSpace() {
 
   return (
     <Box>
-      <DescriptionBox
-        title={`👨🏻‍🎤 ChatGPT Prompt Generator 👨🏻‍🎤`}
-        desc={`This app generates ChatGPT prompts, it’s based on a BART model
-          trained on this dataset. 📓 Simply enter a persona that you want the
-          prompt to be generated based on. 🧙🏻🧑🏻‍🚀🧑🏻‍🎨🧑🏻‍🔬🧑🏻‍💻🧑🏼‍🏫🧑🏽‍🌾`}
-      />
       {isConnected && (
         <Box>
           <Grid

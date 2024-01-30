@@ -1,17 +1,20 @@
-import axios from "axios";
+import { Box, Button, Flex, Grid } from "@chakra-ui/react";
 
 import { useParams } from "react-router";
-import { useEffect, useState } from "react";
+import { useWallet } from "@/hooks/common/useWallet";
 
-import Spaces from "@/pages/Spaces/Spaces";
 import spacesData from "@/data/spaces/spacesData";
 
-import Navbar from "@/components/common/Navbar";
-import { Box, Container } from "@chakra-ui/react";
+import Spaces from "../Spaces/Spaces";
+import Navbar from "@/components/common/Navbar/Navbar";
+import DescriptionBox from "@/components/spaces/DescriptionBox/DescriptionBox";
+import SpacesContainer from "@/components/containers/SpaceContainer/SpacesContainer";
+
 
 function SpaceFactory() {
   const params = useParams();
-  const [access, setAccess] = useState(false);
+  const space = spacesData.find((s) => s.link === params.space) || Spaces
+  const { isConnected, connectWallet, disconnect } = useWallet()
 
   // useEffect(() => {
   //   const code = params.refCode;
@@ -30,31 +33,31 @@ function SpaceFactory() {
   // }, [params]);
 
   // if (access) {
+  // return <Spaces />;
   // }
 
-  return spacesData.map((s, k) => {
-    if (s.link === params.space)
-      return (
-        <Box key={k}>
-          <Navbar />
-          <Container
-            py={12}
-            minH={{ base: "auto", xl: "100vh" }}
-            mx="auto"
-            maxW={{
-              base: "100%",
-              md: "90%",
-              lg: "80%",
-              xl: "65%",
-              "2xl": "60%",
-            }}
-          >
-            <s.component />
-          </Container>
-        </Box>
-      );
-  });
-  return <Spaces />;
+
+  return (
+    <Box >
+      <Navbar />
+      <SpacesContainer >
+        <Grid rowGap={"3rem"}>
+          <DescriptionBox desc={space.desc} title={space.display_name} />
+          {isConnected && <space.component />}
+          <Flex mt={12} justifyContent={"center"}>
+            {!isConnected && (
+              <Button onClick={connectWallet}>{`Connect Wallet`}</Button>
+            )}
+            {isConnected && (
+              <Button onClick={disconnect}>{`Disconnect Wallet`}</Button>
+            )}
+          </Flex>
+        </Grid>
+
+      </SpacesContainer>
+    </Box>
+  );
+
 }
 
 export default SpaceFactory;

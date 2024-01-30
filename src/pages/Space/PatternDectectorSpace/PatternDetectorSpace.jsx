@@ -17,10 +17,12 @@ import { useWallet } from "@/hooks/common/useWallet";
 import { useCredits } from "@/hooks/common/useCredits";
 import { useTokenTimeExchange } from "@/hooks/space/common/useTokenTimeExchange";
 
-import DescriptionBox from "@/components/spaces/DescriptionBox";
-import TokenResultsTableBuilder from "@/components/spaces/TokenResultsTableBuilder";
-import TokenTimeExchangeOptionsForm from "@/components/spaces/TokenTimeExchangeOptionsForm";
-import CreditsCheckerComponent from "@/components/spaces/CreditsCheckerComponent";
+import SearchLoader from '@/components/spaces/SpacesLoader/SearchLoader';
+import TokenTableHeader from '@/components/spaces/TokenTableHeader/TokenTableHeader';
+import CreditsCheckerComponent from '@/components/spaces/CreditsCheckerComponent/CreditsCheckerComponent';
+import TokenResultsTableBuilder from '@/components/spaces/TokenResultsTableBuilder/TokenResultsTableBuilder';
+import TokenTimeExchangeOptionsForm from '@/components/spaces/TokenTimeExchangeOptionsForm/TokenTimeExchangeOptionsForm';
+
 
 
 export default function PatternDetectorSpace() {
@@ -72,13 +74,6 @@ export default function PatternDetectorSpace() {
         px={8}
         borderRadius="md"
       >
-        <DescriptionBox
-          title={`AI TOKEN PATTERN ANALYZER`}
-          desc={`The analyzer employs a sophisticated pattern recognition algorithm
-          to identify a variety of chart patterns, including but not limited
-          to triangles, flags, head and shoulders, and more. This helps users
-          anticipate potential price movements.`}
-        />
       </Box>
       {isConnected ? (
         <Box mt={12}>
@@ -102,6 +97,7 @@ export default function PatternDetectorSpace() {
               onClick={exchangePumpCoins}
               onClickText={"Get pump coins"}
             />
+
             <Box
               borderRadius={"md"}
               borderBottomRadius="none"

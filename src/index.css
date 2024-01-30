@@ -21,18 +21,3 @@ body {
   overflow-x: hidden;
 }
 
-.path_square {
-  stroke: #8eaccd;
-  stroke-width: 12;
-  stroke-dasharray: 54;
-  stroke-dashoffset: 10;
-  stroke-miterlimit: initial;
-  stroke-linecap: round;
-  stroke-linejoin: bevel;
-  fill: none;
-}
-
-.c_circle {
-  fill: white;
-  stroke: #8eaccd;
-}
