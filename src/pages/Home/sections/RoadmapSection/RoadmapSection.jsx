@@ -12,7 +12,9 @@ export default function RoadmapSection() {
       {ecoSystemData.map((d, i) => (
         <Grid key={i}>
           <RoadmapCard i={i} alignLeft={i % 2 === 0} {...d} />
-          {i !== 3 ? <SvgLine alignLeft={i % 2 === 0} /> : null}
+          <Box display={{ base: "none", lg: "block" }}>
+            {i !== 3 ? <SvgLine alignLeft={i % 2 === 0} /> : null}
+          </Box>
         </Grid>
       ))}
     </Box>

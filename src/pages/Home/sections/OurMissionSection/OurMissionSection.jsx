@@ -8,11 +8,11 @@ import {
   Grid,
 } from "@chakra-ui/react";
 
-import OurMissionLogo from "@/assets/ourmission.webp";
+import OurMissionLogo from "@/assets/ourmission.png";
 
 export default function OurMissionSection() {
   return (
-    <Box>
+    <Box bg="white">
       <Box
         display={"grid"}
         rowGap="2rem"
