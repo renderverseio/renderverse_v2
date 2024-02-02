@@ -9,6 +9,7 @@ import HomeContainer from "@/components/containers/HomeContainer/HomeContainer";
 
 import Navbar from "@/components/common/Navbar/Navbar";
 import Footer from "@/components/common/Footer/Footer";
+import PricingSection from "./sections/PricingSection/PricingSection";
 
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
       <HightLightSection />
       <HomeContainer children={
         <>
+          <PricingSection />
           <RoadmapSection />
         </>
       } />

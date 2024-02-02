@@ -31,10 +31,10 @@ export default function EcoSystemCard({ alignLeft, title, note1, note2, i }) {
           bgImg={gradientBgs[i].bgImg}
         >
           <Box flexDir={"row"} columnGap={"1rem"} display={"flex"} justifyContent={"space-evenly"} >
-            <MotionDiv hidden={{ opacity: 0, y: -120, scale: .8 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
+            <MotionDiv hidden={{ opacity: 0, y: -120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
               <Image bg="transparent" borderRadius={"lg"} src={Eco} />
             </MotionDiv>
-            <MotionDiv hidden={{ opacity: 0, y: 120, scale: .8 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
+            <MotionDiv hidden={{ opacity: 0, y: 120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
               <Image bg="transparent" borderRadius={"lg"} src={Eco2} />
             </MotionDiv>
           </Box>
@@ -59,10 +59,10 @@ export default function EcoSystemCard({ alignLeft, title, note1, note2, i }) {
           p={6}
         >
           <Box flexDir={"row"} columnGap={"1rem"} display={"flex"} justifyContent={"space-evenly"} >
-            <MotionDiv hidden={{ opacity: 0, y: -120, scale: .8 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
+            <MotionDiv hidden={{ opacity: 0, y: -120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
               <Image bg="transparent" borderRadius={"lg"} src={Eco} />
             </MotionDiv>
-            <MotionDiv hidden={{ opacity: 0, y: 120, scale: .8 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
+            <MotionDiv hidden={{ opacity: 0, y: 120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
               <Image bg="transparent" borderRadius={"lg"} src={Eco2} />
             </MotionDiv>
           </Box>
@@ -98,10 +98,10 @@ export default function EcoSystemCard({ alignLeft, title, note1, note2, i }) {
           p={6}
         >
           <Box flexDir={"row"} columnGap={"1rem"} display={"flex"} justifyContent={"space-evenly"} >
-            <MotionDiv hidden={{ opacity: 0, y: -120, scale: .8 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
+            <MotionDiv hidden={{ opacity: 0, y: -120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
               <Image bg="transparent" borderRadius={"lg"} src={Eco2} />
             </MotionDiv>
-            <MotionDiv hidden={{ opacity: 0, y: 120, scale: .8 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
+            <MotionDiv hidden={{ opacity: 0, y: 120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
               <Image bg="transparent" borderRadius={"lg"} src={Eco} />
             </MotionDiv>
           </Box>
