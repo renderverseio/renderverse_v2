@@ -18,7 +18,6 @@ export default function Navbar() {
         justifyContent={"space-between"}
       >
         <Flex
-          w="50%"
           columnGap={".5rem"}
           alignItems={"center"}
           justifyContent="flex-start"

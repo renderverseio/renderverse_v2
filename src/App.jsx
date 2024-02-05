@@ -4,7 +4,6 @@ import { Box, ChakraProvider } from "@chakra-ui/react";
 
 import Router from "./router/Router";
 import WalletConnection from "./blockchain/WalletConnection";
-import UniSatWalletSdk from "./blockchain/UniSatWalletSdk";
 
 
 function App() {
@@ -15,7 +14,6 @@ function App() {
         minH="100vh"
       >
         <WalletConnection children={<Router />} />
-        <UniSatWalletSdk />
       </Box>
     </ChakraProvider>
   );
