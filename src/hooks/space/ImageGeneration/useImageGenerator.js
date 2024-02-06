@@ -1,7 +1,6 @@
 import { TStatus } from "@/utils/status";
 import { useState } from "react";
 
-import { blobToBase64 } from "@/utils/blobTobase64";
 import { spacesRequests } from "@/requests/spaces/SpacesRequests";
 
 export const useImageGenerator = ({ address }) => {
@@ -16,11 +15,9 @@ export const useImageGenerator = ({ address }) => {
       setStatus(TStatus.fetching)
       const response = await spacesRequests.generateImage({ address, input, style })
       console.log(response)
-      const blob = response.data
-      blobToBase64(blob).then((c) => {
-        setImgSrc(c);
-        setStatus(TStatus.fetched)
-      });
+      const data = response.data
+      setImgSrc(data.url);
+      setStatus(TStatus.fetched)
     } catch (error) {
       console.log(error)
       setStatus(TStatus.error)

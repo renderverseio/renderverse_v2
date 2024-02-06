@@ -6,10 +6,9 @@ import { motion } from 'framer-motion'
 import { gradientBgs } from "@/data/home/homeData";
 
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
-import { chiliz } from 'viem/chains';
 import CHeading from '@/components/typography/CHeading/CHeading';
 
-export default function EcoSystemCard({ alignLeft, title, note1, note2, i }) {
+export default function ProductCard({ alignLeft, title, note1, note2, i }) {
 
 
   return (

@@ -4,6 +4,10 @@ import CText from "@/components/typography/CText/CText";
 import { Box, Flex, } from "@chakra-ui/react";
 import { Outlet, useLocation, useNavigate } from "react-router";
 
+import { MdDashboard } from "react-icons/md";
+
+import { AiOutlineApi } from "react-icons/ai";
+
 export default function Dapp() {
   return (
     <Box>
@@ -17,16 +21,26 @@ export default function Dapp() {
 
 const headers = [
   {
-    title: "Dashboard",
-    link: "dashboard"
+    title: "Dashboard (soon)",
+    link: "/dapp",
+    icon: MdDashboard
   },
   {
-    title: "Product Suite",
+    title: "Infernece APIs (Soon)",
+    link: "/dapp",
+    icon: AiOutlineApi
+  },
+  {
+    title: "Products",
     link: "products"
   },
   {
     title: "Staking",
     link: "staking"
+  },
+  {
+    title: "Affiliate program",
+    link: "affiliate"
   },
   {
     title: "Docs",

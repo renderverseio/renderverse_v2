@@ -1,4 +1,36 @@
-export const ecoSystemData = [
+export const roadMapData = [
+  {
+    title: `r1 Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.`,
+    note1: `d1`,
+    note2: `d1`,
+    link: `d2`,
+    desc: 's'
+  },
+  {
+    title: `r2 Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.`,
+    note1: `d2`,
+    note2: `d2.`,
+    link: `d2`,
+    desc: 's'
+  },
+  {
+    title: `r3 Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.`,
+    note1: `d3`,
+    note2: `d3.`,
+    link: `d3`,
+    desc: 's'
+  },
+  {
+    title: `r4 Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.`,
+    note1: `d4`,
+    note2: `d4.`,
+    link: `d4`,
+    desc: 's'
+  },
+];
+
+
+export const productsData = [
   {
     title: `AI Art Generator`,
     note1: `Say goodbye to boring NFTs created by other platforms. Renderverse enables you to create stunning AI Arts for absolutely free.`,

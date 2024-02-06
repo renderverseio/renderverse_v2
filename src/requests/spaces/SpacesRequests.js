@@ -20,7 +20,6 @@ const generateImage = async ({ address, input, style }) => {
       prompt: input,
       style: style
     },
-      { responseType: "blob", }
     )
 }
 

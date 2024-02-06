@@ -29,7 +29,9 @@ export default function RoadmapCard({ alignLeft, title, note1, note2, desc, i })
           borderRadius="lg"
         ></Box>
       )}
-      <Flex rowGap={"1rem"} p={6} flexDir={"column"}>
+
+      <Flex w={{ base: "100%", md: "50%" }}
+        rowGap={"1rem"} p={6} flexDir={"column"}>
         <Text fontSize={{ base: "xl", lg: "2xl" }} fontWeight="bold">
           {title}
         </Text>

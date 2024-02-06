@@ -32,7 +32,6 @@ export default function ImageGenerationForm({
   generateImage,
   disconnect,
 }) {
-
   const styles = [
     {
       name: "Realism",
