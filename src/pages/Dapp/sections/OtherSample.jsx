@@ -1,10 +1,13 @@
+import CText from "@/components/typography/CText/CText";
 import CCard from "@/components/custom/CCard/CCard";
 import CHeading from "@/components/typography/CHeading/CHeading";
-import CText from "@/components/typography/CText/CText";
+
+import { Box, Button, Flex, Grid, } from "@chakra-ui/react";
 import { gradientBgs } from "@/data/home/homeData";
-import { Box, Button, Flex, Grid, Tag, } from "@chakra-ui/react";
+import { useNavigate } from "react-router";
 
 export default function OtherSample() {
+  const navigate = useNavigate()
   return <Box>
     <Flex rowGap={"2rem"} p={8} flexDir={"column"}>
       <CHeading size={1} title={"Welcome to our bots"} />
@@ -12,7 +15,6 @@ export default function OtherSample() {
       <Grid rowGap={"2rem"} columnGap={"2rem"} templateColumns={{ base: "1fr", lg: "1fr 1fr 1fr" }}>
         {data.map((c, i) =>
           <CCard
-
             key={i}
             props={{
               borderRadius: "lg",
@@ -25,7 +27,7 @@ export default function OtherSample() {
             <Grid mt={6} rowGap={"1rem"}>
               <CText cprops={{ color: "gray.100", fontWeight: "bold" }} size={3} title={c.desc} />
             </Grid>
-            <Button mt={6}>{c.btnText}</Button>
+            <Button onClick={() => navigate(c.link)} mt={6}>{c.btnText}</Button>
 
           </CCard>)}
       </Grid>
@@ -38,9 +40,10 @@ export default function OtherSample() {
 const data = [
   {
     bg: gradientBgs[0],
-    title: "AI Community Manager",
-    desc: 'Boost community interaction with AigentXC, delivering 24 / 7 support and multilingual engagement through advanced AI - driven management.',
-    btnText: "Contact Sales",
+    title: "Image Generation Algoritham",
+    desc: 'These apps find applications in artistic endeavors, content creation, and design, offering a user-friendly interface for individuals to effortlessly produce a wide range of AI-generated images tailored to their preferences.',
+    btnText: "Try Now",
+    link: "/dapp/image-generation"
   },
   {
     bg: gradientBgs[1],

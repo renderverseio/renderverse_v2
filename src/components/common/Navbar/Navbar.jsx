@@ -3,7 +3,6 @@ import Logo from "@/assets/logo.svg";
 import { Box, Flex, Heading, Image } from "@chakra-ui/react";
 
 import { desktopMenuItems } from "@/data/home/navbarData";
-
 import WalletMenuDropDown from "@/components/dropdowns/WalletMenuDropDown/WalletMenuDropDown";
 import MobileMenuDropDown from "@/components/dropdowns/MobileMenuDropDown/MobileMenuDropDown";
 import DesktopMenuDropDown from "@/components/dropdowns/DesktopMenuDropDown/DesktopMenuDropDown";

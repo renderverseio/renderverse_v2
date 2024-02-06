@@ -7,7 +7,10 @@ import {
   Input,
   Tag,
   Text,
-  Grid
+  Grid,
+  Radio,
+  RadioGroup,
+  Stack
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -21,12 +24,30 @@ import CreditsCheckerComponent from "@/components/spaces/CreditsCheckerComponent
 export default function ImageGenerationForm({
   input,
   setInput,
+  style,
+  setStyle,
   hasCredits,
   imgSrc,
   status,
   generateImage,
   disconnect,
 }) {
+
+  const styles = [
+    {
+      name: "Realism",
+      value: "photorealism"
+    },
+    {
+
+      name: "Art",
+      value: "artistic"
+    },
+    {
+      name: "Anime",
+      value: "anime"
+    }
+  ]
   return (
     <Grid
       rowGap={"2rem"}
@@ -44,6 +65,15 @@ export default function ImageGenerationForm({
             onChange={(i) => setInput(i.target.value)}
             placeholder="Muskmelon"
           />
+
+          <CText size={2} title={"Style"} />
+          <RadioGroup my={2} onChange={setStyle} value={style}>
+            <Stack direction='row'>
+              {styles.map((s, i) => <Radio key={i} value={s.value}>{s.name}</Radio>
+              )}
+            </Stack>
+          </RadioGroup>
+
           <Box p={3}>
             <Flex columnGap=".4rem" alignItems={"center"}>
               <FaBoxes size={18} />

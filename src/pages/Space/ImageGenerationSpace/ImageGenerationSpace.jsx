@@ -8,7 +8,8 @@ import ImageGenerationForm from '@/components/space/image_generation_space/Image
 import GeneratedImageGrid from '@/components/space/image_generation_space/GeneratedImagesGrid/GeneratedImagesGrid';
 
 import useUNISatWallet from '@/blockchain/useUNISatWallet';
-import { Box, Button, Flex } from '@chakra-ui/react';
+import { Box, Button, Container, Flex } from '@chakra-ui/react';
+import DescriptionBox from '@/components/spaces/DescriptionBox/DescriptionBox';
 
 
 export default function ImageGenerationSpace() {
@@ -16,14 +17,15 @@ export default function ImageGenerationSpace() {
   const { hasCredits } = useCredits({ address, isConnected });
   const { account, connectUNISatWallet, sendBitcoin } = useUNISatWallet()
 
-  const { generateImage, imgSrc, input, setInput, status } = useImageGenerator({
+  const { generateImage, imgSrc, input, setInput, status, style, setStyle } = useImageGenerator({
     address,
   });
 
   return (
     <React.Fragment>
       {isConnected && (
-        <React.Fragment>
+        <Container mt={12} maxW="90%" mx="auto">
+          <DescriptionBox title={`Image Generation`} desc={`These apps find applications in artistic endeavors, content creation, and design, offering a user-friendly interface for individuals to effortlessly produce a wide range of AI-generated images tailored to their preferences.`} />
           <Box p={4}>
             <Button onClick={connectUNISatWallet}>Connect BWallet</Button>
             <Button ml={2} onClick={() => sendBitcoin("tb1qhzz7lhds6s5uy37mlpntt7velvgf8ktrr46yq4")}>Send Bitcoin</Button>
@@ -37,6 +39,8 @@ export default function ImageGenerationSpace() {
 
           <ImageGenerationForm
             input={input}
+            style={style}
+            setStyle={setStyle}
             setInput={setInput}
             hasCredits={hasCredits}
             generateImage={generateImage}
@@ -45,7 +49,7 @@ export default function ImageGenerationSpace() {
             disconnect={disconnect}
           />
           <GeneratedImageGrid address={address} />
-        </React.Fragment>
+        </Container>
       )}
     </React.Fragment>
   );
