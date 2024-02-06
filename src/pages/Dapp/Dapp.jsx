@@ -1,19 +1,18 @@
-import Navbar from "@/components/common/Navbar/Navbar";
 import CCard from "@/components/custom/CCard/CCard";
 import CText from "@/components/typography/CText/CText";
-import { Box, Flex, Icon, } from "@chakra-ui/react";
+import { Box, Divider, Flex, Heading, Icon, Image, } from "@chakra-ui/react";
 import { Outlet, useLocation, useNavigate } from "react-router";
 
+import Logo from "@/assets/logo.svg";
+
 import { CiBank, CiServer, CiStar, CiGrid41, CiDollar, CiLink } from "react-icons/ci";
+import WalletMenuDropDown from "@/components/dropdowns/WalletMenuDropDown/WalletMenuDropDown";
 
 
 
 export default function Dapp() {
   return (
     <Box>
-      <Box boxShadow={"md"}>
-        <Navbar />
-      </Box>
       <DesktopSideBar />
     </Box>
   )
@@ -57,20 +56,39 @@ function DesktopSideBar() {
   const navigate = useNavigate()
   const path = useLocation()
   const pathClass = path.pathname.replace("/dapp/", "")
-  return <Box>
-    <Flex>
-      <Box
-        height={"100vh"}
-        w="24%"
-        p={6}
-        border={"2px"}
-        borderTop="none"
-        borderBottom={"none"}
-        borderLeft={"none"}
-        borderColor="gray.400"
-        display={"flex"}
+  return <Flex
+
+    bg="gray.200"
+    backgroundImage={`radial-gradient(circle, #ffffff, #fcfcff, #f8faff, #f3f7ff, #eef5ff);`}
+    minH="100vh"
+  >
+    <Box
+      w="24%"
+      display={"flex"}
+      alignItems={"center"}
+      px={4}
+      py={8}
+      boxShadow={"lg"}
+      flexDir={"column"}
+      rowGap={"2rem"}
+    >
+      <Flex
+        columnGap={".5rem"}
+        alignItems={"center"}
+        justifyContent="flex-start"
+        cursor={"pointer"}
+        onClick={() => window.location.href = "https://renderverse.io"}
+      >
+        <Image src={Logo} />
+        <Heading fontSize={{ lg: "2xl" }} color={`gray.900`}>Renderverse</Heading>{" "}
+      </Flex>
+      <Flex
+        borderRadius={"xl"}
+        boxShadow={"lg"}
+        p={4}
         flexDir={"column"}
         rowGap={"1rem"}
+        bg="gray.100"
       >
         {headers.map((d, i) =>
           <Box onClick={() => navigate(d.link)} key={i}>
@@ -81,7 +99,6 @@ function DesktopSideBar() {
                 columnGap: "1rem",
                 alignItem: "center",
                 bg: pathClass === d.link ? "white" : "transparent",
-                border: "2px",
                 borderColor: "gray.400",
                 _hover: {
 
@@ -94,13 +111,35 @@ function DesktopSideBar() {
             </CCard>
           </Box>
         )}
-      </Box>
+      </Flex>
+    </Box>
 
-      <Box w="100%">
-        <Outlet />
-      </Box>
-    </Flex>
-  </Box>
+
+    <Box w="100%">
+      <Flex
+        py={4}
+        px={8}
+        display={{ base: "none", md: "flex" }}
+        justifyContent={"space-between"}
+        alignItems="center"
+        columnGap={"1rem"}
+      >
+
+        <Flex
+          columnGap={".5rem"}
+          alignItems={"center"}
+          justifyContent="flex-start"
+          cursor={"pointer"}
+          onClick={() => window.location.href = "https://renderverse.io"}
+        >
+          <Heading color={`gray.900`}>Some Text</Heading>{" "}
+        </Flex>
+        <WalletMenuDropDown />
+      </Flex>
+      <Divider />
+      <Outlet />
+    </Box>
+  </Flex >
 }
 
 // function DrawerExample() {
