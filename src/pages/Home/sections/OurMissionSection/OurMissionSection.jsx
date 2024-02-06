@@ -49,15 +49,10 @@ export default function OurMissionSection() {
         <Image p={{ base: 0, md: 4, lg: 8, xl: 12 }} src={OurMissionLogo} />
         <Grid rowGap={"1rem"}>
           <Heading>Our Mission</Heading>
-          <Text>Greetings! 👋</Text>
           <Text>
-            {`We're Anki and Dominik and with snappify we want to provide you the
-        possibility to easily create technical presentations with smooth
-        animations.`}
+            {`Our mission is clear—to empower web3 users with the transformative capabilities of AI within the BRC-20 ecosystem. We aim to lead the charge in the Bitcoin blockchain revolution by providing accessible and user-friendly AI ordinals.`}
           </Text>
-          <Text>{`Doesn't matter if you create code explanations on social media, technical
-      presentations for your company or smoothly animated videos - we hope
-      you'll find snappify a valuable companion.`}</Text>
+          <Text>{`Together, we're shaping a future where seamless integration of AI fuels innovation and propels us to the forefront of the digital landscape. Join us as we redefine the possibilities in the BRC-20 space.`}</Text>
         </Grid>
       </Grid>
     </Box>

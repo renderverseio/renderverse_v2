@@ -33,7 +33,7 @@ export default function MainSubtitles() {
                 >
                   New!
                 </Box>
-                {" - Experimental Video Export"}
+                {" - AI Art Generator"}
               </>
             } >
           </CText>
@@ -42,8 +42,8 @@ export default function MainSubtitles() {
       <Box>
         <CText
           size={1}
-          title={`Take your Code presentation to the next level with ${`snappify's`}
-          powerful animations features.`} />
+          title={`Take your imagination to another level with our
+          powerful AI models.`} />
       </Box>
       <Flex>
         <Box
@@ -73,7 +73,6 @@ export default function MainSubtitles() {
       </Flex>
 
       <Box>
-        {`Avatars Section`}
         <Text color={"gray.700"} fontSize={{ base: "sm" }}>
           Join the community of 24k+ developers spicing up their content
         </Text>
