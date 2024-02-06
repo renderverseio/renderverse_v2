@@ -2,7 +2,7 @@
 import { Box } from "@chakra-ui/react";
 import ComingSoon from "./ComingSoon";
 
-export default function DashboardSection() {
+export default function AffiliateProgramSection() {
   return <Box>
     <ComingSoon />
   </Box>

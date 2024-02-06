@@ -33,16 +33,6 @@ export const desktopMenuItems = [
     options: [
       {
         icon: "",
-        title: "Spaces",
-        subText: "Create Smooth slides with smooth animations",
-      },
-      {
-        icon: "",
-        title: "Models",
-        subText: "Take your social media presence to next level",
-      },
-      {
-        icon: "",
         title: "API",
         subText: "Help your students to grasp complex concepts easily",
       },

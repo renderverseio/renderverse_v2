@@ -29,7 +29,7 @@ export default function ProductCard({ alignLeft, title, note1, note2, i }) {
           bg={gradientBgs[i].bg}
           bgImg={gradientBgs[i].bgImg}
         >
-          <Box flexDir={"row"} columnGap={"1rem"} display={"flex"} justifyContent={"space-evenly"} >
+          <Box w="50%" flexDir={"row"} columnGap={"1rem"} display={"flex"} justifyContent={"space-evenly"} >
             <MotionDiv hidden={{ opacity: 0, y: -120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
               <Image bg="transparent" borderRadius={"lg"} src={Eco} />
             </MotionDiv>

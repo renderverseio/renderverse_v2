@@ -18,6 +18,8 @@ export default function OtherSample() {
             key={i}
             props={{
               borderRadius: "lg",
+              borderColor: "gray.400",
+              border: "1px",
               p: 4,
               bg: c.bg.bg,
               bgImage: c.bg.bgImg

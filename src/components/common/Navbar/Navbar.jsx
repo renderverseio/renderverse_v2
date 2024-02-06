@@ -11,10 +11,10 @@ export default function Navbar() {
   return (
     <Box minH={{ base: "10vh" }}>
       <Flex
-        py={4}
         px={{ base: 4, md: 8, lg: 12, xl: 24 }}
         alignItems={"center"}
         justifyContent={"space-between"}
+        py={3}
       >
         <Flex
           columnGap={".5rem"}

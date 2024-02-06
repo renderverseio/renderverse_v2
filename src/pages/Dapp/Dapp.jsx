@@ -1,12 +1,12 @@
 import Navbar from "@/components/common/Navbar/Navbar";
 import CCard from "@/components/custom/CCard/CCard";
 import CText from "@/components/typography/CText/CText";
-import { Box, Flex, } from "@chakra-ui/react";
+import { Box, Flex, Icon, } from "@chakra-ui/react";
 import { Outlet, useLocation, useNavigate } from "react-router";
 
-import { MdDashboard } from "react-icons/md";
+import { CiBank, CiServer, CiStar, CiGrid41, CiDollar, CiLink } from "react-icons/ci";
 
-import { AiOutlineApi } from "react-icons/ai";
+
 
 export default function Dapp() {
   return (
@@ -22,29 +22,33 @@ export default function Dapp() {
 const headers = [
   {
     title: "Dashboard (soon)",
-    link: "/dapp",
-    icon: MdDashboard
+    link: "dashboard",
+    icon: CiGrid41
   },
   {
     title: "Infernece APIs (Soon)",
-    link: "/dapp",
-    icon: AiOutlineApi
+    link: "api",
+    icon: CiServer
   },
   {
     title: "Products",
-    link: "products"
+    link: "products",
+    icon: CiStar
   },
   {
     title: "Staking",
-    link: "staking"
+    link: "staking",
+    icon: CiBank
   },
   {
     title: "Affiliate program",
-    link: "affiliate"
+    link: "affiliate",
+    icon: CiDollar
   },
   {
     title: "Docs",
-    link: "docs"
+    link: "docs",
+    icon: CiLink
   }
 ]
 
@@ -53,27 +57,40 @@ function DesktopSideBar() {
   const navigate = useNavigate()
   const path = useLocation()
   const pathClass = path.pathname.replace("/dapp/", "")
-
   return <Box>
     <Flex>
       <Box
         height={"100vh"}
         w="24%"
-        mt={6}
-        p={4}
+        p={6}
+        border={"2px"}
+        borderTop="none"
+        borderBottom={"none"}
+        borderLeft={"none"}
+        borderColor="gray.400"
+        display={"flex"}
+        flexDir={"column"}
+        rowGap={"1rem"}
       >
         {headers.map((d, i) =>
-          <Box my={2} onClick={() => navigate(d.link)} key={i}>
+          <Box onClick={() => navigate(d.link)} key={i}>
             <CCard
               props={{
-                p: 4,
-                background: pathClass === d.link ? "white" : "transparent",
+                p: 2,
+                display: "flex",
+                columnGap: "1rem",
+                alignItem: "center",
+                bg: pathClass === d.link ? "white" : "transparent",
+                border: "2px",
+                borderColor: "gray.400",
                 _hover: {
-                }
 
+                }
               }}
-              type="d">
-              <CText size={3} cprops={{ fontWeight: "bold" }} title={d.title} />
+              type="d"
+            >
+              <Icon h={6} w={6} as={d.icon}></Icon>
+              <CText size={3} cprops={{ fontWeight: "bold", fontSize: { base: "sm" } }} title={d.title} />
             </CCard>
           </Box>
         )}

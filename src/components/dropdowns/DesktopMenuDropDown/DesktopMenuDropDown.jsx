@@ -16,7 +16,7 @@ export default function DesktopMenuDropDown({ menu, options }) {
       <PopoverTrigger>
         <Text fontWeight={"bold"}>{menu}</Text>
       </PopoverTrigger>
-      {options.length > 0 ? (
+      {options.length > 0 && (
         <PopoverContent
           boxShadow={"none"}
           outline="none"
@@ -29,7 +29,7 @@ export default function DesktopMenuDropDown({ menu, options }) {
           }}
         >
           <PopoverArrow />
-          <Flex bg="blue" justifyContent={"flex-end"}>
+          <Flex justifyContent={"flex-end"}>
             <Grid
               w="100%"
               rowGap={".5rem"}
@@ -70,7 +70,7 @@ export default function DesktopMenuDropDown({ menu, options }) {
             </Grid>
           </Flex>
         </PopoverContent>
-      ) : null}
+      )}
     </Popover>
   );
 }

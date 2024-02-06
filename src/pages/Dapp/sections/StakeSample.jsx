@@ -25,7 +25,9 @@ export default function StakeSample() {
               borderRadius: "lg",
               p: 4,
               bg: c.bg.bg,
-              bgImage: c.bg.bgImg
+              bgImage: c.bg.bgImg,
+              border: "2px",
+              borderColor: "gray.400",
             }}>
 
             <CHeading cprops={{ color: "gray.100" }} size={2} title={c.days} />
