@@ -29,7 +29,7 @@ export default function DesktopMenuDropDown({ menu, options }) {
           }}
         >
           <PopoverArrow />
-          <Flex justifyContent={"flex-end"}>
+          <Flex bg="blue" justifyContent={"flex-end"}>
             <Grid
               w="100%"
               rowGap={".5rem"}

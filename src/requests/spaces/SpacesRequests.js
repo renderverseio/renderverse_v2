@@ -11,14 +11,17 @@ const generatedImages = async ({ address }) => {
   }
 }
 
-const generateImage = async ({ address, input }) => {
+const generateImage = async ({ address, input, style }) => {
   return await axios
     // .post("https://opai.renderverse.io/image-gen", {
     .post("http://127.0.0.1:5000/image-gen", {
       walletAddress: address,
       wallet_address: address,
       prompt: input,
-    })
+      style: style
+    },
+      { responseType: "blob", }
+    )
 }
 
 const getCredits = async ({ address }) => {
@@ -51,31 +54,6 @@ const generatedChats = async ({ address }) => {
 
 }
 
-const getCoinTrackerCoins = async ({ exchange, address }) => {
-  return await axios
-    .post("https://opai.renderverse.io/chart-coinstracker", {
-      exchange: exchange,
-      wallet_address: address,
-    })
-}
-
-const getPumpCoins = async ({ exchange, address }) => {
-  return await axios
-    .post("https://opai.renderverse.io/chart-pump", {
-      exchange: exchange,
-      wallet_address: address,
-    })
-}
-
-const getTokenAnalyzerCoins = async ({ exchange, address, tf }) => {
-  return await axios
-    .post("https://opai.renderverse.io/chart-scans", {
-      exchange: exchange,
-      wallet_address: address,
-      tf: tf,
-    })
-}
-
 
 export const spacesRequests = {
   getCredits,
@@ -83,9 +61,5 @@ export const spacesRequests = {
   generatedImages,
   generatedChats,
   generateChatPrompt,
-  getCoinTrackerCoins,
-  getPumpCoins,
-  getTokenAnalyzerCoins
-
 }
 

@@ -17,16 +17,8 @@ export default function Dapp() {
 
 const headers = [
   {
-    title: "Conversations",
-    link: "conversations"
-  },
-  {
     title: "Dashboard",
     link: "dashboard"
-  },
-  {
-    title: "My Aigents",
-    link: "myaigents"
   },
   {
     title: "Product Suite",
@@ -35,10 +27,6 @@ const headers = [
   {
     title: "Staking",
     link: "staking"
-  },
-  {
-    title: "Affiliate Program",
-    link: "affiliate"
   },
   {
     title: "Docs",
@@ -56,7 +44,7 @@ function DesktopSideBar() {
     <Flex>
       <Box
         height={"100vh"}
-        w="14%"
+        w="24%"
         mt={6}
         p={4}
       >

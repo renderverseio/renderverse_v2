@@ -8,12 +8,14 @@ export const useImageGenerator = ({ address }) => {
   const [input, setInput] = useState("")
   const [imgSrc, setImgSrc] = useState("")
   const [status, setStatus] = useState(TStatus.idle)
+  const [style, setStyle] = useState("")
 
   async function generateImage() {
     try {
       setImgSrc("");
       setStatus(TStatus.fetching)
-      const response = await spacesRequests.generateImage({ address, input })
+      const response = await spacesRequests.generateImage({ address, input, style })
+      console.log(response)
       const blob = response.data
       blobToBase64(blob).then((c) => {
         setImgSrc(c);
@@ -26,6 +28,6 @@ export const useImageGenerator = ({ address }) => {
   }
 
   return {
-    input, setInput, imgSrc, generateImage, status
+    input, setInput, imgSrc, generateImage, status, setStyle, style
   }
 }
