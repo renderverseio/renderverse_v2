@@ -1,13 +1,14 @@
+import Logo from "@/assets/logo.svg";
 import CCard from "@/components/custom/CCard/CCard";
 import CText from "@/components/typography/CText/CText";
-import { Box, Divider, Flex, Heading, Icon, Image, } from "@chakra-ui/react";
+
 import { Outlet, useLocation, useNavigate } from "react-router";
+import { Box, Flex, Heading, Icon, Image, } from "@chakra-ui/react";
 
-import Logo from "@/assets/logo.svg";
 
-import { CiBank, CiServer, CiStar, CiGrid41, CiDollar, CiLink } from "react-icons/ci";
+import { CiBag1 } from "react-icons/ci";
 import WalletMenuDropDown from "@/components/dropdowns/WalletMenuDropDown/WalletMenuDropDown";
-
+import { dAppHeaders } from "@/data/dapp/dappData";
 
 
 export default function Dapp() {
@@ -18,38 +19,6 @@ export default function Dapp() {
   )
 }
 
-const headers = [
-  {
-    title: "Dashboard (soon)",
-    link: "dashboard",
-    icon: CiGrid41
-  },
-  {
-    title: "Infernece APIs (Soon)",
-    link: "api",
-    icon: CiServer
-  },
-  {
-    title: "Products",
-    link: "products",
-    icon: CiStar
-  },
-  {
-    title: "Staking",
-    link: "staking",
-    icon: CiBank
-  },
-  {
-    title: "Affiliate program",
-    link: "affiliate",
-    icon: CiDollar
-  },
-  {
-    title: "Docs",
-    link: "docs",
-    icon: CiLink
-  }
-]
 
 function DesktopSideBar() {
 
@@ -57,20 +26,19 @@ function DesktopSideBar() {
   const path = useLocation()
   const pathClass = path.pathname.replace("/dapp/", "")
   return <Flex
-
-    bg="gray.200"
-    backgroundImage={`radial-gradient(circle, #ffffff, #fcfcff, #f8faff, #f3f7ff, #eef5ff);`}
+    backgroundImage={`linear-gradient(to right bottom, #fffcd6, #fff5d4, #ffefd4, #ffe9d5, #ffe4d6);`}
     minH="100vh"
   >
     <Box
       w="24%"
+      h={"100vh"}
       display={"flex"}
       alignItems={"center"}
       px={4}
       py={8}
-      boxShadow={"lg"}
       flexDir={"column"}
       rowGap={"2rem"}
+      justifyContent={"space-evenly"}
     >
       <Flex
         columnGap={".5rem"}
@@ -83,14 +51,15 @@ function DesktopSideBar() {
         <Heading fontSize={{ lg: "2xl" }} color={`gray.900`}>Renderverse</Heading>{" "}
       </Flex>
       <Flex
-        borderRadius={"xl"}
-        boxShadow={"lg"}
-        p={4}
         flexDir={"column"}
         rowGap={"1rem"}
-        bg="gray.100"
+        p={4}
+        borderRadius={"lg"}
+        boxShadow={"inset 5px 5px 27px #e3e3e3, inset -5px -5px 27px #ffffff"}
+        bg="white"
+        backgroundImage={`linear-gradient(to right bottom, #fffcd6, #fff5d4, #ffefd4, #ffe9d5, #ffe4d6);`}
       >
-        {headers.map((d, i) =>
+        {dAppHeaders.map((d, i) =>
           <Box onClick={() => navigate(d.link)} key={i}>
             <CCard
               props={{
@@ -98,8 +67,7 @@ function DesktopSideBar() {
                 display: "flex",
                 columnGap: "1rem",
                 alignItem: "center",
-                bg: pathClass === d.link ? "white" : "transparent",
-                borderColor: "gray.400",
+                bg: pathClass !== d.link ? "transpernt" : "white",
                 _hover: {
 
                 }
@@ -107,36 +75,49 @@ function DesktopSideBar() {
               type="d"
             >
               <Icon h={6} w={6} as={d.icon}></Icon>
-              <CText size={3} cprops={{ fontWeight: "bold", fontSize: { base: "sm" } }} title={d.title} />
+              <CText size={2} cprops={{ fontWeight: "bold", fontSize: { base: "sm" } }} title={d.title} />
             </CCard>
           </Box>
         )}
+      </Flex>
+
+      <Flex
+        flexDir={"column"}
+        rowGap={"1rem"}
+        px={8}
+        py={4}
+        borderRadius={"lg"}
+        bg="white"
+        boxShadow={"inset 5px 5px 27px #e3e3e3, inset -5px -5px 27px #ffffff"}
+        backgroundImage={`linear-gradient(to right bottom, #fffcd6, #fff5d4, #ffefd4, #ffe9d5, #ffe4d6);`}
+      >
+        <Flex alignItems={"center"} columnGap={".5rem"}>
+          <Icon h={8} w={8} as={CiBag1}></Icon>
+          <CText size={2} cprops={{ fontWeight: "bold", }} title={`ETH Rewards`} />
+        </Flex>
+        <Box>
+          <CText size={2} cprops={{ fontWeight: "bold", fontSize: { base: "lg" } }} title={`105.85 ETH`} />
+          <CText size={2} cprops={{ fontSize: { base: "sm" } }} title={`Allocated rewards`} />
+        </Box>
+        <Box>
+          <CText size={2} cprops={{ fontWeight: "bold", fontSize: { base: "lg" } }} title={`18 108 033 RNDR`} />
+          <CText size={2} cprops={{ fontSize: { base: "sm" } }} title={`Total staked amount`} />
+        </Box>
       </Flex>
     </Box>
 
 
     <Box w="100%">
       <Flex
-        py={4}
+        pt={4}
         px={8}
         display={{ base: "none", md: "flex" }}
-        justifyContent={"space-between"}
+        justifyContent={"flex-end"}
         alignItems="center"
         columnGap={"1rem"}
       >
-
-        <Flex
-          columnGap={".5rem"}
-          alignItems={"center"}
-          justifyContent="flex-start"
-          cursor={"pointer"}
-          onClick={() => window.location.href = "https://renderverse.io"}
-        >
-          <Heading color={`gray.900`}>Some Text</Heading>{" "}
-        </Flex>
         <WalletMenuDropDown />
       </Flex>
-      <Divider />
       <Outlet />
     </Box>
   </Flex >

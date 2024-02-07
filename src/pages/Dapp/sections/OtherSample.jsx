@@ -5,6 +5,7 @@ import CHeading from "@/components/typography/CHeading/CHeading";
 import { Box, Button, Flex, Grid, } from "@chakra-ui/react";
 import { gradientBgs } from "@/data/home/homeData";
 import { useNavigate } from "react-router";
+import { StakingImages } from "@/data/dapp/dappData";
 
 export default function OtherSample() {
   const navigate = useNavigate()
@@ -18,16 +19,16 @@ export default function OtherSample() {
             key={i}
             props={{
               borderRadius: "lg",
-              borderColor: "gray.400",
-              border: "1px",
+              boxShadow: "lg",
               p: 4,
-              bg: c.bg.bg,
-              bgImage: c.bg.bgImg
+              bgImg: StakingImages[i],
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat"
             }}>
 
-            <CText cprops={{ color: "gray.100" }} size={1} title={c.title} />
+            <CText cprops={{ color: "gray.800" }} size={1} title={c.title} />
             <Grid mt={6} rowGap={"1rem"}>
-              <CText cprops={{ color: "gray.100", fontWeight: "bold" }} size={3} title={c.desc} />
+              <CText cprops={{ color: "white", bg: 'rgba(0,0,0,.5)', p: 4, borderRadius: 'lg' }} size={3} title={c.desc} />
             </Grid>
             <Button onClick={() => navigate(c.link)} mt={6}>{c.btnText}</Button>
 

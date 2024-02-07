@@ -7,7 +7,7 @@ import { Box, Divider, } from "@chakra-ui/react";
 
 export default function DescriptionBox({ title, desc }) {
   return (
-    <CCard type="s" >
+    <CCard type="s" props={{ bg: 'white' }}>
       <Box rowGap={".2rem"} display={"grid"} p={4} py={6}>
         <CHeading data-testid="title" title={title} size={2} />
         <Divider my={2} />

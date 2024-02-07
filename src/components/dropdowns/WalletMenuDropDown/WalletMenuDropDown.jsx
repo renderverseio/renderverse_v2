@@ -62,9 +62,18 @@ export default function WalletMenuDropDown() {
       component = <Button onClick={connectWallet}>Connect Wallet</Button>
     else
       component = (
-        <CCard type="d" props={{ cursor: "pointer", minW: "200px" }} >
+        <CCard type="s" props={{
+          cursor: "pointer", minW: "200px",
+          bgImage: "linear-gradient(to right bottom, #fffcd6, #fff5d4, #ffefd4, #ffe9d5, #ffe4d6);",
+          outline: "none",
+          border: 'none',
+          _hover: {
+            bg: "white",
+          }
+
+        }} >
           <Flex py={2} px={3} alignItems={"center"} columnGap={"1rem"}>
-            <Image maxW={8} src={BNB} />
+            <Image borderRadius={"xl"} maxW={8} src={BNB} />
             <Box>
               <CText size={3} title={`Connected To`} />
               <CText cprops={{ fontWeight: "600" }} size={3} title={addressStripped.toString()} />
@@ -85,7 +94,7 @@ export default function WalletMenuDropDown() {
         </Box>
       </PopoverTrigger>
       <PopoverArrow />
-      {isConnected && <PopoverContent maxW="200px">
+      {isConnected && <PopoverContent border={"none"} outline="none" borderRadius={"lg"} boxShadow={"lg"} maxW="200px">
         <WalletMenu menuButtons={menuButtons} menuBalance={menuBalance} />
       </PopoverContent>
       }

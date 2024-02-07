@@ -55,8 +55,9 @@ export default function ImageGenerationForm({
         base: "1fr",
         lg: "1fr 1fr",
       }}
+      mb={12}
     >
-      <CCard type="s" props={{ padding: 6 }}>
+      <CCard type="s" props={{ padding: 6, bg: "white" }}>
         <FormControl >
           <CText size={2} title={"Input"} />
           <Input
@@ -104,7 +105,7 @@ export default function ImageGenerationForm({
         </FormControl>
       </CCard>
 
-      <CCard type={"s"} props={{ pos: "relative" }}>
+      <CCard type={"s"} props={{ pos: "relative", bg: 'white' }}>
         <CCard
           type="d"
           props={{

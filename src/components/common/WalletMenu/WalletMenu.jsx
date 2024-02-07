@@ -5,9 +5,11 @@ import { Box, Button, Divider, Flex, Grid, Heading, Text } from "@chakra-ui/reac
 
 export default function WalletMenu({ menuButtons, menuBalance }) {
   return (
-    <Grid rowGap={"2rem"}>
+    <Grid
+      backgroundImage={`linear-gradient(to right bottom, #fffcd6, #fff5d4, #ffefd4, #ffe9d5, #ffe4d6);`}
+      rowGap={"2rem"}>
       <Grid py={3}>
-        <Box m={4} p={4} borderRadius={"lg"} display={"flex"} justifyContent={"center"} boxShadow={"lg"} flexDir={"column"} alignItems={"center"}>
+        <Box bg="white" m={4} p={4} borderRadius={"lg"} display={"flex"} justifyContent={"center"} boxShadow={"lg"} flexDir={"column"} alignItems={"center"}>
           <CHeading size={2} title={menuBalance.value} />
           <CHeading size={3} title={menuBalance.key} />
           <Divider my={3} />
