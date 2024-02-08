@@ -11,7 +11,7 @@ export default function StakeSample() {
     <Flex rowGap={"2rem"} p={8} flexDir={"column"}>
       <CHeading size={1} title={"Staking"} />
       <Flex>
-        <CCard props={{ p: 4, bg: 'white' }} type="s">
+        <CCard props={{ p: 4, className: "glass_effect" }} type="s" >
           <CText size={1} title="Pool Size" />
           <CText size={3} title="Leverage the power of compounding by staking your $AIX tokens and compounding rewards as they accrue" />
         </CCard>
@@ -27,6 +27,7 @@ export default function StakeSample() {
               p: 4,
               bgImg: StakingImages[i],
               boxShadow: 'lg',
+              className: "glass_effect"
             }}>
 
             <CHeading cprops={{ color: "gray.800" }} size={2} title={c.days} />
@@ -44,7 +45,11 @@ export default function StakeSample() {
       </Grid>
 
       <Flex>
-        <CCard props={{ p: 4, bg: "white" }} type="s">
+        <CCard
+          props={{
+            p: 4,
+            className: "glass_effect"
+          }} type="s">
           <Flex columnGap={"6rem"} justifyContent={"space-between"} alignItems={"center"}>
             <Box>
               <CText size={1} title="My Stakes & Rewards" />
