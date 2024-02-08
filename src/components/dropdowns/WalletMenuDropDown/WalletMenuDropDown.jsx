@@ -1,4 +1,3 @@
-
 import {
   Popover,
   PopoverTrigger,
@@ -8,7 +7,6 @@ import {
   Box,
   Image,
   Flex,
-  ColorModeScript
 } from "@chakra-ui/react";
 
 import { useWallet } from "@/hooks/common/useWallet";
@@ -55,18 +53,33 @@ export default function WalletMenuDropDown() {
 
 
   let routeComponent = null
-  if (path.pathname === '/') routeComponent = <Button onClick={() => navigate("/dapp")}>Launch Dapp</Button>
+  if (path.pathname === '/') routeComponent = (
+    <Box
+      minW="160px"
+      boxShadow={"lg"}
+      fontWeight={"bolder"}
+      borderRadius={"lg"}
+      className="btn btn-1"
+      onClick={() => navigate("/dapp")}
+    >
+      Launch Dapp
+    </Box>
+  )
   if (path.pathname.includes('/dapp')) {
     let component = null;
     if (!isConnected)
-      component = <Button onClick={connectWallet}>Connect Wallet</Button>
+      component = <Box borderRadius={"lg"} border="2px" borderColor={"white"} fontWeight={"bold"} className="btn btn-1" onClick={connectWallet}>Connect Wallet</Box>
     else
       component = (
         <CCard type="s" props={{
-          cursor: "pointer", minW: "200px",
+          cursor: "pointer",
+          minW: "200px",
           bgImage: "linear-gradient(to right bottom, #fffcd6, #fff5d4, #ffefd4, #ffe9d5, #ffe4d6);",
           outline: "none",
           border: 'none',
+          boxShadow: "sm",
+          border: "2px",
+          borderColor: "white",
           _hover: {
             bg: "white",
           }
@@ -87,7 +100,6 @@ export default function WalletMenuDropDown() {
 
   return (
     <Popover trigger="click" boxShadow={"none"} outline="none" border="none">
-
       <PopoverTrigger>
         <Box>
           {routeComponent}

@@ -89,22 +89,22 @@ export const desktopMenuItems = [
       {
         icon: "",
         title: "Twitter",
-        subText: "",
+        subText: "Interactive Infographics on your website / blog",
       },
       {
         icon: "",
         title: "Telegram",
-        subText: "",
+        subText: "Interactive Infographics on your website / blog",
       },
       {
         icon: "",
         title: "Discord",
-        subText: "",
+        subText: "Interactive Infographics on your website / blog",
       },
       {
         icon: "",
         title: "Email",
-        subText: "",
+        subText: "Interactive Infographics on your website / blog",
       },
     ],
   },

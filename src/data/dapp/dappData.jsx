@@ -4,16 +4,12 @@ import AImage from '@/assets/stakin/1.png'
 import BImage from '@/assets/stakin/2.png'
 import CImage from '@/assets/stakin/3.png'
 
+
 export const dAppHeaders = [
   {
     title: "Dashboard (soon)",
     link: "dashboard",
     icon: CiGrid41
-  },
-  {
-    title: "Infernece APIs (Soon)",
-    link: "api",
-    icon: CiServer
   },
   {
     title: "Products",
@@ -29,6 +25,11 @@ export const dAppHeaders = [
     title: "Affiliate program",
     link: "affiliate",
     icon: CiDollar
+  },
+  {
+    title: "Infernece APIs (Soon)",
+    link: "api",
+    icon: CiServer
   },
   {
     title: "Docs",

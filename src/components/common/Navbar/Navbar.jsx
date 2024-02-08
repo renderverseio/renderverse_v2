@@ -1,8 +1,9 @@
-import Logo from "@/assets/logo.svg";
+import Logo from "@/assets/logo.png";
 
 import { Box, Flex, Heading, Image } from "@chakra-ui/react";
 
 import { desktopMenuItems } from "@/data/home/navbarData";
+
 import WalletMenuDropDown from "@/components/dropdowns/WalletMenuDropDown/WalletMenuDropDown";
 import MobileMenuDropDown from "@/components/dropdowns/MobileMenuDropDown/MobileMenuDropDown";
 import DesktopMenuDropDown from "@/components/dropdowns/DesktopMenuDropDown/DesktopMenuDropDown";
@@ -23,8 +24,7 @@ export default function Navbar() {
           cursor={"pointer"}
           onClick={() => window.location.href = "https://renderverse.io"}
         >
-          <Image src={Logo} />
-          <Heading color={`gray.900`}>Renderverse</Heading>{" "}
+          <Image maxW={"220px"} src={Logo} />
         </Flex>
         <Box
           w={{ base: "auto", md: "none" }}

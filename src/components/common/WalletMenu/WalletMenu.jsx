@@ -1,7 +1,7 @@
 import CHeading from "@/components/typography/CHeading/CHeading";
 import CText from "@/components/typography/CText/CText";
 
-import { Box, Button, Divider, Flex, Grid, Heading, Text } from "@chakra-ui/react";
+import { Box, Button, Divider, Flex, Grid, } from "@chakra-ui/react";
 
 export default function WalletMenu({ menuButtons, menuBalance }) {
   return (

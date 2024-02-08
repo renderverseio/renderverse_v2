@@ -1,5 +1,7 @@
 import CText from "@/components/typography/CText/CText";
 import { Box, Flex, Text } from "@chakra-ui/react";
+import Typewriter from 'typewriter-effect';
+
 
 
 export default function MainSubtitles() {
@@ -39,12 +41,30 @@ export default function MainSubtitles() {
           </CText>
         </Box>
       </Flex>
-      <Box>
-        <CText
-          size={1}
-          title={`Take your imagination to another level with our
-          powerful AI models.`} />
-      </Box>
+
+      <Flex minH="180px">
+        <Text fontFamily={"Inter"} fontSize={{ base: "xl", md: "2xl", lg: "4xl" }} fontWeight={"bold"} >
+          <span style={{ fontWeight: "bold" }}>
+            We empower
+          </span>
+          <span >
+            <Typewriter
+              options={{
+                wrapperClassName: "gradient_text",
+                strings: [
+                  'Developers to create stunning AI projects',
+                  'Artists to desing stunning AI images',
+                  'Traders to execute stunning AI trades'
+                ],
+                autoStart: true,
+                deleteSpeed: 0.1,
+                delay: 25,
+                loop: true,
+              }}
+            />
+          </span>
+        </Text>
+      </Flex>
       <Flex>
         <Box
           py={2}
@@ -74,7 +94,7 @@ export default function MainSubtitles() {
 
       <Box>
         <Text color={"gray.700"} fontSize={{ base: "sm" }}>
-          Join the community of 24k+ developers spicing up their content
+          Take your imagination to another level with our powerful AI models.
         </Text>
       </Box>
     </Flex >

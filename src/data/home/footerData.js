@@ -18,8 +18,4 @@ export const footerData = [
     title: "VS Code Extension",
     options: ["IntelliJ Plugin", "About"],
   },
-  {
-    title: "Our Mission",
-    options: ["Twitter", "YouTube", "Imprint", "Legal"],
-  },
 ];

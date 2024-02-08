@@ -1,9 +1,9 @@
-import Logo from "@/assets/logo.svg";
+import Logo from "@/assets/logo.png";
 import CCard from "@/components/custom/CCard/CCard";
 import CText from "@/components/typography/CText/CText";
 
 import { Outlet, useLocation, useNavigate } from "react-router";
-import { Box, Flex, Heading, Icon, Image, } from "@chakra-ui/react";
+import { Box, Divider, Flex, Grid, Heading, Icon, Image, } from "@chakra-ui/react";
 
 
 import { CiBag1 } from "react-icons/ci";
@@ -25,22 +25,26 @@ function DesktopSideBar() {
   const navigate = useNavigate()
   const path = useLocation()
   const pathClass = path.pathname.replace("/dapp/", "")
-  return <Flex
+  return <Grid
     minH="100vh"
-    className="bg"
+    templateColumns={{ base: 0, lg: "2fr 7fr", xl: "1.5fr 8fr", '2xl': "1.6fr 7fr" }}
+    // backgroundImage={`linear-gradient(to left, #f6f4eb, #f8f7ea, #faf9e9, #fbfce8, #fcffe7);`}
+    bg="gray.200"
   >
+
     <Box
-      p={4}
-      m={8}
-      w="24%"
+      px={4}
       h={"100vh"}
       display={"flex"}
-      rowGap={"2rem"}
       flexDir={"column"}
       alignItems={"center"}
-      justifyContent={"space-evenly"}
-      className="glass_effect"
-      borderRadius={"lg"}
+      py={8}
+      border="2px"
+      borderLeft={"none"}
+      borderTop="none"
+      borderBottom={"none"}
+      borderColor="white"
+      bg="gray.50"
     >
       <Flex
         columnGap={".5rem"}
@@ -50,12 +54,12 @@ function DesktopSideBar() {
         onClick={() => window.location.href = "https://renderverse.io"}
       >
         <Image src={Logo} />
-        <Heading fontSize={{ lg: "2xl" }} color={`gray.900`}>Renderverse</Heading>{" "}
       </Flex>
+      <Box h="1px" my={6} w="100%" bg="gray.100"></Box>
       <Flex
         flexDir={"column"}
         rowGap={"1rem"}
-        p={4}
+        w="100%"
         borderRadius={"lg"}
       >
         {dAppHeaders.map((d, i) =>
@@ -66,27 +70,33 @@ function DesktopSideBar() {
                 display: "flex",
                 columnGap: "1rem",
                 alignItem: "center",
-                bg: pathClass !== d.link ? "transpernt" : "white",
+                boxShadow: "none",
+                bg: "gray.50",
+                bgImg: pathClass !== d.link ? "transpernt" : "linear-gradient(to right bottom, #fffcd6, #fff5d4, #ffefd4, #ffe9d5, #ffe4d6);",
                 _hover: {
-
                 }
               }}
               type="d"
             >
               <Icon h={6} w={6} as={d.icon}></Icon>
-              <CText size={2} cprops={{ fontWeight: "bold", fontSize: { base: "sm" } }} title={d.title} />
+              <CText size={1} cprops={{ fontWeight: "bold", fontSize: { base: "sm" } }} title={d.title} />
             </CCard>
           </Box>
         )}
       </Flex>
-      <WalletMenuDropDown />
+
+      <Box h="1px" my={6} w="100%" bg="gray.100"></Box>
+
     </Box>
 
 
     <Box w="100%">
+      <Flex p={4} justifyContent={"flex-end"} alignItems={"flex-end"}>
+        <WalletMenuDropDown />
+      </Flex>
       <Outlet />
     </Box>
-  </Flex >
+  </Grid >
 }
 
 // function DrawerExample() {

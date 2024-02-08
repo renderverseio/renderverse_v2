@@ -26,7 +26,7 @@ export default function Home() {
       <HightLightSection />
       <HomeContainer children={
         <>
-          <PricingSection />
+          {/* <PricingSection /> */}
           <RoadmapSection />
         </>
       } />

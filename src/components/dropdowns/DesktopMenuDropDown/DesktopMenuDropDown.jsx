@@ -20,6 +20,7 @@ export default function DesktopMenuDropDown({ menu, options }) {
         <PopoverContent
           boxShadow={"none"}
           outline="none"
+          w="550px"
           border="none"
 
           _focus={{
@@ -31,17 +32,16 @@ export default function DesktopMenuDropDown({ menu, options }) {
           <PopoverArrow />
           <Flex justifyContent={"flex-end"}>
             <Grid
-              w="100%"
               rowGap={".5rem"}
               columnGap=".5rem"
               p={4}
-              gridTemplateColumns={"1fr"}
+              gridTemplateColumns={"1fr 1fr"}
               borderRadius="lg"
-              boxShadow={"dark-lg"}
+              boxShadow={"xl"}
             >
               {options.map((option, i) => (
                 <Box
-                  boxShadow={"lg"}
+                  boxShadow={"0px 0px 3px -2px gray"}
                   borderRadius="lg"
                   transition={"all 400ms ease-in-out"}
                   _hover={{ bg: "gray.200" }}

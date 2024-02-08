@@ -5,11 +5,11 @@ import {
   Link,
   Text,
   Image,
-  Heading,
   Button,
+
 } from "@chakra-ui/react";
 
-import Logo from "@/assets/logo.svg";
+import Logo from "@/assets/logos/white.png";
 
 import { footerData } from "@/data/home/footerData";
 
@@ -39,15 +39,14 @@ export default function Footer() {
               alignItems={"center"}
               justifyContent="flex-start"
             >
-              <Image src={Logo} />{" "}
-              <Heading color={`white`}>Renderverse</Heading>{" "}
+              <Image maxW={"248px"} src={Logo} />{" "}
             </Flex>
             <Box color="white">
-              <Text>Create stunning Code Presentations</Text>
-              <Text>and smoothly animated videos.</Text>
+              <Text>The first AI ORDINAL on</Text>
+              <Text>BRC-20 Network</Text>
             </Box>
             <Box color="white">
-              <Text>© seriouscode GmbH</Text>
+              <Text>©Renderverse</Text>
               <Text>All Rights Reserved.</Text>
             </Box>
           </Box>
@@ -73,7 +72,7 @@ export default function Footer() {
         </Flex>
         <Flex px={8} pt={8} columnGap="1rem" justifyContent={"flex-end"}>
           <Button>Join Our Discord</Button>
-          <Button>#2 Product of the day</Button>
+          <Button>Join Our Telegram</Button>
         </Flex>
       </Box>
     </Box>
