@@ -7,6 +7,7 @@ import { gradientBgs } from "@/data/home/homeData";
 
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import CHeading from '@/components/typography/CHeading/CHeading';
+import CText from '@/components/typography/CText/CText';
 
 export default function ProductCard({ alignLeft, title, note1, note2, i }) {
 
@@ -23,7 +24,7 @@ export default function ProductCard({ alignLeft, title, note1, note2, i }) {
         <Box
           display={"grid"}
           rowGap={"2rem"}
-          w={{ base: "100%", md: "50%" }}
+          w={{ base: "100%", }}
           p={6}
           borderRadius="lg"
           bg={gradientBgs[i].bg}
@@ -49,7 +50,7 @@ export default function ProductCard({ alignLeft, title, note1, note2, i }) {
 
       {alignLeft && (
         <Box
-          w={{ base: "100%", md: "50%" }}
+          w={{ base: "100%", }}
           display={{ base: "none", md: "grid" }}
           rowGap={"2rem"}
           bg={gradientBgs[i].bg}
@@ -76,11 +77,9 @@ export default function ProductCard({ alignLeft, title, note1, note2, i }) {
       )}
 
       <Flex rowGap={"1rem"} p={6} flexDir={"column"}>
-        <Text fontSize={{ base: "xl", lg: "2xl" }} fontWeight="bold">
-          {title}
-        </Text>
-        <Text>{note1}</Text>
-        <Text>{note2}</Text>
+        <CHeading size={2} title={title} />
+        <CText size={2} title={note1} />
+        <CText size={2} title={note2} />
         <Text fontWeight={"bold"} textDecor={"underline"}>
           Learn more →
         </Text>
@@ -88,7 +87,7 @@ export default function ProductCard({ alignLeft, title, note1, note2, i }) {
 
       {!alignLeft && (
         <Box
-          w={{ base: "100%", md: "50%" }}
+          w={{ base: "100%", }}
           display={{ base: "none", md: "grid" }}
           rowGap={"2rem"}
           bg={gradientBgs[i].bg}

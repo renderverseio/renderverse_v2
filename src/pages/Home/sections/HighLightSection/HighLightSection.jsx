@@ -1,5 +1,6 @@
+import { gallery } from "@/data/home/galleryData";
 import { gradientBgs } from "@/data/home/homeData";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Heading, Image } from "@chakra-ui/react";
 import Marquee from "react-fast-marquee";
 
 export default function HightLightSection() {
@@ -22,37 +23,29 @@ export default function HightLightSection() {
           }}
           color={"gray.700"}
         >
-          {`Because your code deserves a `}
-          <span className="gradient_text">stunning presentation</span>{" "}
+          {`Gallery`}
         </Heading>
       </Box>
-      <Marquee>
-        {gradientBgs.map((c, i) => (
-          <Box
-            m={4}
-            borderRadius="lg"
-            minH={{ base: "180px", sm: "240px" }}
-            minW={{ base: "240px", sm: "320px", md: "480px" }}
-            key={i}
-            bg={c.bg}
-            bgImg={c.bgImg}
-          ></Box>
-        ))}
-      </Marquee>
 
-      <Marquee direction="right">
-        {gradientBgs.map((c, i) => (
-          <Box
-            m={4}
-            borderRadius="lg"
-            minH={{ base: "180px", sm: "240px" }}
-            minW={{ base: "240px", sm: "320px", md: "480px" }}
-            key={i}
-            bg={c.bg}
-            bgImg={c.bgImg}
-          ></Box>
-        ))}
-      </Marquee>
+      {gallery.map((row, i) =>
+        <Marquee direction={(i + 1) % 2 === 0 ? "right" : "left"} key={i}>
+          {row.items.map((col, j) => <Image
+            _hover={{
+              filter: "contrast(1.5)",
+              transform: "scale(.96)"
+
+            }}
+            cursor={"pointer"}
+            m={1}
+            transition={"all 300ms ease-in-out"}
+            borderRadius={"lg"}
+            boxShadow={"lg"}
+            maxW={"320px"}
+            key={j}
+            src={col} />)}
+        </Marquee>
+      )}
+
     </Box>
   );
 }

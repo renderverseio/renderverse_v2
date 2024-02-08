@@ -3,7 +3,6 @@ import {
   Flex,
   GridItem,
   Link,
-  Text,
   Image,
   Button,
 
@@ -12,6 +11,9 @@ import {
 import Logo from "@/assets/logos/white.png";
 
 import { footerData } from "@/data/home/footerData";
+
+import CText from "@/components/typography/CText/CText";
+import CHeading from "@/components/typography/CHeading/CHeading";
 
 export default function Footer() {
   return (
@@ -41,13 +43,13 @@ export default function Footer() {
             >
               <Image maxW={"248px"} src={Logo} />{" "}
             </Flex>
-            <Box color="white">
-              <Text>The first AI ORDINAL on</Text>
-              <Text>BRC-20 Network</Text>
+            <Box >
+              <CText cprops={{ color: 'white' }} size={2} title={"The first AI ORDINAL on"} />
+              <CText cprops={{ color: 'white' }} size={2} title={"BRC-20 Network"} />
             </Box>
-            <Box color="white">
-              <Text>©Renderverse</Text>
-              <Text>All Rights Reserved.</Text>
+            <Box >
+              <CText cprops={{ color: 'white' }} size={2} title={"©Renderverse"} />
+              <CText cprops={{ color: 'white' }} size={2} title={"All Rights Reserved."} />
             </Box>
           </Box>
           <Flex
@@ -58,12 +60,12 @@ export default function Footer() {
           >
             {footerData.map((d, i) => (
               <Flex flexDir={"column"} key={i}>
-                <Text my={2} color="white" fontWeight={"bold"}>
-                  {d.title}
-                </Text>
+                <CHeading size={3} title={d.title} cprops={{ my: 2, color: "white" }} />
                 {d.options.map((o, k) => (
                   <GridItem key={k}>
-                    <Link color="white">{o}</Link>
+                    <Link color="white">
+                      <CText cprops={{ color: 'white' }} size={2} title={o} />
+                    </Link>
                   </GridItem>
                 ))}
               </Flex>

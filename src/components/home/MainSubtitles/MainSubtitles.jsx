@@ -9,7 +9,7 @@ export default function MainSubtitles() {
     <Flex
       w="100%"
       justifyContent={"center"}
-      rowGap={"2rem"}
+      rowGap={"1rem"}
       flexDir={"column"}
     >
       <Flex>
@@ -25,7 +25,7 @@ export default function MainSubtitles() {
           borderRadius="lg"
         >
           <CText
-            size={3}
+            size={2}
             title={
               <>
                 <Box
@@ -73,11 +73,11 @@ export default function MainSubtitles() {
           boxShadow={"md"}
           cursor={"pointer"}
           _hover={{
-            bg: "gray.300",
+            bg: "blue.100",
             boxShadow: "lg"
           }}
           transition={`all 300ms ease-in-out`}
-          bg="gray.100"
+          bg="blue.400"
 
         >
           <CText size={1} title={
@@ -93,9 +93,7 @@ export default function MainSubtitles() {
       </Flex>
 
       <Box>
-        <Text color={"gray.700"} fontSize={{ base: "sm" }}>
-          Take your imagination to another level with our powerful AI models.
-        </Text>
+        <CText size={3} title={`Take your imagination to another level with our powerful AI models.`} />
       </Box>
     </Flex >
 

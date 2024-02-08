@@ -68,7 +68,7 @@ export default function WalletMenuDropDown() {
   if (path.pathname.includes('/dapp')) {
     let component = null;
     if (!isConnected)
-      component = <Box borderRadius={"lg"} border="2px" borderColor={"white"} fontWeight={"bold"} className="btn btn-1" onClick={connectWallet}>Connect Wallet</Box>
+      component = <Box borderRadius={"lg"} boxShadow={"lg"} fontWeight={"bold"} className="btn btn-1" onClick={connectWallet}>Connect Wallet</Box>
     else
       component = (
         <CCard type="s" props={{

@@ -27,7 +27,7 @@ function DesktopSideBar() {
   const pathClass = path.pathname.replace("/dapp/", "")
   return <Grid
     minH="100vh"
-    templateColumns={{ base: 0, lg: "2fr 7fr", xl: "1.5fr 8fr", '2xl': "1.6fr 7fr" }}
+    templateColumns={{ base: 0, lg: "2fr 7fr", xl: "2fr 8fr", '2xl': "1.6fr 7fr" }}
     // backgroundImage={`linear-gradient(to left, #f6f4eb, #f8f7ea, #faf9e9, #fbfce8, #fcffe7);`}
     bg="gray.200"
   >

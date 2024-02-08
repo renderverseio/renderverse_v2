@@ -1,5 +1,8 @@
+import CHeading from "@/components/typography/CHeading/CHeading";
+import CText from "@/components/typography/CText/CText";
 import { gradientBgs } from "@/data/home/homeData";
 import { Box, Flex, Text } from "@chakra-ui/react";
+import { CiText } from "react-icons/ci";
 
 export default function RoadmapCard({ alignLeft, title, note1, note2, desc, i }) {
   return (
@@ -32,16 +35,14 @@ export default function RoadmapCard({ alignLeft, title, note1, note2, desc, i })
 
       <Flex w={{ base: "100%", md: "50%" }}
         rowGap={"1rem"} p={6} flexDir={"column"}>
-        <Text fontSize={{ base: "xl", lg: "2xl" }} fontWeight="bold">
-          {title}
-        </Text>
-        <Text>{note1}</Text>
-        <Text>{note2}</Text>
+        <CHeading size={2} title={title} />
+        <CText size={2} title={note1} />
+        <CText size={2} title={note2} />
         <Text fontWeight={"bold"} textDecor={"underline"}>
           Learn more →
         </Text>
         <Box borderRadius={"md"} p={3} bg="orange.100">
-          <Text>{desc}</Text>
+          <CText size={2} title={desc} />
         </Box>
       </Flex>
 
