@@ -1,7 +1,3 @@
-
-import Eco from '@/assets/eco.jpg'
-import Eco2 from '@/assets/eco2.jpg'
-
 import { motion } from 'framer-motion'
 import { gradientBgs } from "@/data/home/homeData";
 
@@ -9,11 +5,12 @@ import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import CHeading from '@/components/typography/CHeading/CHeading';
 import CText from '@/components/typography/CText/CText';
 
-export default function ProductCard({ alignLeft, title, note1, note2, i }) {
+export default function ProductCard({ alignLeft, title, note1, note2, i, img }) {
 
 
   return (
     <Flex
+      my={12}
       flexDir={{ base: "column", md: "row" }}
       rowGap="1rem"
       columnGap="1rem"
@@ -32,19 +29,9 @@ export default function ProductCard({ alignLeft, title, note1, note2, i }) {
         >
           <Box w="50%" flexDir={"row"} columnGap={"1rem"} display={"flex"} justifyContent={"space-evenly"} >
             <MotionDiv hidden={{ opacity: 0, y: -120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
-              <Image bg="transparent" borderRadius={"lg"} src={Eco} />
-            </MotionDiv>
-            <MotionDiv hidden={{ opacity: 0, y: 120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
-              <Image bg="transparent" borderRadius={"lg"} src={Eco2} />
+              <Image p={8} bg="transparent" borderRadius={"lg"} src={img} />
             </MotionDiv>
           </Box>
-          <MotionDiv hidden={{ opacity: 0, y: 120, }} visible={{ y: 0, opacity: 1 }}>
-            <Box bg="white" borderRadius={"lg"} p={2}>
-              <CHeading
-                title={"Lorem minim sint cillum sint consectetur cupidatat."}
-                size={3} />
-            </Box>
-          </MotionDiv>
         </Box>
       </Box>
 
@@ -56,22 +43,10 @@ export default function ProductCard({ alignLeft, title, note1, note2, i }) {
           bg={gradientBgs[i].bg}
           bgImg={gradientBgs[i].bgImg}
           borderRadius="lg"
-          p={6}
+          p={12}
         >
-          <Box flexDir={"row"} columnGap={"1rem"} display={"flex"} justifyContent={"space-evenly"} >
-            <MotionDiv hidden={{ opacity: 0, y: -120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
-              <Image bg="transparent" borderRadius={"lg"} src={Eco} />
-            </MotionDiv>
-            <MotionDiv hidden={{ opacity: 0, y: 120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
-              <Image bg="transparent" borderRadius={"lg"} src={Eco2} />
-            </MotionDiv>
-          </Box>
-          <MotionDiv hidden={{ opacity: 0, y: 120, }} visible={{ y: 0, opacity: 1 }}>
-            <Box bg="white" borderRadius={"lg"} p={2}>
-              <CHeading
-                title={"Lorem minim sint cillum sint consectetur cupidatat."}
-                size={3} />
-            </Box>
+          <MotionDiv hidden={{ opacity: 0, y: -120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
+            <Image bg="transparent" borderRadius={"lg"} src={img} />
           </MotionDiv>
         </Box>
       )}
@@ -93,24 +68,13 @@ export default function ProductCard({ alignLeft, title, note1, note2, i }) {
           bg={gradientBgs[i].bg}
           bgImg={gradientBgs[i].bgImg}
           borderRadius="lg"
-          p={6}
+          p={12}
         >
           <Box flexDir={"row"} columnGap={"1rem"} display={"flex"} justifyContent={"space-evenly"} >
             <MotionDiv hidden={{ opacity: 0, y: -120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
-              <Image bg="transparent" borderRadius={"lg"} src={Eco2} />
-            </MotionDiv>
-            <MotionDiv hidden={{ opacity: 0, y: 120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
-              <Image bg="transparent" borderRadius={"lg"} src={Eco} />
+              <Image bg="transparent" borderRadius={"lg"} src={img} />
             </MotionDiv>
           </Box>
-          <MotionDiv hidden={{ opacity: 0, y: 120, }} visible={{ y: 0, opacity: 1 }}>
-            <Box bg="white" borderRadius={"lg"} p={2}>
-              <CHeading
-                title={"Lorem minim sint cillum sint consectetur cupidatat."}
-                size={3} />
-            </Box>
-          </MotionDiv>
-
         </Box>
       )}
     </Flex>

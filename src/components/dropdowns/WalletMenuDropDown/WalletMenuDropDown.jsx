@@ -3,27 +3,23 @@ import {
   PopoverTrigger,
   PopoverContent,
   PopoverArrow,
-  Button,
   Box,
-  Image,
   Flex,
 } from "@chakra-ui/react";
 
-import { useWallet } from "@/hooks/common/useWallet";
 import { useCredits } from "@/hooks/common/useCredits";
 import { useLocation, useNavigate, } from "react-router";
 
-
-import BNB from '@/assets/exchange_logos/binance.png'
 
 import WalletMenu from "@/components/common/WalletMenu/WalletMenu";
 import CCard from "@/components/custom/CCard/CCard";
 import CText from "@/components/typography/CText/CText";
 
+import useUNISatWallet from "@/blockchain/useUNISatWallet";
+
 
 export default function WalletMenuDropDown() {
-
-  const { address, balance, isConnected, connectWallet, disconnect } = useWallet()
+  const { isConnected, address, balance, connectUNISatWallet, sendBitcoin, disconnect } = useUNISatWallet()
   const { credits } = useCredits({ isConnected, address })
 
   const path = useLocation()
@@ -31,16 +27,16 @@ export default function WalletMenuDropDown() {
 
   function addressStrip() {
     return (
-      address.substring(0, 4) +
+      address.substring(0, 6) +
       "...." +
-      address.substring(address.length - 4, address.length)
+      address.substring(address.length - 6, address.length)
     );
   }
   const addressStripped = addressStrip();
 
   const menuBalance = {
-    key: "Bal",
-    value: `${balance} BNB`,
+    key: "BTC",
+    value: `${balance.total / 10 ** 8}`,
     credits: credits
   }
 
@@ -68,27 +64,20 @@ export default function WalletMenuDropDown() {
   if (path.pathname.includes('/dapp')) {
     let component = null;
     if (!isConnected)
-      component = <Box borderRadius={"lg"} boxShadow={"lg"} fontWeight={"bold"} className="btn btn-1" onClick={connectWallet}>Connect Wallet</Box>
+      component = <Box borderRadius={"lg"} boxShadow={"lg"} fontWeight={"bold"} className="btn btn-1" onClick={connectUNISatWallet}>Connect Wallet</Box>
     else
       component = (
-        <CCard type="s" props={{
-          cursor: "pointer",
-          minW: "200px",
-          bgImage: "linear-gradient(to right bottom, #fffcd6, #fff5d4, #ffefd4, #ffe9d5, #ffe4d6);",
-          outline: "none",
-          border: 'none',
-          boxShadow: "sm",
-          border: "2px",
-          borderColor: "white",
-          _hover: {
-            bg: "white",
-          }
-
-        }} >
+        <CCard type="s"
+          props={{
+            cursor: "pointer",
+            minW: "200px",
+            boxShadow: "lg",
+            className: 'btn btn-1'
+          }}
+        >
           <Flex py={2} px={3} alignItems={"center"} columnGap={"1rem"}>
-            <Image borderRadius={"xl"} maxW={8} src={BNB} />
             <Box>
-              <CText size={3} title={`Connected To`} />
+              <CText cprops={{ textAlign: "left" }} size={3} title={`Connected To`} />
               <CText cprops={{ fontWeight: "600" }} size={3} title={addressStripped.toString()} />
             </Box>
           </Flex>

@@ -35,7 +35,7 @@ export default function RoadmapCard({ alignLeft, title, note1, note2, desc, i })
 
       <Flex w={{ base: "100%", md: "50%" }}
         rowGap={"1rem"} p={6} flexDir={"column"}>
-        <CHeading size={2} title={title} />
+        <CHeading size={2} title={"Roadmap 1"} />
         <CText size={2} title={note1} />
         <CText size={2} title={note2} />
         <Text fontWeight={"bold"} textDecor={"underline"}>

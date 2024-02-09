@@ -6,7 +6,7 @@ import {
   Grid,
 } from "@chakra-ui/react";
 
-import OurMissionLogo from "@/assets/ourmission.png";
+import OurMissionLogo from "@/assets/ourmission.jpeg";
 import CHeading from "@/components/typography/CHeading/CHeading";
 import CText from "@/components/typography/CText/CText";
 
@@ -18,7 +18,7 @@ export default function OurMissionSection() {
         rowGap="2rem"
         justifyContent={"center"}
         alignItems="center"
-        bg="orange.100"
+        bgImg={'linear-gradient(112.9deg, #FFFAEE -0.14%, #FFF0EE 45.98%, #FFEEFC 100.47%)'}
         p={16}
       >
         <CHeading

@@ -3,10 +3,9 @@ import CCard from "@/components/custom/CCard/CCard";
 import CText from "@/components/typography/CText/CText";
 
 import { Outlet, useLocation, useNavigate } from "react-router";
-import { Box, Divider, Flex, Grid, Heading, Icon, Image, } from "@chakra-ui/react";
+import { Box, Flex, Grid, Icon, Image, } from "@chakra-ui/react";
 
 
-import { CiBag1 } from "react-icons/ci";
 import WalletMenuDropDown from "@/components/dropdowns/WalletMenuDropDown/WalletMenuDropDown";
 import { dAppHeaders } from "@/data/dapp/dappData";
 
@@ -28,7 +27,6 @@ function DesktopSideBar() {
   return <Grid
     minH="100vh"
     templateColumns={{ base: 0, lg: "2fr 7fr", xl: "2fr 8fr", '2xl': "1.6fr 7fr" }}
-    // backgroundImage={`linear-gradient(to left, #f6f4eb, #f8f7ea, #faf9e9, #fbfce8, #fcffe7);`}
     bg="gray.200"
   >
 
@@ -69,7 +67,7 @@ function DesktopSideBar() {
                 p: 2,
                 display: "flex",
                 columnGap: "1rem",
-                alignItem: "center",
+                alignItems: "center",
                 boxShadow: "none",
                 bg: "gray.50",
                 bgImg: pathClass !== d.link ? "transpernt" : "linear-gradient(to right bottom, #fffcd6, #fff5d4, #ffefd4, #ffe9d5, #ffe4d6);",

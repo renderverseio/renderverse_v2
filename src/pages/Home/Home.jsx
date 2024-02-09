@@ -2,7 +2,6 @@ import MainSection from "./sections/MainSection/MainSection";
 import PartnersSection from "./sections/PartnersSection/PartnersSection";
 import ProductsSection from "./sections/ProductSection/ProductSection";
 import OurMissionSection from "./sections/OurMissionSection/OurMissionSection";
-import PricingSection from "./sections/PricingSection/PricingSection";
 import HightLightSection from "./sections/HighLightSection/HighLightSection";
 import RoadmapSection from "./sections/RoadmapSection/RoadmapSection";
 

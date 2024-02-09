@@ -42,7 +42,7 @@ export default function MainSubtitles() {
         </Box>
       </Flex>
 
-      <Flex minH="164px">
+      <Flex minH="180px">
         <Text fontFamily={"Inter"} fontSize={{ base: "xl", md: "2xl", lg: "4xl" }} fontWeight={"bold"} >
           <span style={{ fontWeight: "bold" }}>
             We empower
@@ -76,13 +76,11 @@ export default function MainSubtitles() {
           display={"block"}
           flex={"block"}
         >
-          <CText cprops={{ color: 'white' }} size={1} title={
-            <>
+          <CText size={1} title={
               <Box display={"inline-block"} fontWeight={"bold"}>
                 Get Started
               </Box>{" "}
               - {`It's`} Free
-            </>
           } >
           </CText>
         </Box>

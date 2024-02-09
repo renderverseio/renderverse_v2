@@ -6,11 +6,13 @@ import { Box, Button, Divider, Flex, Grid, } from "@chakra-ui/react";
 export default function WalletMenu({ menuButtons, menuBalance }) {
   return (
     <Grid
-      backgroundImage={`linear-gradient(to right bottom, #fffcd6, #fff5d4, #ffefd4, #ffe9d5, #ffe4d6);`}
+      boxShadow="lg"
+      className='btn btn-1'
+      borderRadius={"lg"}
       rowGap={"2rem"}>
       <Grid py={3}>
         <Box bg="white" m={4} p={4} borderRadius={"lg"} display={"flex"} justifyContent={"center"} boxShadow={"lg"} flexDir={"column"} alignItems={"center"}>
-          <CHeading size={2} title={menuBalance.value} />
+          <CText size={3} title={menuBalance.value} />
           <CHeading size={3} title={menuBalance.key} />
           <Divider my={3} />
           <Flex alignItems={"center"}>

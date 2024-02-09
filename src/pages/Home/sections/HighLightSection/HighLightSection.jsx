@@ -1,12 +1,15 @@
 import { gallery } from "@/data/home/galleryData";
-import { gradientBgs } from "@/data/home/homeData";
 import { Box, Heading, Image } from "@chakra-ui/react";
 import Marquee from "react-fast-marquee";
 
 export default function HightLightSection() {
 
   return (
-    <Box py={24}>
+    <Box
+      bgImg={'linear-gradient(112.9deg, #FFFAEE -0.14%, #FFF0EE 45.98%, #FFEEFC 100.47%)'}
+      pt={6}
+      pb={12}
+    >
       <Box
         my={12}
         maxW={{ base: "100%", md: "90%", lg: "70%", xl: "60%", "2xl": "40%" }}
@@ -36,7 +39,7 @@ export default function HightLightSection() {
 
             }}
             cursor={"pointer"}
-            m={1}
+            m={3}
             transition={"all 300ms ease-in-out"}
             borderRadius={"lg"}
             boxShadow={"lg"}
