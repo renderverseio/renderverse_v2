@@ -59,9 +59,15 @@ export default function ProductCard({
           justifyContent="center"
           p={p}
           pos={"relative"}
-          minH="50vh"
         >
-          <Box minW={"100%"} minH="100%" zIndex={3} pos={"absolute"}>
+          <Box
+            display={"flex"}
+            alignItems="stretch"
+            minH="100%"
+            minW={"100%"}
+            zIndex={3}
+            pos={"absolute"}
+          >
             <MotionDiv
               visible={parentAnimations.visible}
               hidden={parentAnimations.hidden}
@@ -71,8 +77,12 @@ export default function ProductCard({
                 bgImg={gradientBgs[i].bgImg}
                 borderRadius="lg"
                 zIndex={1}
+                minW="24rem"
+                w="100%"
+                minH="100%"
+                fontSize={1}
               >
-                <Box minH="50vh"></Box>
+                x
               </Box>
             </MotionDiv>
           </Box>
@@ -110,7 +120,14 @@ export default function ProductCard({
           p={p}
           pos={"relative"}
         >
-          <Box minW={"100%"} minH="100%" zIndex={3} pos={"absolute"}>
+          <Box
+            display={"flex"}
+            alignItems="stretch"
+            minH="100%"
+            minW={"100%"}
+            zIndex={3}
+            pos={"absolute"}
+          >
             <MotionDiv
               visible={parentAnimations.visible}
               hidden={parentAnimations.hidden}
@@ -120,8 +137,12 @@ export default function ProductCard({
                 bgImg={gradientBgs[i].bgImg}
                 borderRadius="lg"
                 zIndex={1}
+                minW="24rem"
+                w="100%"
+                minH="100%"
+                fontSize={1}
               >
-                <Box minH="50vh"></Box>
+                x
               </Box>
             </MotionDiv>
           </Box>
