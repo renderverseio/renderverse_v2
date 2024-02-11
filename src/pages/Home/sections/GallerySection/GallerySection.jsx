@@ -12,7 +12,7 @@ export default function GallerySection() {
       pt={6}
       pb={12}
     >
-      <Flex pb={6} justifyContent="center">
+      <Flex py={6} justifyContent="center">
         <CHeading title={`Gallery`} size={1} />
       </Flex>
 

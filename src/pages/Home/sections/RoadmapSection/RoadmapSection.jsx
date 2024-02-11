@@ -9,7 +9,7 @@ import CHeading from "@/components/typography/CHeading/CHeading";
 export default function RoadmapSection() {
   return (
     <Box py={24}>
-      <Flex pb={6} justifyContent="center">
+      <Flex py={6} justifyContent="center">
         <CHeading title={`Roadmap`} size={1} />
       </Flex>
 

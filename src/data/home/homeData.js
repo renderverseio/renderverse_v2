@@ -129,11 +129,13 @@ export const productsData = [
     childAnimations: {
       visible: {
         opacity: 1,
-        scale: 1
+        scale: 1,
+        y: 0
       },
       hidden: {
-        opacity: 0,
-        scale: 0
+        y: 100,
+        opacity: 1,
+        scale: 1
       }
     }
   },
@@ -147,11 +149,13 @@ export const productsData = [
     parentAnimations: {
       visible: {
         opacity: 1,
-        rotate: -8
+        rotate: -8,
+        scale: 1
       },
       hidden: {
         opacity: 0,
-        rotate: 0
+        rotate: 0,
+        scale: 0
       }
     },
     childAnimations: {
