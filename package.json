@@ -27,7 +27,8 @@
     "react-router": "^6.14.2",
     "react-router-dom": "^6.14.2",
     "react-scroll": "^1.8.9",
-    "typewriter-effect": "^2.21.0"
+    "typewriter-effect": "^2.21.0",
+    "zustand": "^4.5.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.3.0",

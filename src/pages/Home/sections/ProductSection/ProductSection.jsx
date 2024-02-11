@@ -8,7 +8,7 @@ export default function ProductsSection() {
   return (
     <Box py={24}>
       {productsData.map((d, i) => (
-        <Grid rowGap={"4rem"} key={i}>
+        <Grid justifyContent={"center"} rowGap={"4rem"} key={i}>
           <ProductCard i={i} alignLeft={i % 2 === 0} {...d} />
         </Grid>
       ))}

@@ -5,8 +5,11 @@ import { gradientBgs } from "@/data/home/homeData";
 import { Box, Button, Flex, Grid, Tag, } from "@chakra-ui/react";
 
 import { StakingImages } from "@/data/dapp/dappData";
+import { useNavigate } from "react-router";
 
 export default function StakingSection() {
+
+  const navigate = useNavigate()
   return <Box>
     <Box>
       <Flex rowGap={"2rem"} p={8} flexDir={"column"}>

@@ -1,73 +1,36 @@
-import { useEffect, useState } from "react";
+import { useWalletStore } from "./useWalletStore";
 
 export default function useUNISatWallet() {
+  const { setWallet } = useWalletStore((state) => state);
 
-
-  const [address, setAddress] = useState("")
-  const [balance, setBalance] = useState({
-    confirmed: 0,
-    unconfirmed: 0,
-    total: 0
-  })
-  const [isConnected, setIsConnected] = useState(false)
+  async function connectWallet() {
+    try {
+      let address = await window.unisat.requestAccounts();
+      address = address[0];
+      let balance = await window.unisat.getBalance();
+      const isConnected = true;
+      setWallet({ address, balance, isConnected });
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   async function sendBitcoin(address) {
     try {
       let txid = await window.unisat.sendBitcoin(address, 1);
-      console.log(txid)
+      console.log(txid);
     } catch (e) {
       console.log(e);
     }
   }
 
   async function disconnect() {
-    window.unisat.requestAccounts()
-
-  }
-
-
-  useEffect(() => {
-    async function fun() {
-      try {
-        if (!isConnected) {
-          console.log('UniSat Wallet is installed!');
-          const address = await window.unisat.requestAccounts()
-          let bal = await window.unisat.getBalance();
-          setAddress(address[0])
-          setBalance(bal)
-          setIsConnected(true)
-        }
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    fun()
-  }, [isConnected])
-
-
-
-  async function connectUNISatWallet() {
-    try {
-      if (!isConnected) {
-        console.log('UniSat Wallet is installed!');
-        const address = await window.unisat.requestAccounts()
-        let bal = await window.unisat.getBalance();
-        setAddress(address[0])
-        setBalance(bal)
-        setIsConnected(true)
-      }
-    } catch (error) {
-      console.log(error)
-    }
+    window.location.reload();
   }
 
   return {
-    connectUNISatWallet,
+    connectWallet,
+    disconnect,
     sendBitcoin,
-    address,
-    balance,
-    isConnected
-  }
-
-
+  };
 }

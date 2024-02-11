@@ -8,28 +8,36 @@ import {
 } from "@chakra-ui/react";
 
 import { useCredits } from "@/hooks/common/useCredits";
-import { useLocation, useNavigate, } from "react-router";
-
+import { useLocation, useNavigate } from "react-router";
 
 import WalletMenu from "@/components/common/WalletMenu/WalletMenu";
 import CCard from "@/components/custom/CCard/CCard";
 import CText from "@/components/typography/CText/CText";
 
 import useUNISatWallet from "@/blockchain/useUNISatWallet";
-
+import { useWalletStore } from "@/blockchain/useWalletStore";
 
 export default function WalletMenuDropDown() {
-  const { isConnected, address, balance, connectUNISatWallet, sendBitcoin, disconnect } = useUNISatWallet()
-  const { credits } = useCredits({ isConnected, address })
+  const { connectWallet, sendBitcoin, disconnect } = useUNISatWallet();
 
-  const path = useLocation()
-  const navigate = useNavigate()
+  const { wallet } = useWalletStore((state) => state);
+  const { isConnected, address, balance } = wallet;
+
+  const { credits } = useCredits({ isConnected, address });
+
+  const path = useLocation();
+  const navigate = useNavigate();
+
+  console.log(wallet);
 
   function addressStrip() {
+    console.log(address);
+    if (!address) return "";
+    const _address = address;
     return (
-      address.substring(0, 6) +
+      _address.substring(0, 6) +
       "...." +
-      address.substring(address.length - 6, address.length)
+      _address.substring(_address.length - 6, _address.length)
     );
   }
   const addressStripped = addressStrip();
@@ -37,69 +45,93 @@ export default function WalletMenuDropDown() {
   const menuBalance = {
     key: "BTC",
     value: `${balance.total / 10 ** 8}`,
-    credits: credits
-  }
+    credits: credits,
+  };
 
   const menuButtons = [
     {
       key: `Disconnect`,
-      fn: () => disconnect()
-    }
-  ]
+      fn: () => disconnect(),
+    },
+  ];
 
-
-  let routeComponent = null
-  if (path.pathname === '/') routeComponent = (
-    <Box
-      minW="160px"
-      boxShadow={"lg"}
-      fontWeight={"bolder"}
-      borderRadius={"lg"}
-      className="btn btn-1"
-      onClick={() => navigate("/dapp")}
-    >
-      Launch Dapp
-    </Box>
-  )
-  if (path.pathname.includes('/dapp')) {
+  let routeComponent = null;
+  if (path.pathname === "/")
+    routeComponent = (
+      <Box
+        minW="160px"
+        boxShadow={"lg"}
+        fontWeight={"bolder"}
+        borderRadius={"lg"}
+        className="btn btn-1"
+        onClick={() => navigate("/dapp")}
+        p={3}
+      >
+        Launch Dapp
+      </Box>
+    );
+  if (path.pathname.includes("/dapp")) {
     let component = null;
     if (!isConnected)
-      component = <Box borderRadius={"lg"} boxShadow={"lg"} fontWeight={"bold"} className="btn btn-1" onClick={connectUNISatWallet}>Connect Wallet</Box>
+      component = (
+        <Box
+          p={3}
+          borderRadius={"lg"}
+          boxShadow={"lg"}
+          fontWeight={"bold"}
+          className="btn btn-1"
+          onClick={connectWallet}
+        >
+          Connect Wallet
+        </Box>
+      );
     else
       component = (
-        <CCard type="s"
+        <CCard
+          type="s"
           props={{
             cursor: "pointer",
             minW: "200px",
             boxShadow: "lg",
-            className: 'btn btn-1'
+            className: "btn btn-1",
           }}
         >
           <Flex py={2} px={3} alignItems={"center"} columnGap={"1rem"}>
             <Box>
-              <CText cprops={{ textAlign: "left" }} size={3} title={`Connected To`} />
-              <CText cprops={{ fontWeight: "600" }} size={3} title={addressStripped.toString()} />
+              <CText
+                cprops={{ textAlign: "left" }}
+                size={3}
+                title={`Connected To`}
+              />
+              <CText
+                cprops={{ fontWeight: "600" }}
+                size={3}
+                title={addressStripped.toString()}
+              />
             </Box>
           </Flex>
         </CCard>
-      )
-    routeComponent = component
+      );
+    routeComponent = component;
   }
-
 
   return (
     <Popover trigger="click" boxShadow={"none"} outline="none" border="none">
       <PopoverTrigger>
-        <Box>
-          {routeComponent}
-        </Box>
+        <Box>{routeComponent}</Box>
       </PopoverTrigger>
       <PopoverArrow />
-      {isConnected && <PopoverContent border={"none"} outline="none" borderRadius={"lg"} boxShadow={"lg"} maxW="200px">
-        <WalletMenu menuButtons={menuButtons} menuBalance={menuBalance} />
-      </PopoverContent>
-      }
+      {isConnected && (
+        <PopoverContent
+          border={"none"}
+          outline="none"
+          borderRadius={"lg"}
+          boxShadow={"lg"}
+          maxW="200px"
+        >
+          <WalletMenu menuButtons={menuButtons} menuBalance={menuBalance} />
+        </PopoverContent>
+      )}
     </Popover>
   );
 }
-

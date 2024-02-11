@@ -37,7 +37,6 @@ export default function ProductCard({ alignLeft, title, note1, note2, i, img }) 
 
       {alignLeft && (
         <Box
-          w={{ base: "100%", }}
           display={{ base: "none", md: "grid" }}
           rowGap={"2rem"}
           bg={gradientBgs[i].bg}
@@ -46,7 +45,7 @@ export default function ProductCard({ alignLeft, title, note1, note2, i, img }) 
           p={12}
         >
           <MotionDiv hidden={{ opacity: 0, y: -120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
-            <Image bg="transparent" borderRadius={"lg"} src={img} />
+            <Image maxW={"280px"} bg="transparent" borderRadius={"lg"} src={img} />
           </MotionDiv>
         </Box>
       )}
@@ -62,7 +61,6 @@ export default function ProductCard({ alignLeft, title, note1, note2, i, img }) 
 
       {!alignLeft && (
         <Box
-          w={{ base: "100%", }}
           display={{ base: "none", md: "grid" }}
           rowGap={"2rem"}
           bg={gradientBgs[i].bg}
@@ -72,7 +70,7 @@ export default function ProductCard({ alignLeft, title, note1, note2, i, img }) 
         >
           <Box flexDir={"row"} columnGap={"1rem"} display={"flex"} justifyContent={"space-evenly"} >
             <MotionDiv hidden={{ opacity: 0, y: -120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
-              <Image bg="transparent" borderRadius={"lg"} src={img} />
+              <Image maxW={"280px"} bg="transparent" borderRadius={"lg"} src={img} />
             </MotionDiv>
           </Box>
         </Box>

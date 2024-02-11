@@ -5,7 +5,6 @@ import CText from "@/components/typography/CText/CText";
 import { Outlet, useLocation, useNavigate } from "react-router";
 import { Box, Flex, Grid, Icon, Image, } from "@chakra-ui/react";
 
-
 import WalletMenuDropDown from "@/components/dropdowns/WalletMenuDropDown/WalletMenuDropDown";
 import { dAppHeaders } from "@/data/dapp/dappData";
 
@@ -88,8 +87,8 @@ function DesktopSideBar() {
     </Box>
 
 
-    <Box w="100%">
-      <Flex p={4} justifyContent={"flex-end"} alignItems={"flex-end"}>
+    <Box maxH="100vh" overflowY={"scroll"} w="100%">
+      <Flex p={4} pr={8} justifyContent={"flex-end"} alignItems={"flex-end"}>
         <WalletMenuDropDown />
       </Flex>
       <Outlet />

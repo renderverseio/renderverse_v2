@@ -11,22 +11,22 @@ const generatedImages = async ({ address }) => {
   }
 }
 
-const generateImage = async ({ address, input, style }) => {
+const generateImage = async ({ address, input, model }) => {
   return await axios
-    // .post("https://opai.renderverse.io/image-gen", {
-    .post("http://127.0.0.1:5000/image-gen", {
+    .post("https://opai.renderverse.io/image-gen", {
       walletAddress: address,
       wallet_address: address,
       prompt: input,
-      style: style
+      model: model
     },
     )
 }
 
 const getCredits = async ({ address }) => {
-  return await axios.post("https://opai.renderverse.io/credits", {
-    wallet_address: address,
-  })
+  return await axios
+    .post("https://opai.renderverse.io/credits", {
+      wallet_address: address,
+    })
 }
 
 const generateChatPrompt = async ({ input, person, address }) => {
@@ -41,24 +41,11 @@ const generateChatPrompt = async ({ input, person, address }) => {
 
 }
 
-const generatedChats = async ({ address }) => {
-  return await axios
-    .post(
-      "https://api.renderverse.io/renderscan/v1/users/op/generate-chat/gens",
-      {
-        walletAddress: address,
-        wallet_address: address,
-      }
-    )
-
-}
 
 
 export const spacesRequests = {
   getCredits,
   generateImage,
   generatedImages,
-  generatedChats,
-  generateChatPrompt,
 }
 

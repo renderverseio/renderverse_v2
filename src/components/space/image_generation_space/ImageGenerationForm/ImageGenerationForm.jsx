@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Flex,
   FormControl,
   Image,
@@ -10,43 +9,34 @@ import {
   Grid,
   Radio,
   RadioGroup,
-  Stack
+  Stack,
 } from "@chakra-ui/react";
 import React from "react";
 
 import { FaBoxes } from "react-icons/fa";
-import { Audio, } from "react-loader-spinner";
+import { Audio } from "react-loader-spinner";
 
 import CCard from "@/components/custom/CCard/CCard";
 import CText from "@/components/typography/CText/CText";
-import CreditsCheckerComponent from "@/components/spaces/CreditsCheckerComponent/CreditsCheckerComponent";
 
 export default function ImageGenerationForm({
   input,
   setInput,
-  style,
-  setStyle,
-  hasCredits,
+  model,
+  setModel,
   imgSrc,
   status,
-  generateImage,
-  disconnect,
 }) {
-  const styles = [
+  const models = [
     {
       name: "Realism",
-      value: "photorealism"
+      value: "absolute-reality-v1-8-1",
     },
     {
-
       name: "Art",
-      value: "artistic"
+      value: "dream-shaper-v8",
     },
-    {
-      name: "Anime",
-      value: "anime"
-    }
-  ]
+  ];
   return (
     <Grid
       rowGap={"2rem"}
@@ -57,8 +47,20 @@ export default function ImageGenerationForm({
       }}
       mb={12}
     >
-      <CCard type="s" props={{ padding: 6, bg: "white" }}>
-        <FormControl >
+      <CCard
+        type="s"
+        props={{
+          borderRadius: "lg",
+          p: 4,
+          className: "glass_effect",
+          bg: "gray.50",
+          backgroundSize: "cover",
+          border: "2px",
+          borderColor: "white",
+          boxShadow: "sm",
+        }}
+      >
+        <FormControl>
           <CText size={2} title={"Input"} />
           <Input
             value={input}
@@ -67,10 +69,13 @@ export default function ImageGenerationForm({
           />
 
           <CText size={2} title={"Style"} />
-          <RadioGroup my={2} onChange={setStyle} value={style}>
-            <Stack direction='row'>
-              {styles.map((s, i) => <Radio key={i} value={s.value}>{s.name}</Radio>
-              )}
+          <RadioGroup my={2} onChange={setModel} value={model}>
+            <Stack direction="row">
+              {models.map((s, i) => (
+                <Radio key={i} value={s.value}>
+                  {s.name}
+                </Radio>
+              ))}
             </Stack>
           </RadioGroup>
 
@@ -93,27 +98,28 @@ export default function ImageGenerationForm({
               </Tag>
             ))}
           </Box>
-          <Flex alignItems={"center"} justifyContent={"space-evenly"}>
-            <CreditsCheckerComponent
-              onClick={() => generateImage()}
-              onClickText={`Generate Image`}
-              hasCredits={hasCredits}
-            />
-            <Button ml={2} onClick={disconnect}>{`Disconnect Wallet`}</Button>
-          </Flex>
-
         </FormControl>
       </CCard>
 
-      <CCard type={"s"} props={{ pos: "relative", bg: 'white' }}>
+      <CCard
+        type={"s"}
+        props={{
+          pos: "relative",
+          borderRadius: "lg",
+          className: "glass_effect",
+          bg: "gray.50",
+          backgroundSize: "cover",
+          border: "2px",
+          borderColor: "white",
+          boxShadow: "sm",
+        }}
+      >
         <CCard
           type="d"
           props={{
             px: 2,
             py: 1,
             pos: "absolute",
-            borderBottomRadius: "none",
-            borderRightRadius: "none"
           }}
         >
           <CText size={3} title="Image Output" />
@@ -151,7 +157,3 @@ const tags = [
   "Andriod",
   "AI",
 ];
-
-
-
-

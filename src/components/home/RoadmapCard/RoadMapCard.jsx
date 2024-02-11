@@ -2,7 +2,6 @@ import CHeading from "@/components/typography/CHeading/CHeading";
 import CText from "@/components/typography/CText/CText";
 import { gradientBgs } from "@/data/home/homeData";
 import { Box, Flex, Text } from "@chakra-ui/react";
-import { CiText } from "react-icons/ci";
 
 export default function RoadmapCard({ alignLeft, title, note1, note2, desc, i }) {
   return (
@@ -14,7 +13,7 @@ export default function RoadmapCard({ alignLeft, title, note1, note2, desc, i })
     >
       <Box px={4} display={{ base: "block", md: "none" }}>
         <Box
-          w={{ base: "100%", md: "50%" }}
+          maxW={"320px"}
           minH="40vh"
           borderRadius="lg"
           bg={gradientBgs[i].bg}
@@ -26,7 +25,8 @@ export default function RoadmapCard({ alignLeft, title, note1, note2, desc, i })
         <Box
           w={{ base: "100%", md: "50%" }}
           display={{ base: "none", md: "block" }}
-          minH="40vh"
+          minH="440px"
+          maxH="440px"
           bg={gradientBgs[i].bg}
           bgImg={gradientBgs[i].bgImg}
           borderRadius="lg"
@@ -50,7 +50,8 @@ export default function RoadmapCard({ alignLeft, title, note1, note2, desc, i })
         <Box
           w={{ base: "100%", md: "50%" }}
           display={{ base: "none", md: "block" }}
-          minH="40vh"
+          minH="440px"
+          maxH="440px"
           bg={gradientBgs[i].bg}
           bgImg={gradientBgs[i].bgImg}
           borderRadius="lg"

@@ -1,8 +1,9 @@
 import { gallery } from "@/data/home/galleryData";
-import { Box, Heading, Image } from "@chakra-ui/react";
 import Marquee from "react-fast-marquee";
+import { Box, Heading, Image } from "@chakra-ui/react";
 
-export default function HightLightSection() {
+
+export default function GallerySection() {
 
   return (
     <Box
@@ -48,7 +49,6 @@ export default function HightLightSection() {
             src={col} />)}
         </Marquee>
       )}
-
     </Box>
   );
 }

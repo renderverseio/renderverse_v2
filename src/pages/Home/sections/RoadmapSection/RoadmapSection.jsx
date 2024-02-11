@@ -10,7 +10,7 @@ export default function RoadmapSection() {
   return (
     <Box py={24}>
       {roadMapData.map((d, i) => (
-        <Grid key={i}>
+        <Grid justifyContent={"center"} key={i}>
           <RoadmapCard i={i} alignLeft={i % 2 === 0} {...d} />
           <Box display={{ base: "none", lg: "block" }}>
             {i !== 3 ? <SvgLine alignLeft={i % 2 === 0} /> : null}
