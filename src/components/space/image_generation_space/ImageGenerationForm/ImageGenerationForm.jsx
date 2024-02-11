@@ -112,6 +112,7 @@ export default function ImageGenerationForm({
           border: "2px",
           borderColor: "white",
           boxShadow: "sm",
+          minH: { base: "50vh", lg: "auto" },
         }}
       >
         <CCard

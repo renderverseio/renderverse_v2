@@ -1,13 +1,21 @@
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 import { gradientBgs } from "@/data/home/homeData";
 
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
-import CHeading from '@/components/typography/CHeading/CHeading';
-import CText from '@/components/typography/CText/CText';
+import CHeading from "@/components/typography/CHeading/CHeading";
+import CText from "@/components/typography/CText/CText";
 
-export default function ProductCard({ alignLeft, title, note1, note2, i, img }) {
-
-
+export default function ProductCard({
+  parentAnimations,
+  childAnimations,
+  alignLeft,
+  title,
+  note1,
+  note2,
+  i,
+  img,
+  p,
+}) {
   return (
     <Flex
       my={12}
@@ -21,14 +29,23 @@ export default function ProductCard({ alignLeft, title, note1, note2, i, img }) 
         <Box
           display={"grid"}
           rowGap={"2rem"}
-          w={{ base: "100%", }}
+          w={{ base: "100%" }}
           p={6}
           borderRadius="lg"
           bg={gradientBgs[i].bg}
           bgImg={gradientBgs[i].bgImg}
         >
-          <Box w="50%" flexDir={"row"} columnGap={"1rem"} display={"flex"} justifyContent={"space-evenly"} >
-            <MotionDiv hidden={{ opacity: 0, y: -120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
+          <Box
+            w="50%"
+            flexDir={"row"}
+            columnGap={"1rem"}
+            display={"flex"}
+            justifyContent={"space-evenly"}
+          >
+            <MotionDiv
+              hidden={childAnimations.hidden}
+              visible={childAnimations.visible}
+            >
               <Image p={8} bg="transparent" borderRadius={"lg"} src={img} />
             </MotionDiv>
           </Box>
@@ -37,16 +54,42 @@ export default function ProductCard({ alignLeft, title, note1, note2, i, img }) 
 
       {alignLeft && (
         <Box
-          display={{ base: "none", md: "grid" }}
-          rowGap={"2rem"}
-          bg={gradientBgs[i].bg}
-          bgImg={gradientBgs[i].bgImg}
-          borderRadius="lg"
-          p={12}
+          display={{ base: "none", lg: "flex" }}
+          alignItems="center"
+          justifyContent="center"
+          p={p}
+          pos={"relative"}
+          minH="50vh"
         >
-          <MotionDiv hidden={{ opacity: 0, y: -120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
-            <Image maxW={"280px"} bg="transparent" borderRadius={"lg"} src={img} />
-          </MotionDiv>
+          <Box minW={"100%"} minH="100%" zIndex={3} pos={"absolute"}>
+            <MotionDiv
+              visible={parentAnimations.visible}
+              hidden={parentAnimations.hidden}
+            >
+              <Box
+                bg={gradientBgs[i].bg}
+                bgImg={gradientBgs[i].bgImg}
+                borderRadius="lg"
+                zIndex={1}
+              >
+                <Box minH="50vh"></Box>
+              </Box>
+            </MotionDiv>
+          </Box>
+
+          <Box zIndex={4}>
+            <MotionDiv
+              hidden={childAnimations.hidden}
+              visible={childAnimations.visible}
+            >
+              <Image
+                maxW={{ base: "280px", lg: "330px" }}
+                bg="transparent"
+                borderRadius={"lg"}
+                src={img}
+              />
+            </MotionDiv>
+          </Box>
         </Box>
       )}
 
@@ -61,16 +104,39 @@ export default function ProductCard({ alignLeft, title, note1, note2, i, img }) 
 
       {!alignLeft && (
         <Box
-          display={{ base: "none", md: "grid" }}
-          rowGap={"2rem"}
-          bg={gradientBgs[i].bg}
-          bgImg={gradientBgs[i].bgImg}
-          borderRadius="lg"
-          p={12}
+          display={{ base: "none", lg: "flex" }}
+          alignItems="center"
+          justifyContent="center"
+          p={p}
+          pos={"relative"}
         >
-          <Box flexDir={"row"} columnGap={"1rem"} display={"flex"} justifyContent={"space-evenly"} >
-            <MotionDiv hidden={{ opacity: 0, y: -120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
-              <Image maxW={"280px"} bg="transparent" borderRadius={"lg"} src={img} />
+          <Box minW={"100%"} minH="100%" zIndex={3} pos={"absolute"}>
+            <MotionDiv
+              visible={parentAnimations.visible}
+              hidden={parentAnimations.hidden}
+            >
+              <Box
+                bg={gradientBgs[i].bg}
+                bgImg={gradientBgs[i].bgImg}
+                borderRadius="lg"
+                zIndex={1}
+              >
+                <Box minH="50vh"></Box>
+              </Box>
+            </MotionDiv>
+          </Box>
+
+          <Box zIndex={4}>
+            <MotionDiv
+              hidden={childAnimations.hidden}
+              visible={childAnimations.visible}
+            >
+              <Image
+                maxW={{ base: "280px", lg: "330px" }}
+                bg="transparent"
+                borderRadius={"lg"}
+                src={img}
+              />
             </MotionDiv>
           </Box>
         </Box>
@@ -79,27 +145,26 @@ export default function ProductCard({ alignLeft, title, note1, note2, i, img }) 
   );
 }
 
-
 function MotionDiv({ children, visible, hidden }) {
-  return <motion.div
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: false }}
-    transition={{
-      duration: .3,
-      ease: "linear",
-      type: "spring",
-      bounce: .33,
-      stiffness: 120,
-    }}
-    variants={{
-      visible,
-      hidden: hidden
-    }}
-  >
-    {children}
-  </motion.div>
-
+  return (
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false }}
+      style={{ zIndex: 2 }}
+      transition={{
+        duration: 0.3,
+        ease: "linear",
+        type: "spring",
+        bounce: 0.1,
+        stiffness: 120,
+      }}
+      variants={{
+        visible,
+        hidden: hidden,
+      }}
+    >
+      {children}
+    </motion.div>
+  );
 }
-
-
