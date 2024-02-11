@@ -1,12 +1,4 @@
-import {
-  Box,
-  Flex,
-  GridItem,
-  Link,
-  Image,
-  Button,
-
-} from "@chakra-ui/react";
+import { Box, Flex, GridItem, Link, Image, Button } from "@chakra-ui/react";
 
 import Logo from "@/assets/logos/white.png";
 
@@ -24,6 +16,7 @@ export default function Footer() {
       <Box
         maxW={{ base: "100%", md: "90%", lg: "85%", xl: "80%", "2xl": "70%" }}
         mx="auto"
+        py={12}
       >
         <Flex
           flexDir={{ base: "column", lg: "row" }}
@@ -32,7 +25,8 @@ export default function Footer() {
           <Box
             display={"flex"}
             flexDir={{ base: "column" }}
-            justifyContent={"center"}
+            justifyContent={{ base: "center" }}
+            alignItems={{ base: "center", lg: "start" }}
             rowGap="1rem"
             w="90%"
           >
@@ -43,13 +37,45 @@ export default function Footer() {
             >
               <Image maxW={"248px"} src={Logo} />{" "}
             </Flex>
-            <Box >
-              <CText cprops={{ color: 'white', fontSize: "lg" }} size={2} title={"The first AI ORDINAL on"} />
-              <CText cprops={{ color: 'white', fontSize: "lg" }} size={2} title={"BRC-20 Network"} />
+            <Box>
+              <CText
+                cprops={{
+                  color: "white",
+                  fontSize: "lg",
+                  textAlign: { base: "left", lg: "center" },
+                }}
+                size={2}
+                title={"The first AI ORDINAL on"}
+              />
+              <CText
+                cprops={{
+                  color: "white",
+                  fontSize: "lg",
+                  textAlign: { base: "center", lg: "left" },
+                }}
+                size={2}
+                title={"BRC-20 Network"}
+              />
             </Box>
-            <Box >
-              <CText cprops={{ color: 'white', fontSize: 'lg' }} size={2} title={"©Renderverse"} />
-              <CText cprops={{ color: 'white', fontSize: "lg" }} size={2} title={"All Rights Reserved."} />
+            <Box>
+              <CText
+                cprops={{
+                  color: "white",
+                  fontSize: "lg",
+                  textAlign: { base: "center", lg: "left" },
+                }}
+                size={2}
+                title={"©Renderverse"}
+              />
+              <CText
+                cprops={{
+                  color: "white",
+                  fontSize: "lg",
+                  textAlign: { base: "center", lg: "left" },
+                }}
+                size={2}
+                title={"All Rights Reserved."}
+              />
             </Box>
           </Box>
           <Flex
@@ -60,12 +86,31 @@ export default function Footer() {
             w="100%"
           >
             {footerData.map((d, i) => (
-              <Flex flexDir={"column"} columnGap={"3rem"} rowGap={".6rem"} key={i}>
-                <CHeading size={3} title={d.title} cprops={{ my: 2, color: "white" }} />
+              <Flex
+                flexDir={"column"}
+                columnGap={"3rem"}
+                rowGap={".6rem"}
+                key={i}
+              >
+                <CHeading
+                  size={2}
+                  title={d.title}
+                  cprops={{
+                    my: 2,
+                    color: "white",
+                  }}
+                />
                 {d.options.map((o, k) => (
                   <GridItem key={k}>
                     <Link color="white">
-                      <CText cprops={{ color: 'white', fontSize: { base: "lg" } }} size={2} title={o} />
+                      <CText
+                        cprops={{
+                          color: "white",
+                          fontSize: { base: "lg" },
+                        }}
+                        size={3}
+                        title={o}
+                      />
                     </Link>
                   </GridItem>
                 ))}
@@ -81,4 +126,3 @@ export default function Footer() {
     </Box>
   );
 }
-

@@ -12,25 +12,28 @@ import Footer from "@/components/common/Footer/Footer";
 import SubscribeSection from "./sections/SubscribeSection";
 import { Box } from "@chakra-ui/react";
 
-
 export default function Home() {
   return (
     <>
       <Navbar />
-      <HomeContainer children={
-        <>
-          <MainSection />
-          <PartnersSection />
-          <ProductsSection />
-        </>
-      } />
+      <HomeContainer
+        children={
+          <>
+            <MainSection />
+            <PartnersSection />
+            <ProductsSection />
+          </>
+        }
+      />
       <GallerySection />
-      <HomeContainer children={
-        <>
-          {/* <PricingSection /> */}
-          <RoadmapSection />
-        </>
-      } />
+      <HomeContainer
+        children={
+          <>
+            {/* <PricingSection /> */}
+            <RoadmapSection />
+          </>
+        }
+      />
 
       <SubscribeSection />
       <Box py={24} bg="white">

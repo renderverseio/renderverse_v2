@@ -9,7 +9,6 @@ const logos = [L1, L2, L3];
 export default function PartnersSection() {
   return (
     <Box justifyContent={"center"} display={"grid"} rowGap="2rem">
-
       <Box display={"flex"} justifyContent={{ md: "center" }}>
         <Heading
           color={"gray.700"}
@@ -18,9 +17,7 @@ export default function PartnersSection() {
           textAlign="center"
         >
           Supported by{" "}
-          <span style={{ fontWeight: "normal" }}>
-            leaders around the globe
-          </span>
+          <span style={{ fontWeight: "normal" }}>leaders around the globe</span>
         </Heading>
       </Box>
 
@@ -28,7 +25,10 @@ export default function PartnersSection() {
         minW="100%"
         columnGap={"6rem"}
         px={{ base: 0, sm: 2, md: 4, lg: 8 }}
-        rowGap="2rem"
+        justifyContent="center"
+        rowGap="4rem"
+        mt={4}
+        flexWrap={"wrap"}
       >
         {logos.map((logo, i) => (
           <Flex key={i} justifyContent="center" alignItems={"center"}>
@@ -37,5 +37,5 @@ export default function PartnersSection() {
         ))}
       </Flex>
     </Box>
-  )
+  );
 }

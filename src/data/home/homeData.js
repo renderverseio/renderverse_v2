@@ -5,34 +5,107 @@ import API from '@/assets/products/apis.jpg'
 
 export const roadMapData = [
   {
-    title: `r1 Lorem ipsum  `,
-    note1: `d1 adipisicing minim sint cillum sint consectetur cupidatat. dolor sit amet, qui minim labore`,
-    note2: `d1 adipisicing minim sint cillum sint consectetur cupidatat. dolor sit amet, qui minim labore`,
-    link: `d2`,
-    desc: `d1 adipisicing minim sint cillum sint consectetur cupidatat. dolor sit amet, qui minim labore`,
+    title: "AI Development",
+    phase: [
+      {
+        phase: "Q3-Q4",
+        year: "2023",
+        milestones: [
+          "Research and Data Collection",
+          "Models Development",
+          "Models Testing and Validation",
+          "Renderverse AI Web APP V1",
+          "Deployment and Integration",
+          "Decentralised AI Marketplace Beta",
+          "Renderverse TG bot",
+          "Renderverse AI API launch",
+        ],
+        isCompleted: [true, true, true, true, true, false, false],
+      },
+    ],
   },
   {
-    title: `r1 Lorem ipsum  `,
-    note1: `d1 adipisicing minim sint cillum sint consectetur cupidatat. dolor sit amet, qui minim labore`,
-    note2: `d1 adipisicing minim sint cillum sint consectetur cupidatat. dolor sit amet, qui minim labore`,
-    link: `d2`,
-    desc: `d1 adipisicing minim sint cillum sint consectetur cupidatat. dolor sit amet, qui minim labore`,
+    title: "$RAI token",
+    phase: [
+      {
+        phase: "Q3-Q4",
+        year: "2023",
+        milestones: [
+          "$RAI Token Design",
+          "Smart Contract Development & Audit",
+          "$RAI Private Token Sale",
+          "$RAI Public Sale",
+          "Dex Listings - Uniswap",
+          "$RAI staking and farming DApp",
+          "Dao system for $RAI holders",
+          "Revenue sharing Integration",
+        ],
+        isCompleted: [true, true, false, false, false, false, false],
+      },
+    ],
   },
   {
-    title: `r1 Lorem ipsum  `,
-    note1: `d1 adipisicing minim sint cillum sint consectetur cupidatat. dolor sit amet, qui minim labore`,
-    note2: `d1 adipisicing minim sint cillum sint consectetur cupidatat. dolor sit amet, qui minim labore`,
-    link: `d2`,
-    desc: `d1 adipisicing minim sint cillum sint consectetur cupidatat. dolor sit amet, qui minim labore`,
+    title: "Renderverse AI Ecosystem",
+    phase: [
+      {
+        phase: "Q3-Q4",
+        year: "2023",
+        milestones: [
+          "Developer Onboarding",
+          "Partnerships",
+          "Use case Expansion",
+          "Developer Portal & API docs launch",
+          "Community engagement & Feedback",
+          "Governance and Voting rights",
+          "L1 Blockchain Development for AI Models",
+          "Renderverse AI Explorer",
+        ],
+        isCompleted: [true, true, true, false, false, false, false],
+      },
+    ],
   },
   {
-    title: `r1 Lorem ipsum  `,
-    note1: `d1 adipisicing minim sint cillum sint consectetur cupidatat. dolor sit amet, qui minim labore`,
-    note2: `d1 adipisicing minim sint cillum sint consectetur cupidatat. dolor sit amet, qui minim labore`,
-    link: `d2`,
-    desc: `d1 adipisicing minim sint cillum sint consectetur cupidatat. dolor sit amet, qui minim labore`,
+    title: "Ui/UX",
+    phase: [
+      {
+        phase: "Q3-Q4",
+        year: "2023",
+        milestones: [
+          "Platform Design Concept",
+          "User flow Wireframes",
+          "Prototyping and User testing",
+          "Accessibility and Inclusivity",
+          "AI MarketPlace Dashboard",
+          "Token Wallet and Management",
+          "Beta Launch to Users",
+          "Iterated UI/UX versions",
+        ],
+        isCompleted: [true, true, true, true, true, true, true],
+      },
+    ],
+  },
+  {
+    title: "Marketing and Expansion",
+    phase: [
+      {
+        phase: "Q3-Q4",
+        year: "2023",
+        milestones: [
+          "Awareness Campaigns and Brand Building",
+          "Onboarding Influencers",
+          "Referral and Ambassador Programs",
+          "User Acquisition and Incentive Programs",
+          "User Adoption Initiatives",
+          "Strategic Partnerships and Alliances",
+          "User-Centric Feedback tools",
+          "Event Participation and Sponsorship",
+        ],
+        isCompleted: [false, false, false, false, false, false, false],
+      },
+    ],
   },
 ];
+
 
 
 export const productsData = [
@@ -147,12 +220,12 @@ export const productsData = [
 
 export const gradientBgs = [
   {
-    bg: "#4158D0",
-    bgImg: "linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)",
+    bg: "#D9AFD9",
+    bgImg: "linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%)",
   },
   {
-    bg: "#0093E9",
-    bgImg: "linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)",
+    bg: "#85FFBD",
+    bgImg: "linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%)",
   },
   {
     bg: "#8EC5FC",
@@ -162,4 +235,9 @@ export const gradientBgs = [
     bg: "#FBAB7E",
     bgImg: "linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)",
   },
+  {
+    bg: "#FFDEE9",
+    bgImg: "linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%)",
+  },
 ];
+

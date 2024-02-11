@@ -135,13 +135,15 @@ function MobileDrawer() {
 
   return (
     <Box display={{ base: "block", lg: "none" }}>
-      <Icon
-        as={MdOutlineMenuOpen}
-        h={12}
-        w={12}
-        ref={btnRef}
-        onClick={onOpen}
-      />
+      <Box>
+        <Icon
+          h={12}
+          w={12}
+          as={MdOutlineMenuOpen}
+          ref={btnRef}
+          onClick={onOpen}
+        />
+      </Box>
       <Drawer
         isOpen={isOpen}
         placement="left"

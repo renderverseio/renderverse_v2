@@ -18,7 +18,6 @@ export default function ProductCard({
 }) {
   return (
     <Flex
-      my={12}
       flexDir={{ base: "column", md: "row" }}
       rowGap="1rem"
       columnGap="1rem"
@@ -28,25 +27,19 @@ export default function ProductCard({
       <Box px={4} display={{ base: "block", md: "none" }}>
         <Box
           display={"grid"}
-          rowGap={"2rem"}
-          w={{ base: "100%" }}
           p={6}
           borderRadius="lg"
           bg={gradientBgs[i].bg}
           bgImg={gradientBgs[i].bgImg}
         >
           <Box
-            w="50%"
             flexDir={"row"}
             columnGap={"1rem"}
             display={"flex"}
             justifyContent={"space-evenly"}
           >
-            <MotionDiv
-              hidden={childAnimations.hidden}
-              visible={childAnimations.visible}
-            >
-              <Image p={8} bg="transparent" borderRadius={"lg"} src={img} />
+            <MotionDiv>
+              <Image bg="transparent" borderRadius={"lg"} src={img} />
             </MotionDiv>
           </Box>
         </Box>
@@ -189,3 +182,13 @@ function MotionDiv({ children, visible, hidden }) {
     </motion.div>
   );
 }
+
+// borders
+// headers
+// roadmap
+// animations 1,2 delay
+
+// dapp
+// layout - fonts
+// input theme
+// image generation fonts

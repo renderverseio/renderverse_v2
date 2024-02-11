@@ -28,10 +28,7 @@ export default function WalletMenuDropDown() {
   const path = useLocation();
   const navigate = useNavigate();
 
-  console.log(wallet);
-
   function addressStrip() {
-    console.log(address);
     if (!address) return "";
     const _address = address;
     return (

@@ -1,61 +1,86 @@
 import CHeading from "@/components/typography/CHeading/CHeading";
 import CText from "@/components/typography/CText/CText";
 import { gradientBgs } from "@/data/home/homeData";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Divider, Flex, Image, Text } from "@chakra-ui/react";
+import Mission from "@/assets/ourmission.png";
+import { FaRegDotCircle } from "react-icons/fa";
 
-export default function RoadmapCard({ alignLeft, title, note1, note2, desc, i }) {
+export default function RoadmapCard({ alignLeft, title, phase, i }) {
+  console.log(phase[0].milestones);
   return (
     <Flex
-      columnGap={"1rem"}
+      w="100%"
+      columnGap={"2rem"}
       rowGap="2rem"
       alignItems="center"
+      justifyContent={"space-between"}
       flexDir={{ base: "column", md: "row" }}
+      flexGrow={1}
+      flexBasis={0}
     >
-      <Box px={4} display={{ base: "block", md: "none" }}>
+      <Box my={4} w="100%" display={{ base: "block", md: "none" }}>
         <Box
-          maxW={"320px"}
-          minH="40vh"
           borderRadius="lg"
           bg={gradientBgs[i].bg}
           bgImg={gradientBgs[i].bgImg}
-        ></Box>
+        >
+          <Flex rowGap={"1rem"} p={6} flexDir={"column"}>
+            <CHeading size={2} title={title} />
+            <Divider />
+            {phase[0].milestones.map((p, i) => (
+              <Flex columnGap={".5rem"} alignItems="center">
+                <FaRegDotCircle />
+                <CText size={3} title={p} />
+              </Flex>
+            ))}
+          </Flex>
+        </Box>
       </Box>
 
       {alignLeft && (
         <Box
-          w={{ base: "100%", md: "50%" }}
           display={{ base: "none", md: "block" }}
-          minH="440px"
-          maxH="440px"
           bg={gradientBgs[i].bg}
           bgImg={gradientBgs[i].bgImg}
           borderRadius="lg"
-        ></Box>
+          w="100%"
+        >
+          <Flex rowGap={"1rem"} p={6} flexDir={"column"}>
+            <CHeading size={2} title={title} />
+            <Divider />
+            {phase[0].milestones.map((p, i) => (
+              <Flex columnGap={".5rem"} alignItems="center">
+                <FaRegDotCircle />
+                <CText size={3} title={p} />
+              </Flex>
+            ))}
+          </Flex>
+        </Box>
       )}
 
-      <Flex w={{ base: "100%", md: "50%" }}
-        rowGap={"1rem"} p={6} flexDir={"column"}>
-        <CHeading size={2} title={"Roadmap 1"} />
-        <CText size={2} title={note1} />
-        <CText size={2} title={note2} />
-        <Text fontWeight={"bold"} textDecor={"underline"}>
-          Learn more →
-        </Text>
-        <Box borderRadius={"md"} p={3} bg="orange.100">
-          <CText size={2} title={desc} />
-        </Box>
+      <Flex display={{ base: "none", lg: "flex" }}>
+        <Image maxW={"330px"} src={Mission} />
       </Flex>
 
       {!alignLeft && (
         <Box
-          w={{ base: "100%", md: "50%" }}
           display={{ base: "none", md: "block" }}
-          minH="440px"
-          maxH="440px"
           bg={gradientBgs[i].bg}
           bgImg={gradientBgs[i].bgImg}
           borderRadius="lg"
-        ></Box>
+          w="100%"
+        >
+          <Flex rowGap={"1rem"} p={6} flexDir={"column"}>
+            <CHeading size={2} title={title} />
+            <Divider />
+            {phase[0].milestones.map((p, i) => (
+              <Flex columnGap={".5rem"} alignItems="center">
+                <FaRegDotCircle />
+                <CText size={3} title={p} />
+              </Flex>
+            ))}
+          </Flex>
+        </Box>
       )}
     </Flex>
   );
