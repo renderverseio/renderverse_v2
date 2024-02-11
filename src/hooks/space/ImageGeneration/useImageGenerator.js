@@ -15,8 +15,8 @@ export const useImageGenerator = ({ address }) => {
       setStatus(TStatus.fetching)
       const response = await spacesRequests.generateImage({ address, input, model })
       const data = response.data
-      console.log(data)
-      setImgSrc(`data:image/png;base64,` + data.url.image);
+      console.log(data.img)
+      setImgSrc(`data:image/png;base64,` + data.img.image);
       setStatus(TStatus.fetched)
     } catch (error) {
       console.log(error)
