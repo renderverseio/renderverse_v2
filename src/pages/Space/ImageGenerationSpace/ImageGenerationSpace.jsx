@@ -28,10 +28,6 @@ export default function ImageGenerationSpace() {
   return (
     <React.Fragment>
       <Container display={"grid"} rowGap={"2rem"} mt={12} maxW="90%" mx="auto">
-        <DescriptionBox
-          title={`Image Generation`}
-          desc={`These apps find applications in artistic endeavors, content creation, and design, offering a user-friendly interface for individuals to effortlessly produce a wide range of AI-generated images tailored to their preferences.`}
-        />
         {isConnected && (
           <>
             <ImageGenerationForm
@@ -41,17 +37,13 @@ export default function ImageGenerationSpace() {
               setInput={setInput}
               hasCredits={hasCredits}
               imgSrc={imgSrc}
+              generateImage={generateImage}
               status={status}
-            />
-            <CreditsCheckerComponent
-              onClick={generateImage}
-              onClickText="Generate Image"
-              hasCredits={hasCredits}
             />
           </>
         )}
         {!isConnected && (
-          <Flex justifyContent={"center"}>
+          <Flex bg="green" p={5} justifyContent={"center"}>
             <Box
               p={4}
               borderRadius={"lg"}

@@ -10,6 +10,7 @@ import {
   Radio,
   RadioGroup,
   Stack,
+  FormLabel,
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -18,12 +19,15 @@ import { Audio } from "react-loader-spinner";
 
 import CCard from "@/components/custom/CCard/CCard";
 import CText from "@/components/typography/CText/CText";
+import CreditsCheckerComponent from "@/components/spaces/CreditsCheckerComponent/CreditsCheckerComponent";
 
 export default function ImageGenerationForm({
   input,
   setInput,
   model,
   setModel,
+  generateImage,
+  hasCredits,
   imgSrc,
   status,
 }) {
@@ -39,8 +43,8 @@ export default function ImageGenerationForm({
   ];
   return (
     <Grid
-      rowGap={"2rem"}
-      columnGap={"2rem"}
+      rowGap={"1rem"}
+      columnGap={"1rem"}
       gridTemplateColumns={{
         base: "1fr",
         lg: "1fr 1fr",
@@ -50,6 +54,8 @@ export default function ImageGenerationForm({
       <CCard
         type="s"
         props={{
+          display: "grid",
+          rowGap: "1rem",
           borderRadius: "lg",
           p: 4,
           className: "glass_effect",
@@ -61,14 +67,25 @@ export default function ImageGenerationForm({
         }}
       >
         <FormControl>
-          <CText size={2} title={"Input"} />
+          <FormLabel>Prompt</FormLabel>
           <Input
+            variant={"unstyled"}
+            borderRadius="lg"
+            p={2}
+            className="glass_effect"
+            bg="gray.50"
+            border="2px"
+            borderColor="white"
+            boxShadow="sm"
             value={input}
             onChange={(i) => setInput(i.target.value)}
             placeholder="Muskmelon"
+            fontFamily={"Inter"}
           />
+        </FormControl>
 
-          <CText size={2} title={"Style"} />
+        <FormControl>
+          <FormLabel>Style</FormLabel>
           <RadioGroup my={2} onChange={setModel} value={model}>
             <Stack direction="row">
               {models.map((s, i) => (
@@ -78,26 +95,21 @@ export default function ImageGenerationForm({
               ))}
             </Stack>
           </RadioGroup>
+        </FormControl>
 
-          <Box p={3}>
-            <Flex columnGap=".4rem" alignItems={"center"}>
-              <FaBoxes size={18} />
-              <CText size={3} title="Examples" />
-            </Flex>
-
-            {tags.map((h, i) => (
-              <Tag
-                size="md"
-                my={2}
-                mx={2}
-                cursor="pointer"
-                onClick={() => setInput(h)}
-                key={i}
-              >
-                {h}
-              </Tag>
-            ))}
-          </Box>
+        <FormControl>
+          <FormLabel>Examples</FormLabel>
+          {tags.map((h, i) => (
+            <Tag
+              my={2}
+              mr={2}
+              cursor="pointer"
+              onClick={() => setInput(h)}
+              key={i}
+            >
+              {h}
+            </Tag>
+          ))}
         </FormControl>
       </CCard>
 
@@ -146,6 +158,11 @@ export default function ImageGenerationForm({
           />
         )}
       </CCard>
+      <CreditsCheckerComponent
+        onClick={generateImage}
+        onClickText="Generate Image"
+        hasCredits={hasCredits}
+      />
     </Grid>
   );
 }
