@@ -24,7 +24,7 @@ export default function ProductCard({
       alignItems="center"
       py={6}
     >
-      <Box px={4} display={{ base: "block", md: "none" }}>
+      <Box px={4} display={{ base: "block", lg: "none" }}>
         <Box
           display={"grid"}
           p={6}
@@ -39,7 +39,12 @@ export default function ProductCard({
             justifyContent={"space-evenly"}
           >
             <MotionDiv>
-              <Image bg="transparent" borderRadius={"lg"} src={img} />
+              <Image
+                bg="transparent"
+                maxW={"220px"}
+                borderRadius={"lg"}
+                src={img}
+              />
             </MotionDiv>
           </Box>
         </Box>
@@ -96,7 +101,7 @@ export default function ProductCard({
         </Box>
       )}
 
-      <Flex rowGap={"1rem"} p={6} flexDir={"column"}>
+      <Flex w="100%" rowGap={"1rem"} p={6} flexDir={"column"}>
         <CHeading size={2} title={title} />
         <CText size={2} title={note1} />
         <CText size={2} title={note2} />
@@ -182,13 +187,3 @@ function MotionDiv({ children, visible, hidden }) {
     </motion.div>
   );
 }
-
-// borders
-// headers
-// roadmap
-// animations 1,2 delay
-
-// dapp
-// layout - fonts
-// input theme
-// image generation fonts

@@ -245,3 +245,13 @@ export const gradientBgs = [
   },
 ];
 
+
+export const gradientBgs2 = [
+  `linear-gradient(to top, #0ba360 0%, #3cba92 100%);`,
+  `linear-gradient(135deg, #667eea 0%, #764ba2 100%);`,
+  `linear-gradient(to right, #6a11cb 0%, #2575fc 100%);`,
+  `linear-gradient(to right, #f83600 0%, #f9d423 100%);`,
+  `linear-gradient(to top, #ff0844 0%, #ffb199 100%);`,
+
+
+]

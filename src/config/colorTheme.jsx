@@ -31,7 +31,6 @@ export const homeTheme = {
     fontSize: {
       base: "4xl",
       lg: "5xl",
-      xl: "6xl",
     },
   },
   c2Heading: {

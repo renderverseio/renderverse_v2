@@ -1,37 +1,68 @@
 import CHeading from "@/components/typography/CHeading/CHeading";
 import CText from "@/components/typography/CText/CText";
-import { gradientBgs } from "@/data/home/homeData";
+import { gradientBgs2 } from "@/data/home/homeData";
 import { Box, Divider, Flex, Image, Text } from "@chakra-ui/react";
-import Mission from "@/assets/ourmission.png";
-import { FaRegDotCircle } from "react-icons/fa";
+import Mission from "@/assets/roadmap.jpeg";
 import { motion } from "framer-motion";
+
+import CheckMark from "@/assets/checkmark.png";
+import InProgress from "@/assets/loading.png";
+import Target from "@/assets/target.png";
 
 export default function RoadmapCard(props) {
   return (
     <Flex
-      columnGap={"2rem"}
+      columnGap={"4rem"}
       rowGap="4rem"
       alignItems="center"
       justifyContent={"space-between"}
       flexDir={{ base: "column", md: "row" }}
     >
-      <Box w="100%" display={{ base: "block", lg: "none" }}>
+      <Box my={6} w="100%" display={{ base: "block", lg: "none" }}>
         <RoadmapMileStone {...props} />
       </Box>
-      {props.alignLeft && (
-        <RoadmapMileStone display={{ base: "none", lg: "flex" }} {...props} />
-      )}
-      <Flex display={{ base: "none", lg: "flex" }}>
-        <Image maxW={"330px"} src={Mission} />
-      </Flex>
-      {!props.alignLeft && (
-        <RoadmapMileStone display={{ base: "none", lg: "flex" }} {...props} />
-      )}
+
+      <Box w="100%" display={{ base: "none", lg: "flex" }}>
+        {props.alignLeft && <RoadmapMileStone {...props} />}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          style={{
+            zIndex: 2,
+            width: "100%",
+          }}
+          transition={{
+            duration: 0.5,
+            ease: "linear",
+            type: "spring",
+            bounce: 0.5,
+            stiffness: 120,
+          }}
+          variants={{
+            visible: {
+              scale: 1,
+            },
+            hidden: { scale: 0.9 },
+          }}
+        >
+          <Flex justifyContent={"center"} p={4} borderRadius="lg">
+            <Image
+              borderRadius={"lg"}
+              objectFit={"contain"}
+              objectPosition="center"
+              maxW={"330px"}
+              src={Mission}
+            />
+          </Flex>
+        </motion.div>
+        {!props.alignLeft && <RoadmapMileStone {...props} />}
+      </Box>
     </Flex>
   );
 }
 
-function RoadmapMileStone({ phase, title, i, display }) {
+function RoadmapMileStone({ phase, title, i }) {
   return (
     <motion.div
       initial="hidden"
@@ -56,14 +87,13 @@ function RoadmapMileStone({ phase, title, i, display }) {
         hidden: { rotate: i % 2 !== 0 ? 25 : -25 },
       }}
     >
-      <Box
-        borderRadius="lg"
-        display={display}
-        bg={gradientBgs[i].bg}
-        bgImg={gradientBgs[i].bgImg}
-      >
-        <Flex rowGap={"1rem"} p={6} flexDir={"column"}>
-          <CHeading size={2} title={title} />
+      <Box borderRadius="lg" bgImg={gradientBgs2[i]}>
+        <Flex w="100%" rowGap={"1rem"} p={6} flexDir={"column"}>
+          <CHeading
+            cprops={{ color: "white", fontWeight: "bold" }}
+            size={2}
+            title={title}
+          />
           <Divider />
           {phase[0].milestones.map((p, i) => (
             <motion.div
@@ -88,9 +118,32 @@ function RoadmapMileStone({ phase, title, i, display }) {
               }}
               key={i}
             >
-              <Flex columnGap={".5rem"} alignItems="center">
-                <FaRegDotCircle />
-                <CText size={3} title={p} />
+              <Flex
+                columnGap={".5rem"}
+                alignItems="center"
+                justifyContent={"space-between"}
+                w="100%"
+              >
+                <Flex columnGap={".5rem"} alignItems="center">
+                  <Image
+                    borderRadius={"lg"}
+                    background={"white"}
+                    p={1}
+                    maxW="32px"
+                    src={Target}
+                  />
+                  <CText
+                    cprops={{ color: "white", fontWeight: "bold" }}
+                    size={3}
+                    title={p}
+                  />
+                </Flex>
+                <Box bg="white" p={1} borderRadius="xl">
+                  <Image
+                    maxW="24px"
+                    src={phase[0].isCompleted[i] ? CheckMark : InProgress}
+                  />
+                </Box>
               </Flex>
             </motion.div>
           ))}

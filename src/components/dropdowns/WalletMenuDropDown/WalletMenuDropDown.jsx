@@ -61,7 +61,7 @@ export default function WalletMenuDropDown() {
         fontWeight={"bolder"}
         borderRadius={"lg"}
         className="btn btn-1"
-        onClick={() => navigate("/dapp")}
+        onClick={() => navigate("/dapp/dashboard")}
         p={3}
       >
         Launch Dapp

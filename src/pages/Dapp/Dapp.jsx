@@ -78,14 +78,16 @@ function DesktopSideBar() {
       borderTop="none"
       borderBottom={"none"}
       borderColor="white"
-      bg="gray.50"
+      // bg="gray.50"
+      // bgImg={`linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);`}
+      bgImg={`linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);`}
     >
       <Flex
         columnGap={".5rem"}
         alignItems={"center"}
         justifyContent="flex-start"
         cursor={"pointer"}
-        onClick={() => (window.location.href = "https://renderverse.io")}
+        onClick={() => navigate("/")}
       >
         <Image src={Logo} />
       </Flex>

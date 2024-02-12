@@ -26,9 +26,9 @@ export default function Footer() {
             display={"flex"}
             flexDir={{ base: "column" }}
             justifyContent={{ base: "center" }}
-            alignItems={{ base: "center", lg: "start" }}
             rowGap="1rem"
             w="90%"
+            px={{ base: 0, lg: 6 }}
           >
             <Flex
               columnGap={".5rem"}
@@ -42,7 +42,6 @@ export default function Footer() {
                 cprops={{
                   color: "white",
                   fontSize: "lg",
-                  textAlign: { base: "left", lg: "center" },
                 }}
                 size={2}
                 title={"The first AI ORDINAL on"}
@@ -51,7 +50,6 @@ export default function Footer() {
                 cprops={{
                   color: "white",
                   fontSize: "lg",
-                  textAlign: { base: "center", lg: "left" },
                 }}
                 size={2}
                 title={"BRC-20 Network"}
@@ -62,7 +60,6 @@ export default function Footer() {
                 cprops={{
                   color: "white",
                   fontSize: "lg",
-                  textAlign: { base: "center", lg: "left" },
                 }}
                 size={2}
                 title={"©Renderverse"}
@@ -71,7 +68,6 @@ export default function Footer() {
                 cprops={{
                   color: "white",
                   fontSize: "lg",
-                  textAlign: { base: "center", lg: "left" },
                 }}
                 size={2}
                 title={"All Rights Reserved."}
@@ -119,8 +115,24 @@ export default function Footer() {
           </Flex>
         </Flex>
         <Flex px={8} pb={8} columnGap="1rem" justifyContent={"flex-end"}>
-          <Button>Join Our Discord</Button>
-          <Button>Join Our Telegram</Button>
+          <Box
+            fontWeight={"bold"}
+            p={3}
+            borderRadius="lg"
+            className="btn btn-1"
+            boxShadow={"lg"}
+          >
+            Join Our Discord
+          </Box>
+          <Box
+            fontWeight={"bold"}
+            p={3}
+            borderRadius="lg"
+            className="btn btn-2"
+            boxShadow={"lg"}
+          >
+            Join Our Telegram
+          </Box>
         </Flex>
       </Box>
     </Box>
