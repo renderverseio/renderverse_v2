@@ -7,7 +7,7 @@ export default function CreditsCheckerComponent({
 }) {
   return (
     <Box py={4}>
-      <Flex justifyContent={"center"} alignItems="center">
+      <Flex alignItems="center">
         {hasCredits ? (
           <Box
             className="btn btn-2"

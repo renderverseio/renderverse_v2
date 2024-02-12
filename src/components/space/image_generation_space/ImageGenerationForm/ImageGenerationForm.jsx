@@ -47,7 +47,6 @@ export default function ImageGenerationForm({
       columnGap={"1rem"}
       gridTemplateColumns={{
         base: "1fr",
-        lg: "1fr 1fr",
       }}
       mb={12}
     >
@@ -84,33 +83,41 @@ export default function ImageGenerationForm({
           />
         </FormControl>
 
-        <FormControl>
-          <FormLabel>Style</FormLabel>
-          <RadioGroup my={2} onChange={setModel} value={model}>
-            <Stack direction="row">
-              {models.map((s, i) => (
-                <Radio key={i} value={s.value}>
-                  {s.name}
-                </Radio>
-              ))}
-            </Stack>
-          </RadioGroup>
-        </FormControl>
+        <Flex>
+          <FormControl>
+            <FormLabel>Style</FormLabel>
+            <RadioGroup my={2} onChange={setModel} value={model}>
+              <Stack direction="row">
+                {models.map((s, i) => (
+                  <Radio key={i} value={s.value}>
+                    {s.name}
+                  </Radio>
+                ))}
+              </Stack>
+            </RadioGroup>
 
-        <FormControl>
-          <FormLabel>Examples</FormLabel>
-          {tags.map((h, i) => (
-            <Tag
-              my={2}
-              mr={2}
-              cursor="pointer"
-              onClick={() => setInput(h)}
-              key={i}
-            >
-              {h}
-            </Tag>
-          ))}
-        </FormControl>
+            <CreditsCheckerComponent
+              onClick={generateImage}
+              onClickText="Generate Image"
+              hasCredits={hasCredits}
+            />
+          </FormControl>
+
+          <FormControl>
+            <FormLabel>Examples</FormLabel>
+            {tags.map((h, i) => (
+              <Tag
+                my={2}
+                mr={2}
+                cursor="pointer"
+                onClick={() => setInput(h)}
+                key={i}
+              >
+                {h}
+              </Tag>
+            ))}
+          </FormControl>
+        </Flex>
       </CCard>
 
       <CCard
@@ -124,12 +131,17 @@ export default function ImageGenerationForm({
           border: "2px",
           borderColor: "white",
           boxShadow: "sm",
-          minH: { base: "50vh", lg: "auto" },
+          minH: { base: "50vh" },
+          display: "flex",
+          p: 4,
+          justifyContent: "center",
         }}
       >
         <CCard
           type="d"
           props={{
+            left: 0,
+            top: 0,
             px: 2,
             py: 1,
             pos: "absolute",
@@ -152,17 +164,12 @@ export default function ImageGenerationForm({
         {status === "fetched" && (
           <Image
             borderRadius={"lg"}
-            width="100%"
+            maxW="512px"
             objectFit={"contain"}
             src={imgSrc}
           />
         )}
       </CCard>
-      <CreditsCheckerComponent
-        onClick={generateImage}
-        onClickText="Generate Image"
-        hasCredits={hasCredits}
-      />
     </Grid>
   );
 }

@@ -43,7 +43,7 @@ export default function ImageGenerationSpace() {
           </>
         )}
         {!isConnected && (
-          <Flex bg="green" p={5} justifyContent={"center"}>
+          <Flex p={5} justifyContent={"center"}>
             <Box
               p={4}
               borderRadius={"lg"}
