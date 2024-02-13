@@ -1,17 +1,21 @@
-
-import Eco from '@/assets/eco.jpg'
-import Eco2 from '@/assets/eco2.jpg'
-
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 import { gradientBgs } from "@/data/home/homeData";
 
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
-import CHeading from '@/components/typography/CHeading/CHeading';
-import CText from '@/components/typography/CText/CText';
+import CHeading from "@/components/typography/CHeading/CHeading";
+import CText from "@/components/typography/CText/CText";
 
-export default function ProductCard({ alignLeft, title, note1, note2, i }) {
-
-
+export default function ProductCard({
+  parentAnimations,
+  childAnimations,
+  alignLeft,
+  title,
+  note1,
+  note2,
+  i,
+  img,
+  p,
+}) {
   return (
     <Flex
       flexDir={{ base: "column", md: "row" }}
@@ -20,63 +24,84 @@ export default function ProductCard({ alignLeft, title, note1, note2, i }) {
       alignItems="center"
       py={6}
     >
-      <Box px={4} display={{ base: "block", md: "none" }}>
+      <Box px={4} display={{ base: "block", lg: "none" }}>
         <Box
           display={"grid"}
-          rowGap={"2rem"}
-          w={{ base: "100%", }}
           p={6}
           borderRadius="lg"
           bg={gradientBgs[i].bg}
           bgImg={gradientBgs[i].bgImg}
         >
-          <Box w="50%" flexDir={"row"} columnGap={"1rem"} display={"flex"} justifyContent={"space-evenly"} >
-            <MotionDiv hidden={{ opacity: 0, y: -120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
-              <Image bg="transparent" borderRadius={"lg"} src={Eco} />
-            </MotionDiv>
-            <MotionDiv hidden={{ opacity: 0, y: 120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
-              <Image bg="transparent" borderRadius={"lg"} src={Eco2} />
+          <Box
+            flexDir={"row"}
+            columnGap={"1rem"}
+            display={"flex"}
+            justifyContent={"space-evenly"}
+          >
+            <MotionDiv>
+              <Image
+                bg="transparent"
+                maxW={"220px"}
+                borderRadius={"lg"}
+                src={img}
+              />
             </MotionDiv>
           </Box>
-          <MotionDiv hidden={{ opacity: 0, y: 120, }} visible={{ y: 0, opacity: 1 }}>
-            <Box bg="white" borderRadius={"lg"} p={2}>
-              <CHeading
-                title={"Lorem minim sint cillum sint consectetur cupidatat."}
-                size={3} />
-            </Box>
-          </MotionDiv>
         </Box>
       </Box>
 
       {alignLeft && (
         <Box
-          w={{ base: "100%", }}
-          display={{ base: "none", md: "grid" }}
-          rowGap={"2rem"}
-          bg={gradientBgs[i].bg}
-          bgImg={gradientBgs[i].bgImg}
-          borderRadius="lg"
-          p={6}
+          display={{ base: "none", lg: "flex" }}
+          alignItems="center"
+          justifyContent="center"
+          p={p}
+          pos={"relative"}
         >
-          <Box flexDir={"row"} columnGap={"1rem"} display={"flex"} justifyContent={"space-evenly"} >
-            <MotionDiv hidden={{ opacity: 0, y: -120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
-              <Image bg="transparent" borderRadius={"lg"} src={Eco} />
-            </MotionDiv>
-            <MotionDiv hidden={{ opacity: 0, y: 120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
-              <Image bg="transparent" borderRadius={"lg"} src={Eco2} />
+          <Box
+            display={"flex"}
+            alignItems="stretch"
+            minH="100%"
+            minW={"100%"}
+            zIndex={3}
+            pos={"absolute"}
+          >
+            <MotionDiv
+              visible={parentAnimations.visible}
+              hidden={parentAnimations.hidden}
+            >
+              <Box
+                bg={gradientBgs[i].bg}
+                bgImg={gradientBgs[i].bgImg}
+                borderRadius="lg"
+                zIndex={1}
+                minW="24rem"
+                w="100%"
+                minH="100%"
+                fontSize={1}
+              >
+                x
+              </Box>
             </MotionDiv>
           </Box>
-          <MotionDiv hidden={{ opacity: 0, y: 120, }} visible={{ y: 0, opacity: 1 }}>
-            <Box bg="white" borderRadius={"lg"} p={2}>
-              <CHeading
-                title={"Lorem minim sint cillum sint consectetur cupidatat."}
-                size={3} />
-            </Box>
-          </MotionDiv>
+
+          <Box zIndex={4}>
+            <MotionDiv
+              hidden={childAnimations.hidden}
+              visible={childAnimations.visible}
+            >
+              <Image
+                maxW={{ base: "280px", lg: "330px" }}
+                bg="transparent"
+                borderRadius={"lg"}
+                src={img}
+              />
+            </MotionDiv>
+          </Box>
         </Box>
       )}
 
-      <Flex rowGap={"1rem"} p={6} flexDir={"column"}>
+      <Flex w="100%" rowGap={"1rem"} p={6} flexDir={"column"}>
         <CHeading size={2} title={title} />
         <CText size={2} title={note1} />
         <CText size={2} title={note2} />
@@ -87,57 +112,78 @@ export default function ProductCard({ alignLeft, title, note1, note2, i }) {
 
       {!alignLeft && (
         <Box
-          w={{ base: "100%", }}
-          display={{ base: "none", md: "grid" }}
-          rowGap={"2rem"}
-          bg={gradientBgs[i].bg}
-          bgImg={gradientBgs[i].bgImg}
-          borderRadius="lg"
-          p={6}
+          display={{ base: "none", lg: "flex" }}
+          alignItems="center"
+          justifyContent="center"
+          p={p}
+          pos={"relative"}
         >
-          <Box flexDir={"row"} columnGap={"1rem"} display={"flex"} justifyContent={"space-evenly"} >
-            <MotionDiv hidden={{ opacity: 0, y: -120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
-              <Image bg="transparent" borderRadius={"lg"} src={Eco2} />
-            </MotionDiv>
-            <MotionDiv hidden={{ opacity: 0, y: 120, scale: .95 }} visible={{ opacity: 1, y: 0, scale: 1 }}>
-              <Image bg="transparent" borderRadius={"lg"} src={Eco} />
+          <Box
+            display={"flex"}
+            alignItems="stretch"
+            minH="100%"
+            minW={"100%"}
+            zIndex={3}
+            pos={"absolute"}
+          >
+            <MotionDiv
+              visible={parentAnimations.visible}
+              hidden={parentAnimations.hidden}
+            >
+              <Box
+                bg={gradientBgs[i].bg}
+                bgImg={gradientBgs[i].bgImg}
+                borderRadius="lg"
+                zIndex={1}
+                minW="24rem"
+                w="100%"
+                minH="100%"
+                fontSize={1}
+              >
+                x
+              </Box>
             </MotionDiv>
           </Box>
-          <MotionDiv hidden={{ opacity: 0, y: 120, }} visible={{ y: 0, opacity: 1 }}>
-            <Box bg="white" borderRadius={"lg"} p={2}>
-              <CHeading
-                title={"Lorem minim sint cillum sint consectetur cupidatat."}
-                size={3} />
-            </Box>
-          </MotionDiv>
 
+          <Box zIndex={4}>
+            <MotionDiv
+              hidden={childAnimations.hidden}
+              visible={childAnimations.visible}
+            >
+              <Image
+                maxW={{ base: "280px", lg: "330px" }}
+                bg="transparent"
+                borderRadius={"lg"}
+                src={img}
+              />
+            </MotionDiv>
+          </Box>
         </Box>
       )}
     </Flex>
   );
 }
 
-
 function MotionDiv({ children, visible, hidden }) {
-  return <motion.div
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: false }}
-    transition={{
-      duration: .3,
-      ease: "linear",
-      type: "spring",
-      bounce: .33,
-      stiffness: 120,
-    }}
-    variants={{
-      visible,
-      hidden: hidden
-    }}
-  >
-    {children}
-  </motion.div>
-
+  return (
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false }}
+      style={{ zIndex: 2 }}
+      transition={{
+        duration: 0.3,
+        ease: "linear",
+        type: "spring",
+        bounce: 0.1,
+        stiffness: 120,
+      }}
+      variants={{
+        visible,
+        hidden: hidden,
+      }}
+    >
+      {children}
+    </motion.div>
+  );
 }
-
-

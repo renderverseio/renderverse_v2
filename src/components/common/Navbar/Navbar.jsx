@@ -1,4 +1,4 @@
-import Logo from "@/assets/logo.png";
+import Logo from "@/assets/logos/logo.png";
 
 import { Box, Flex, Heading, Image } from "@chakra-ui/react";
 
@@ -22,17 +22,17 @@ export default function Navbar() {
           alignItems={"center"}
           justifyContent="flex-start"
           cursor={"pointer"}
-          onClick={() => window.location.href = "https://renderverse.io"}
+          onClick={() => (window.location.href = "https://renderverse.io")}
         >
           <Image maxW={"220px"} src={Logo} />
         </Flex>
         <Box
           w={{ base: "auto", md: "none" }}
-          display={{ base: "block", md: "none" }}
+          display={{ base: "block", lg: "none" }}
         >
           <MobileMenuDropDown />
         </Box>
-        <Box w="100%" display={{ base: "none", md: "block" }}>
+        <Box w="100%" display={{ base: "none", lg: "block" }}>
           <Flex
             justifyContent={"center"}
             alignItems="center"
@@ -40,7 +40,7 @@ export default function Navbar() {
           >
             {desktopMenuItems.map((menu, i) => (
               <Box
-                GridItem justifyContent={"center"}
+                justifyContent={"center"}
                 alignItems="center"
                 display={"flex"}
                 key={i}
@@ -60,7 +60,7 @@ export default function Navbar() {
           </Flex>
         </Box>
         <Flex
-          display={{ base: "none", md: "flex" }}
+          display={{ base: "none", lg: "flex" }}
           justifyContent={"flex-end"}
           alignItems="center"
           columnGap={"1rem"}

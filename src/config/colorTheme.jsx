@@ -7,34 +7,31 @@ export const dynamicCardTheme = {
   _hover: {
     boxShadow: "lg",
     borderRadius: "lg",
-    bg: "gray.50"
-  }
+    bg: "gray.50",
+  },
 };
 
 export const gridCardTheme = {
   _hover: {
-    transform: `scale(1.03)`
-  }
-}
+    transform: `scale(1.03)`,
+  },
+};
 
 export const staticCardTheme = {
   bg: "white.900",
   boxShadow: "lg",
   borderRadius: "lg",
-  cursor: "pointer"
-}
+  cursor: "pointer",
+};
 
 export const homeTheme = {
   c1Heading: {
     fontWeight: "700",
     color: "gray.900",
     fontSize: {
-      base: "xl",
-      sm: "2xl",
-      md: "3xl",
-      lg: "4xl",
-      xl: "5xl",
-    }
+      base: "4xl",
+      lg: "3.5rem",
+    },
   },
   c2Heading: {
     fontWeight: "600",
@@ -45,9 +42,8 @@ export const homeTheme = {
       md: "2xl",
       lg: "3xl",
       xl: "4xl",
-    }
-  }
-  ,
+    },
+  },
   c3Heading: {
     fontWeight: "500",
     color: "gray.500",
@@ -56,7 +52,7 @@ export const homeTheme = {
       sm: "lg",
       md: "xl",
       lg: "2xl",
-    }
+    },
   },
   c1Text: {
     fontWeight: "500",
@@ -66,7 +62,7 @@ export const homeTheme = {
       md: "lg",
       lg: "xl",
       xl: "2xl",
-    }
+    },
   },
   c2Text: {
     fontWeight: "400",
@@ -76,7 +72,7 @@ export const homeTheme = {
       md: "md",
       lg: "lg",
       xl: "xl",
-    }
+    },
   },
   c3Text: {
     fontWeight: "300",
@@ -85,6 +81,6 @@ export const homeTheme = {
       base: "xs",
       md: "sm",
       lg: "md",
-    }
+    },
   },
-}
+};

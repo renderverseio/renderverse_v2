@@ -12,11 +12,15 @@ import {
   Text,
 } from "@chakra-ui/react";
 
+import { MdOutlineMenuOpen } from "react-icons/md";
+
 export default function MobileMenuDropDown() {
   return (
     <Popover boxShadow={"none"} outline="none" border="none">
       <PopoverTrigger>
-        <Icon></Icon>
+        <Box>
+          <Icon h={12} w={12} as={MdOutlineMenuOpen}></Icon>
+        </Box>
       </PopoverTrigger>
       <PopoverContent
         boxShadow={"none"}
@@ -36,7 +40,9 @@ export default function MobileMenuDropDown() {
             {mobileMenuItems.map((menuItem, i) => (
               <Box
                 borderTopRadius={i === 0 ? "lg" : "none"}
-                borderBottomRadius={i === mobileMenuItems.length - 1 ? "lg" : "none"}
+                borderBottomRadius={
+                  i === mobileMenuItems.length - 1 ? "lg" : "none"
+                }
                 bg={i === 0 ? "gray.100" : "white"}
                 px={{ base: 8 }}
                 display={"flex"}

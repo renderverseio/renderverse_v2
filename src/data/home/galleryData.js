@@ -26,18 +26,14 @@ import I24 from '@/assets/gallery/24.png'
 export const gallery = [
   {
     row: 1,
-    items: [I1, I2, I3, I4, I5, I6]
+    items: [I1, I2, I3, I4, I19, I6]
   },
   {
     row: 2,
-    items: [I7, I8, I9, I10, I11, I12]
+    items: [I23, I22, I21, I20, I11, I12]
   },
   {
     row: 3,
     items: [I13, I14, I15, I16, I17, I18]
   },
-  {
-    row: 3,
-    items: [I19, I20, I21, I22, I23, I24]
-  }
 ]

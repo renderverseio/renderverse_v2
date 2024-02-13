@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Flex,
   FormControl,
   Image,
@@ -10,12 +9,13 @@ import {
   Grid,
   Radio,
   RadioGroup,
-  Stack
+  Stack,
+  FormLabel,
 } from "@chakra-ui/react";
 import React from "react";
 
 import { FaBoxes } from "react-icons/fa";
-import { Audio, } from "react-loader-spinner";
+import { Audio } from "react-loader-spinner";
 
 import CCard from "@/components/custom/CCard/CCard";
 import CText from "@/components/typography/CText/CText";
@@ -24,67 +24,91 @@ import CreditsCheckerComponent from "@/components/spaces/CreditsCheckerComponent
 export default function ImageGenerationForm({
   input,
   setInput,
-  style,
-  setStyle,
+  model,
+  setModel,
+  generateImage,
   hasCredits,
   imgSrc,
   status,
-  generateImage,
-  disconnect,
 }) {
-  const styles = [
+  const models = [
     {
       name: "Realism",
-      value: "photorealism"
+      value: "absolute-reality-v1-8-1",
     },
     {
-
       name: "Art",
-      value: "artistic"
+      value: "dream-shaper-v8",
     },
-    {
-      name: "Anime",
-      value: "anime"
-    }
-  ]
+  ];
   return (
     <Grid
-      rowGap={"2rem"}
-      columnGap={"2rem"}
+      rowGap={"1rem"}
+      columnGap={"1rem"}
       gridTemplateColumns={{
         base: "1fr",
-        lg: "1fr 1fr",
       }}
       mb={12}
     >
-      <CCard type="s" props={{ padding: 6, bg: "white" }}>
-        <FormControl >
-          <CText size={2} title={"Input"} />
+      <CCard
+        type="s"
+        props={{
+          display: "grid",
+          rowGap: "1rem",
+          borderRadius: "lg",
+          p: 4,
+          className: "glass_effect",
+          bg: "gray.50",
+          backgroundSize: "cover",
+          border: "2px",
+          borderColor: "white",
+          boxShadow: "sm",
+        }}
+      >
+        <FormControl>
+          <FormLabel>Prompt</FormLabel>
           <Input
+            variant={"unstyled"}
+            borderRadius="lg"
+            p={2}
+            className="glass_effect"
+            bg="gray.50"
+            border="2px"
+            borderColor="white"
+            boxShadow="sm"
             value={input}
             onChange={(i) => setInput(i.target.value)}
             placeholder="Muskmelon"
+            fontFamily={"Inter"}
           />
+        </FormControl>
 
-          <CText size={2} title={"Style"} />
-          <RadioGroup my={2} onChange={setStyle} value={style}>
-            <Stack direction='row'>
-              {styles.map((s, i) => <Radio key={i} value={s.value}>{s.name}</Radio>
-              )}
-            </Stack>
-          </RadioGroup>
+        <Flex>
+          <FormControl>
+            <FormLabel>Style</FormLabel>
+            <RadioGroup my={2} onChange={setModel} value={model}>
+              <Stack direction="row">
+                {models.map((s, i) => (
+                  <Radio key={i} value={s.value}>
+                    {s.name}
+                  </Radio>
+                ))}
+              </Stack>
+            </RadioGroup>
 
-          <Box p={3}>
-            <Flex columnGap=".4rem" alignItems={"center"}>
-              <FaBoxes size={18} />
-              <CText size={3} title="Examples" />
-            </Flex>
+            <CreditsCheckerComponent
+              onClick={generateImage}
+              onClickText="Generate Image"
+              hasCredits={hasCredits}
+            />
+          </FormControl>
 
+          <FormControl>
+            <FormLabel>Examples</FormLabel>
             {tags.map((h, i) => (
               <Tag
-                size="md"
                 my={2}
-                mx={2}
+                mr={2}
                 cursor="pointer"
                 onClick={() => setInput(h)}
                 key={i}
@@ -92,28 +116,35 @@ export default function ImageGenerationForm({
                 {h}
               </Tag>
             ))}
-          </Box>
-          <Flex alignItems={"center"} justifyContent={"space-evenly"}>
-            <CreditsCheckerComponent
-              onClick={() => generateImage()}
-              onClickText={`Generate Image`}
-              hasCredits={hasCredits}
-            />
-            <Button ml={2} onClick={disconnect}>{`Disconnect Wallet`}</Button>
-          </Flex>
-
-        </FormControl>
+          </FormControl>
+        </Flex>
       </CCard>
 
-      <CCard type={"s"} props={{ pos: "relative", bg: 'white' }}>
+      <CCard
+        type={"s"}
+        props={{
+          pos: "relative",
+          borderRadius: "lg",
+          className: "glass_effect",
+          bg: "gray.50",
+          backgroundSize: "cover",
+          border: "2px",
+          borderColor: "white",
+          boxShadow: "sm",
+          minH: { base: "50vh" },
+          display: "flex",
+          p: 4,
+          justifyContent: "center",
+        }}
+      >
         <CCard
           type="d"
           props={{
+            left: 0,
+            top: 0,
             px: 2,
             py: 1,
             pos: "absolute",
-            borderBottomRadius: "none",
-            borderRightRadius: "none"
           }}
         >
           <CText size={3} title="Image Output" />
@@ -133,7 +164,7 @@ export default function ImageGenerationForm({
         {status === "fetched" && (
           <Image
             borderRadius={"lg"}
-            width="100%"
+            maxW="512px"
             objectFit={"contain"}
             src={imgSrc}
           />
@@ -151,7 +182,3 @@ const tags = [
   "Andriod",
   "AI",
 ];
-
-
-
-

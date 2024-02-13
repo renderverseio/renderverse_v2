@@ -7,16 +7,16 @@ export const useImageGenerator = ({ address }) => {
   const [input, setInput] = useState("")
   const [imgSrc, setImgSrc] = useState("")
   const [status, setStatus] = useState(TStatus.idle)
-  const [style, setStyle] = useState("")
+  const [model, setModel] = useState("")
 
   async function generateImage() {
     try {
       setImgSrc("");
       setStatus(TStatus.fetching)
-      const response = await spacesRequests.generateImage({ address, input, style })
-      console.log(response)
+      const response = await spacesRequests.generateImage({ address, input, model })
       const data = response.data
-      setImgSrc(data.url);
+      console.log(data.img)
+      setImgSrc(`data:image/png;base64,` + data.img.image);
       setStatus(TStatus.fetched)
     } catch (error) {
       console.log(error)
@@ -25,6 +25,6 @@ export const useImageGenerator = ({ address }) => {
   }
 
   return {
-    input, setInput, imgSrc, generateImage, status, setStyle, style
+    input, setInput, imgSrc, generateImage, status, model, setModel
   }
 }

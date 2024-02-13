@@ -7,7 +7,16 @@ import { Box, Divider, } from "@chakra-ui/react";
 
 export default function DescriptionBox({ title, desc }) {
   return (
-    <CCard type="s" props={{ bg: 'white' }}>
+    <CCard type="s" props={{
+      borderRadius: "lg",
+      p: 4,
+      className: "glass_effect",
+      bg: "gray.50",
+      backgroundSize: "cover",
+      border: "2px",
+      borderColor: 'white',
+      boxShadow: "sm"
+    }}>
       <Box rowGap={".2rem"} display={"grid"} p={4} py={6}>
         <CHeading data-testid="title" title={title} size={2} />
         <Divider my={2} />

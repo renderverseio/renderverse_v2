@@ -1,48 +1,36 @@
-import { Box } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useWalletStore } from "./useWalletStore";
 
 export default function useUNISatWallet() {
+  const { setWallet } = useWalletStore((state) => state);
 
-  const [account, setAccount] = useState({
-    address: "",
-    balance: {
-      confirmed: 0,
-      unconfirmed: 0,
-      total: 0
+  async function connectWallet() {
+    try {
+      let address = await window.unisat.requestAccounts();
+      address = address[0];
+      let balance = await window.unisat.getBalance();
+      const isConnected = true;
+      setWallet({ address, balance, isConnected });
+    } catch (error) {
+      console.log(error);
     }
-  })
+  }
 
   async function sendBitcoin(address) {
     try {
       let txid = await window.unisat.sendBitcoin(address, 1);
-      console.log(txid)
+      console.log(txid);
     } catch (e) {
       console.log(e);
     }
   }
 
-  async function connectUNISatWallet() {
-    try {
-      if (typeof window.unisat !== 'undefined') {
-        console.log('UniSat Wallet is installed!');
-        const address = await unisat.requestAccounts()
-        let bal = await window.unisat.getBalance();
-        setAccount({
-          address: address,
-          balance: bal
-        })
-      }
-    } catch (e) {
-      console.log(e)
-    }
+  async function disconnect() {
+    window.location.reload();
   }
-
 
   return {
-    connectUNISatWallet,
+    connectWallet,
+    disconnect,
     sendBitcoin,
-    account
-  }
-
-
+  };
 }
