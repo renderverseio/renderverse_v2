@@ -1,5 +1,5 @@
 import Tilt from "react-parallax-tilt";
-import Snap from "@/assets/home_image.png";
+import Snap from "@/assets/home/home_image.png";
 
 import { Box, Flex, Grid, Image } from "@chakra-ui/react";
 
@@ -8,21 +8,14 @@ import MainSubtitles from "@/components/home/MainSubtitles/MainSubtitles";
 
 export default function MainSection() {
   return (
-    <Grid pt={16} alignItems={"center"}>
-      <Box>
-        <MainTitle />
-        <Flex
-          flexDir={{ base: "column", md: "row" }}
-          justifyContent={"space-between"}
-        >
-          <MainSubtitles />
-          <Box maxW={{ base: "100%", md: "50%", lg: "60%" }}>
-            <Tilt>
-              <Image src={Snap} alt="snappify" />
-            </Tilt>
-          </Box>
-        </Flex>
-      </Box>
+    <Grid rowGap={"4rem"} py={12} alignItems={"center"}>
+      <MainTitle />
+      <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }}>
+        <MainSubtitles />
+        <Tilt>
+          <Image src={Snap} alt="snappify" />
+        </Tilt>
+      </Grid>
     </Grid>
   );
 }

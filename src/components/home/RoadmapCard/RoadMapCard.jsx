@@ -2,12 +2,11 @@ import CHeading from "@/components/typography/CHeading/CHeading";
 import CText from "@/components/typography/CText/CText";
 import { gradientBgs2 } from "@/data/home/homeData";
 import { Box, Divider, Flex, Image, Text } from "@chakra-ui/react";
-import Mission from "@/assets/roadmap.jpeg";
 import { motion } from "framer-motion";
 
-import CheckMark from "@/assets/checkmark.png";
-import InProgress from "@/assets/loading.png";
-import Target from "@/assets/target.png";
+import CheckMark from "@/assets/roadmap/checkmark.png";
+import InProgress from "@/assets/roadmap/loading.png";
+import Target from "@/assets/roadmap/target.png";
 
 export default function RoadmapCard(props) {
   return (
@@ -43,16 +42,20 @@ export default function RoadmapCard(props) {
             visible: {
               scale: 1,
             },
-            hidden: { scale: 0.9 },
+            hidden: { scale: 0.5 },
           }}
         >
-          <Flex justifyContent={"center"} p={4} borderRadius="lg">
+          <Flex
+            alignItems={"center"}
+            h="100%"
+            justifyContent={"center"}
+            borderRadius="lg"
+          >
             <Image
               borderRadius={"lg"}
               objectFit={"contain"}
               objectPosition="center"
-              maxW={"330px"}
-              src={Mission}
+              src={props.img}
             />
           </Flex>
         </motion.div>

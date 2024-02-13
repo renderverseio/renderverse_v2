@@ -30,7 +30,7 @@ export const homeTheme = {
     color: "gray.900",
     fontSize: {
       base: "4xl",
-      lg: "5xl",
+      lg: "3.5rem",
     },
   },
   c2Heading: {

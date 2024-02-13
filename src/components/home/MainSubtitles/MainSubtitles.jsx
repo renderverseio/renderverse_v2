@@ -25,7 +25,17 @@ export default function MainSubtitles() {
               display: "inline-block",
               fontWeight: "bold",
             }}
-            title={`New `}
+            title={`New`}
+          />
+          <CText
+            size={2}
+            cprops={{
+              color: "green.600",
+              display: "inline-block",
+              fontWeight: "bold",
+              mx: 2,
+            }}
+            title={`-`}
           />
           <CText
             size={2}
@@ -33,15 +43,12 @@ export default function MainSubtitles() {
               display: "inline-block",
               fontWeight: "bold",
             }}
-            title={` - AI Art Generator`}
+            title={`AI Art Generator`}
           />
         </Box>
       </Flex>
 
-      <Flex
-        alignItems={"center"}
-        minH={{ base: "100px", md: "120px", lg: "140px", xl: "164px" }}
-      >
+      <Flex minH={{ base: "100px", md: "120px", lg: "140px", xl: "164px" }}>
         <Box
           fontFamily={"Inter"}
           fontSize={{ base: "xl", md: "2xl", lg: "4xl" }}
@@ -86,10 +93,16 @@ export default function MainSubtitles() {
             size={1}
             title={`Get Started`}
           />
+
+          <CText
+            cprops={{ color: "white", display: "inline-block", mx: 1 }}
+            size={1}
+            title={`-`}
+          />
           <CText
             cprops={{ color: "white", display: "inline-block" }}
             size={1}
-            title={`\u0000 - It's Free`}
+            title={`It's Free`}
           />
         </Box>
       </Flex>

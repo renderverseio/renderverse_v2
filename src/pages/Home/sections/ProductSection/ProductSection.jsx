@@ -7,7 +7,7 @@ import CHeading from "@/components/typography/CHeading/CHeading";
 
 export default function ProductsSection() {
   return (
-    <Box py={24}>
+    <Box py={32}>
       <Flex py={6} justifyContent="center">
         <CHeading title={`Products`} size={1} />
       </Flex>

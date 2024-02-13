@@ -1,4 +1,4 @@
-import Logo from "@/assets/logo.png";
+import Logo from "@/assets/logos/logo.png";
 import CCard from "@/components/custom/CCard/CCard";
 import CText from "@/components/typography/CText/CText";
 

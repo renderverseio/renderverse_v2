@@ -1,4 +1,4 @@
-import { Box, Flex, Grid } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 
 import { roadMapData } from "@/data/home/homeData";
 
@@ -20,9 +20,10 @@ export default function RoadmapSection() {
             alignLeft={i % 2 === 0}
             phase={d.phase}
             title={d.title}
+            img={d.img}
           />
           <Box display={{ base: "none", lg: "block" }}>
-            {i !== 4 ? <SvgLine alignLeft={i % 2 === 0} /> : null}
+            {i !== 3 ? <SvgLine alignLeft={i % 2 === 0} /> : null}
           </Box>
         </Flex>
       ))}

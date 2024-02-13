@@ -1,4 +1,4 @@
-import Logo from "@/assets/logo.png";
+import Logo from "@/assets/logos/logo.png";
 
 import { Box, Flex, Heading, Image } from "@chakra-ui/react";
 

@@ -3,9 +3,15 @@ import GPT from '@/assets/products/gpt.jpg'
 import AI_TRADING_BOT from '@/assets/products/aitrading.jpg'
 import API from '@/assets/products/apis.jpg'
 
+import Q1 from '@/assets/roadmap/q1.png'
+import Q2 from '@/assets/roadmap/q2.png'
+import Q3 from '@/assets/roadmap/q3.png'
+import Q4 from '@/assets/roadmap/q4.png'
+
 export const roadMapData = [
   {
     title: "AI Development",
+    img: Q1,
     phase: [
       {
         phase: "Q3-Q4",
@@ -26,6 +32,7 @@ export const roadMapData = [
   },
   {
     title: "$RAI token",
+    img: Q2,
     phase: [
       {
         phase: "Q3-Q4",
@@ -45,27 +52,8 @@ export const roadMapData = [
     ],
   },
   {
-    title: "Renderverse AI Ecosystem",
-    phase: [
-      {
-        phase: "Q3-Q4",
-        year: "2023",
-        milestones: [
-          "Developer Onboarding",
-          "Partnerships",
-          "Use case Expansion",
-          "Developer Portal & API docs launch",
-          "Community engagement & Feedback",
-          "Governance and Voting rights",
-          "L1 Blockchain Development for AI Models",
-          "Renderverse AI Explorer",
-        ],
-        isCompleted: [true, true, true, false, false, false, false],
-      },
-    ],
-  },
-  {
     title: "Ui/UX",
+    img: Q3,
     phase: [
       {
         phase: "Q3-Q4",
@@ -86,6 +74,7 @@ export const roadMapData = [
   },
   {
     title: "Marketing and Expansion",
+    img: Q4,
     phase: [
       {
         phase: "Q3-Q4",
@@ -247,11 +236,9 @@ export const gradientBgs = [
 
 
 export const gradientBgs2 = [
-  `linear-gradient(to top, #0ba360 0%, #3cba92 100%);`,
-  `linear-gradient(135deg, #667eea 0%, #764ba2 100%);`,
+  `linear-gradient(to right, #446a46, #5a8d5a, #71b26e, #8bd882, #a6ff96);`,
+  `linear-gradient(to right, #95bdff, #68ceff, #20deff, #00edfe, #1ff8e5);`,
   `linear-gradient(to right, #6a11cb 0%, #2575fc 100%);`,
   `linear-gradient(to right, #f83600 0%, #f9d423 100%);`,
   `linear-gradient(to top, #ff0844 0%, #ffb199 100%);`,
-
-
 ]
