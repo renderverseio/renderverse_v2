@@ -10,17 +10,14 @@ import {
   Drawer,
   DrawerBody,
   DrawerContent,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   Flex,
   Grid,
   Icon,
   Image,
+  Link,
   useDisclosure,
-  Button,
-  DrawerCloseButton,
-  MenuIcon,
 } from "@chakra-ui/react";
 
 import WalletMenuDropDown from "@/components/dropdowns/WalletMenuDropDown/WalletMenuDropDown";
@@ -78,9 +75,9 @@ function DesktopSideBar() {
       borderTop="none"
       borderBottom={"none"}
       borderColor="white"
-      // bg="gray.50"
+      bg="gray.50"
       // bgImg={`linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);`}
-      bgImg={`linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);`}
+      // bgImg={`linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);`}
     >
       <Flex
         columnGap={".5rem"}
@@ -112,11 +109,24 @@ function DesktopSideBar() {
               type="d"
             >
               <Icon h={6} w={6} as={d.icon}></Icon>
-              <CText
-                size={1}
-                cprops={{ fontWeight: "bold", fontSize: { base: "sm" } }}
-                title={d.title}
-              />
+              {dAppHeaders.length - 1 === i ? (
+                <Link
+                  href={`https://whitepaper.renderverse.io`}
+                  target={"_blank"}
+                >
+                  <CText
+                    size={1}
+                    cprops={{ fontWeight: "bold", fontSize: { base: "sm" } }}
+                    title={d.title}
+                  />
+                </Link>
+              ) : (
+                <CText
+                  size={1}
+                  cprops={{ fontWeight: "bold", fontSize: { base: "sm" } }}
+                  title={d.title}
+                />
+              )}
             </CCard>
           </Box>
         ))}

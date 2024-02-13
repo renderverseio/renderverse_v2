@@ -2,17 +2,15 @@ export const footerData = [
   {
     title: "Product",
     options: [
-      "Pricing",
-      "Editor",
-      "Templates",
-      "Features",
-      "Embedding",
-      "Resources",
+      "AI Art Generator",
+      "AI Trading Bot",
+      "GPT Plugins and Extensions",
+      "Inference APIs",
     ],
   },
   {
     title: "Documentation",
-    options: ["Tutorials", "Blog", "User Stories", "Changelog", "Integrations"],
+    options: ["White Paper", "Tutorials", "Changelog", "Integrations"],
   },
   {
     title: "VS Code Extension",

@@ -85,21 +85,25 @@ export const desktopMenuItems = [
         icon: "",
         title: "Twitter",
         subText: "Follow us on twitter to learn more",
+        link: "https://twitter.com/teamrenderverse"
       },
       {
         icon: "",
         title: "Telegram",
         subText: "Join our telegram for latest updates",
+        link: "https://t.me/renderversechat"
       },
       {
         icon: "",
         title: "Discord",
         subText: "Join our Discord channel for exciting prizes",
+        link: "https://renderverse.io/"
       },
       {
         icon: "",
         title: "Email",
         subText: "Feel free to write us if you have more queries",
+        link: "mailto:chakri@renderverse.io"
       },
     ],
   },

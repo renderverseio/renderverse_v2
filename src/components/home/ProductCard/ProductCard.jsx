@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { gradientBgs } from "@/data/home/homeData";
 
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Link, Text } from "@chakra-ui/react";
 import CHeading from "@/components/typography/CHeading/CHeading";
 import CText from "@/components/typography/CText/CText";
 
@@ -105,9 +105,14 @@ export default function ProductCard({
         <CHeading size={2} title={title} />
         <CText size={2} title={note1} />
         <CText size={2} title={note2} />
-        <Text fontWeight={"bold"} textDecor={"underline"}>
-          Learn more →
-        </Text>
+        <Link
+          href="https://whitepaper.renderverse.io/welcome/abstract"
+          target={"_blank"}
+        >
+          <Text fontWeight={"bold"} textDecor={"underline"}>
+            Learn more →
+          </Text>
+        </Link>
       </Flex>
 
       {!alignLeft && (

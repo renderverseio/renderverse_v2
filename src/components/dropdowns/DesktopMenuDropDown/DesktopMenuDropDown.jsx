@@ -10,6 +10,8 @@ import {
   Icon,
 } from "@chakra-ui/react";
 
+import { Link as HLink } from "@chakra-ui/react";
+
 export default function DesktopMenuDropDown({ menu, options }) {
   return (
     <Popover trigger="hover" boxShadow={"none"} outline="none" border="none">
@@ -22,7 +24,6 @@ export default function DesktopMenuDropDown({ menu, options }) {
           outline="none"
           w="550px"
           border="none"
-
           _focus={{
             outline: "none",
             border: "none",
@@ -54,17 +55,24 @@ export default function DesktopMenuDropDown({ menu, options }) {
                   key={i}
                   cursor="pointer"
                 >
-                  <Flex
-                    alignItems={"center"}
-                    justifyContent="space-between"
-                    columnGap={"1rem"}
+                  <HLink
+                    href={option.link}
+                    target={"_blank"}
+                    textDecoration={"none"}
+                    textDecorationLine="none"
                   >
-                    <Icon></Icon>
-                    <Box>
-                      <Text fontWeight={"bold"}>{option.title}</Text>
-                      <Text fontSize={"sm"}>{option.subText}</Text>
-                    </Box>
-                  </Flex>
+                    <Flex
+                      alignItems={"center"}
+                      justifyContent="space-between"
+                      columnGap={"1rem"}
+                    >
+                      <Icon></Icon>
+                      <Box>
+                        <Text fontWeight={"bold"}>{option.title}</Text>
+                        <Text fontSize={"sm"}>{option.subText}</Text>
+                      </Box>
+                    </Flex>
+                  </HLink>
                 </Box>
               ))}
             </Grid>

@@ -95,12 +95,6 @@ export default function ImageGenerationForm({
                 ))}
               </Stack>
             </RadioGroup>
-
-            <CreditsCheckerComponent
-              onClick={generateImage}
-              onClickText="Generate Image"
-              hasCredits={hasCredits}
-            />
           </FormControl>
 
           <FormControl>
@@ -119,6 +113,14 @@ export default function ImageGenerationForm({
           </FormControl>
         </Flex>
       </CCard>
+
+      <Flex justifyContent={"center"}>
+        <CreditsCheckerComponent
+          onClick={generateImage}
+          onClickText="Generate Image"
+          hasCredits={hasCredits}
+        />
+      </Flex>
 
       <CCard
         type={"s"}

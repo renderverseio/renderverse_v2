@@ -11,11 +11,12 @@ export default function CreditsCheckerComponent({
         {hasCredits ? (
           <Box
             className="btn btn-2"
-            p={3}
+            p={5}
             fontWeight="bold"
             color="white"
             borderRadius="lg"
             boxShadow={"lg"}
+            fontSize="xl"
             onClick={onClick}
           >
             {onClickText}

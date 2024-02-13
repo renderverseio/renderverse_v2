@@ -89,7 +89,7 @@ export default function Footer() {
                 key={i}
               >
                 <CHeading
-                  size={2}
+                  size={3}
                   title={d.title}
                   cprops={{
                     my: 2,
@@ -115,24 +115,28 @@ export default function Footer() {
           </Flex>
         </Flex>
         <Flex px={8} pb={8} columnGap="1rem" justifyContent={"flex-end"}>
-          <Box
-            fontWeight={"bold"}
-            p={3}
-            borderRadius="lg"
-            className="btn btn-1"
-            boxShadow={"lg"}
-          >
-            Join Our Discord
-          </Box>
-          <Box
-            fontWeight={"bold"}
-            p={3}
-            borderRadius="lg"
-            className="btn btn-2"
-            boxShadow={"lg"}
-          >
-            Join Our Telegram
-          </Box>
+          <Link href="https://twitter.com/teamrenderverse" target={"_blank"}>
+            <Box
+              fontWeight={"bold"}
+              p={3}
+              borderRadius="lg"
+              className="btn btn-1"
+              boxShadow={"lg"}
+            >
+              Join Our Twitter
+            </Box>
+          </Link>
+          <Link href="https://t.me/renderversechat" target={"_blank"}>
+            <Box
+              fontWeight={"bold"}
+              p={3}
+              borderRadius="lg"
+              className="btn btn-2"
+              boxShadow={"lg"}
+            >
+              Join Our Telegram
+            </Box>
+          </Link>
         </Flex>
       </Box>
     </Box>

@@ -92,12 +92,6 @@ function RoadmapMileStone({ phase, title, i }) {
     >
       <Box borderRadius="lg" bgImg={gradientBgs2[i]}>
         <Flex w="100%" rowGap={"1rem"} p={6} flexDir={"column"}>
-          <CHeading
-            cprops={{ color: "white", fontWeight: "bold" }}
-            size={2}
-            title={title}
-          />
-          <Divider />
           {phase[0].milestones.map((p, i) => (
             <motion.div
               initial="hidden"

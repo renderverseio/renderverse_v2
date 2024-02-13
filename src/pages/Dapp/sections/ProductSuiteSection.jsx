@@ -1,78 +1,85 @@
-
 import CText from "@/components/typography/CText/CText";
 import CCard from "@/components/custom/CCard/CCard";
 import CHeading from "@/components/typography/CHeading/CHeading";
 
-import { Box, Button, Flex, Grid, } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid } from "@chakra-ui/react";
 import { gradientBgs } from "@/data/home/homeData";
 import { useNavigate } from "react-router";
 import { StakingImages } from "@/data/dapp/dappData";
 
 export default function ProductSuiteSection() {
+  const navigate = useNavigate();
 
-  const navigate = useNavigate()
-
-  return <Box>
-    <Flex rowGap={"2rem"} p={8} flexDir={"column"}>
-      <CHeading size={1} title={"Welcome to our bots"} />
-
-      <Grid rowGap={"2rem"} columnGap={"2rem"} templateColumns={{ base: "1fr", lg: "1fr 1fr 1fr" }}>
-        {data.map((c, i) =>
-          <CCard
-            key={i}
-            props={{
-              borderRadius: "lg",
-              p: 4,
-              className: "glass_effect",
-              bg: "gray.50",
-              backgroundImage: StakingImages[i],
-              backgroundSize: "cover",
-              border: "2px",
-              borderColor: 'white',
-              boxShadow: "sm"
-            }}>
-
-            <CText cprops={{ color: "gray.800" }} size={1} title={c.title} />
-            <Grid mt={6} rowGap={"1rem"}>
-              <CText
-                cprops={{
-                  bg: 'rgba(0,0,0,.5)',
-                  p: 4, borderRadius: 'lg',
-                  className: "glass_effect",
-                  bg: "gray.50",
-                  border: "2px",
-                  borderColor: 'white',
-                  boxShadow: "sm"
-                }} size={3} title={c.desc} />
-            </Grid>
-            <Button onClick={() => navigate(c.link)} mt={6}>{c.btnText}</Button>
-
-          </CCard>)}
-      </Grid>
-
-    </Flex>
-  </Box>
+  return (
+    <Box>
+      <Flex rowGap={"2rem"} p={8} flexDir={"column"}>
+        <CHeading size={1} title={"Welcome to our bots"} />
+        <Grid
+          rowGap={"2rem"}
+          columnGap={"2rem"}
+          templateColumns={{ base: "1fr", lg: "1fr 1fr 1fr" }}
+          minH="40rem"
+        >
+          {data.map((c, i) => (
+            <CCard
+              key={i}
+              props={{
+                minH: "100%",
+                borderRadius: "lg",
+                p: 4,
+                className: "glass_effect",
+                bg: "gray.50",
+                backgroundImage: StakingImages[i],
+                backgroundSize: "cover",
+                display: "flex",
+                flexDir: "column",
+                justifyContent: "space-between",
+                border: "2px",
+                borderColor: "white",
+                boxShadow: "sm",
+              }}
+            >
+              <Grid mt={2} rowGap={"1rem"}>
+                <CText
+                  cprops={{ color: "gray.800" }}
+                  size={1}
+                  title={c.title}
+                />
+                <CText
+                  cprops={{ fontWeight: "bold" }}
+                  size={3}
+                  title={c.desc}
+                />
+              </Grid>
+              <Button onClick={() => navigate(c.link)} mt={6}>
+                {c.btnText}
+              </Button>
+            </CCard>
+          ))}
+        </Grid>
+      </Flex>
+    </Box>
+  );
 }
-
 
 const data = [
   {
     bg: gradientBgs[0],
-    title: "Image Generation Algoritham",
-    desc: 'These apps find applications in artistic endeavors, content creation, and design, offering a user-friendly interface for individuals to effortlessly produce a wide range of AI-generated images tailored to their preferences.',
+    title: "AI Art Generator",
+    desc: "Dive into the realm of artistic exploration with our advanced AI Art Generator. We've created a unique platform that allows you to unleash your creativity. We also enable users to easily mint and inscribe your unique creations as BRC-721 tokens instantly on the Bitcoin blockchain.",
     btnText: "Try Now",
-    link: "/dapp/image-generation"
+    link: "/dapp/image-generation",
   },
   {
     bg: gradientBgs[1],
-    title: "ETH Sharing",
-    desc: "Gain a competitive edge in trading with AigentXT, offering AI - powered real - time blockchain data analysis and smart contract security insights for informed investment decisions.",
+    title: "AI Trading Bot",
+    desc: "Seize trading opportunities like never before with our AI Trading Bot. We provide AI-driven insights and trends acorss all the coins in top exchanges. Use our intuitive telegram bot to seamlessly trade and maximise profits.",
+    btnText: "Get Plan",
+  },
+  {
+    bg: gradientBgs[1],
+    title: "GPT extensions and plugins",
+    desc: "Discover our suite of extensions and plugins designed to unlock the full potential of GPT in your endeavors. We provide tools tailored specifically for web3 users to harness the power of GPT technology on the BRC20 ecosystem.",
     btnText: "Coming Soon",
   },
-  {
-    bg: gradientBgs[1],
-    title: "AI Care Agent",
-    desc: 'Unlock the power of digital support managers and scalable client service with 24 / 7 instant high - quality relevant responses in 100 + languages.',
-    btnText: "Get Plan",
-  }
-]
+];

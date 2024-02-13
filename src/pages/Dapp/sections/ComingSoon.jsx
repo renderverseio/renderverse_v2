@@ -18,7 +18,7 @@ export default function ComingSoon() {
         />
         <CText
           cprops={{ textAlign: "center" }}
-          title={`We are small and growing consulting from with big ideas.`}
+          title={`We are small and growing continuously with big ideas.`}
           size={2}
         />
       </Flex>

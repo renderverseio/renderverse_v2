@@ -60,13 +60,13 @@ export default function MainSubtitles() {
               options={{
                 wrapperClassName: "gradient_text",
                 strings: [
-                  "Developers to create stunning AI projects",
+                  "Developers to create advanced AI projects",
                   "Artists to desing stunning AI images",
-                  "Traders to execute stunning AI trades",
+                  "Traders to execute profitable AI trades",
                 ],
                 autoStart: true,
-                deleteSpeed: 0.1,
-                delay: 25,
+                deleteSpeed: 2,
+                delay: 35,
                 loop: true,
               }}
             />
