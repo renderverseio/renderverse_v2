@@ -11,7 +11,7 @@ export default function MainTitle() {
       size={1}
       title={
         <>
-          {`$RDAI is the first AI ORDINAL on `}
+          {`$RDAI is the First AI ORDINAL on `}
           <span className="gradient_text">BRC-20 Network</span>{" "}
         </>
       } />
