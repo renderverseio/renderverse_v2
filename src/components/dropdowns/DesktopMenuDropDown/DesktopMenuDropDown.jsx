@@ -57,7 +57,6 @@ export default function DesktopMenuDropDown({ menu, options }) {
                 >
                   <HLink
                     href={option.link}
-                    target={"_blank"}
                     textDecoration={"none"}
                     textDecorationLine="none"
                   >

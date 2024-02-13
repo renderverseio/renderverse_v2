@@ -18,6 +18,19 @@ export default function RoadmapCard(props) {
       flexDir={{ base: "column", md: "row" }}
     >
       <Box my={6} w="100%" display={{ base: "block", lg: "none" }}>
+        <Flex
+          alignItems={"center"}
+          h="100%"
+          justifyContent={"center"}
+          borderRadius="lg"
+        >
+          <Image
+            borderRadius={"lg"}
+            objectFit={"contain"}
+            objectPosition="center"
+            src={props.img}
+          />
+        </Flex>
         <RoadmapMileStone {...props} />
       </Box>
 

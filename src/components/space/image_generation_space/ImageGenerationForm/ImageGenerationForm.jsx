@@ -11,8 +11,9 @@ import {
   RadioGroup,
   Stack,
   FormLabel,
+  Button,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 
 import { FaBoxes } from "react-icons/fa";
 import { Audio } from "react-loader-spinner";
@@ -20,6 +21,8 @@ import { Audio } from "react-loader-spinner";
 import CCard from "@/components/custom/CCard/CCard";
 import CText from "@/components/typography/CText/CText";
 import CreditsCheckerComponent from "@/components/spaces/CreditsCheckerComponent/CreditsCheckerComponent";
+import axios from "axios";
+import { blobToBase64 } from "@/utils/blobTobase64";
 
 export default function ImageGenerationForm({
   input,
@@ -34,13 +37,28 @@ export default function ImageGenerationForm({
   const models = [
     {
       name: "Realism",
-      value: "absolute-reality-v1-8-1",
+      value: "photorealism",
     },
     {
       name: "Art",
-      value: "dream-shaper-v8",
+      value: "art",
+    },
+    {
+      name: "Anime",
+      value: "anime",
     },
   ];
+
+  async function refetch() {
+    const img = await axios.get(imgSrc, { responseType: "blob" });
+    const data = img.data;
+    blobToBase64(data).then((b) => {
+      setBlob(b);
+    });
+  }
+
+  const [blob, setBlob] = useState(null);
+
   return (
     <Grid
       rowGap={"1rem"}
@@ -86,7 +104,12 @@ export default function ImageGenerationForm({
         <Flex>
           <FormControl>
             <FormLabel>Style</FormLabel>
-            <RadioGroup my={2} onChange={setModel} value={model}>
+            <RadioGroup
+              defaultValue={model}
+              my={2}
+              onChange={setModel}
+              value={model}
+            >
               <Stack direction="row">
                 {models.map((s, i) => (
                   <Radio key={i} value={s.value}>
@@ -114,9 +137,17 @@ export default function ImageGenerationForm({
         </Flex>
       </CCard>
 
-      <Flex justifyContent={"center"}>
+      <Flex
+        flexDir={"column"}
+        rowGap="1rem"
+        justifyContent="center"
+        alignItems={"center"}
+      >
         <CreditsCheckerComponent
-          onClick={generateImage}
+          onClick={() => {
+            setBlob(null);
+            generateImage();
+          }}
           onClickText="Generate Image"
           hasCredits={hasCredits}
         />
@@ -161,6 +192,13 @@ export default function ImageGenerationForm({
         >
           {status === "fetching" && <Audio />}
           {status === "idle" && <Text>Search!</Text>}
+
+          {status === "fetched" && imgSrc && !blob && (
+            <Grid>
+              <Text>Image Generated</Text>
+              <Button onClick={refetch}>Show Image</Button>
+            </Grid>
+          )}
         </Flex>
 
         {status === "fetched" && (
@@ -168,7 +206,7 @@ export default function ImageGenerationForm({
             borderRadius={"lg"}
             maxW="512px"
             objectFit={"contain"}
-            src={imgSrc}
+            src={blob}
           />
         )}
       </CCard>

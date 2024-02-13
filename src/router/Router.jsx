@@ -10,10 +10,20 @@ import ImageGenerationSpace from "@/pages/Space/ImageGenerationSpace/ImageGenera
 import ApiSection from "@/pages/Dapp/sections/ApiSection";
 import AffiliateProgramSection from "@/pages/Dapp/sections/AffiliateProgramSection";
 
+import KtGrid from "@/pages/KT/KtGrid";
+import KtFlex from "@/pages/KT/KtFlex";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/grid",
+    element: <Home />,
+  },
+  {
+    path: "/flex",
     element: <Home />,
   },
   {
@@ -22,37 +32,41 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        path: 'dashboard',
+        path: "dashboard",
         element: <DashboardSection />,
       },
       {
-        path: 'api',
+        path: "api",
         element: <ApiSection />,
       },
       {
-        path: 'products',
+        path: "products",
         element: <ProductSuiteSection />,
       },
       {
-        path: 'affiliate',
+        path: "affiliate",
         element: <AffiliateProgramSection />,
       },
       {
-        path: 'staking',
+        path: "staking",
         element: <StakingSection />,
       },
       {
-        path: 'docs',
+        path: "docs",
         element: <DocsSection />,
       },
       {
         path: "image-generation",
-        element: <ImageGenerationSpace />
-      }
-    ]
-  }
+        element: <ImageGenerationSpace />,
+      },
+    ],
+  },
 ]);
 
 export default function Router() {
-  return <RouterProvider router={router} />
+  return <RouterProvider router={router} />;
 }
+
+// image gen ai url
+// logo
+// links

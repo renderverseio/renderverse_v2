@@ -21,6 +21,7 @@ import {
 } from "@chakra-ui/react";
 
 import WalletMenuDropDown from "@/components/dropdowns/WalletMenuDropDown/WalletMenuDropDown";
+
 import { dAppHeaders } from "@/data/dapp/dappData";
 import { useRef } from "react";
 

@@ -2,18 +2,19 @@ import L1 from "@/assets/partner_logos/polygon.png";
 import L2 from "@/assets/partner_logos/near.png";
 import L3 from "@/assets/partner_logos/google.png";
 
-import { Box, Flex, Image } from "@chakra-ui/react";
 import CHeading from "@/components/typography/CHeading/CHeading";
 
-const logos = [L1, L2, L3];
+import { Box, Flex, Image } from "@chakra-ui/react";
+
+const logos = [L1, L3, L2];
 
 export default function PartnersSection() {
   return (
     <Box py={0} justifyContent={"center"} display={"grid"} rowGap="2rem">
-      <Box display={"flex"} justifyContent={{ md: "center" }}>
+      <Box display={"flex"} justifyContent={"center"}>
         <CHeading
           size={3}
-          cprops={{ fontWeight: "bold" }}
+          cprops={{ fontWeight: "bold", textAlign: "center" }}
           title={`Supported by leaders around the globe`}
         />
       </Box>
