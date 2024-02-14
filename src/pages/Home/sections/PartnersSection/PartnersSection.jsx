@@ -10,7 +10,7 @@ const logos = [L1, L3, L2];
 
 export default function PartnersSection() {
   return (
-    <Box py={0} justifyContent={"center"} display={"grid"} rowGap="2rem">
+    <Box justifyContent={"center"} display={"grid"} rowGap="2rem">
       <Box display={"flex"} justifyContent={"center"}>
         <CHeading
           size={3}

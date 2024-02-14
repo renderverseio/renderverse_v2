@@ -1,8 +1,6 @@
-
 import Router from "./router/Router";
 import { theme } from "./config/theme";
 import { Box, ChakraProvider } from "@chakra-ui/react";
-
 
 function App() {
   return (

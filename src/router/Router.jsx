@@ -24,7 +24,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/flex",
-    element: <Home />,
+    element: <KtFlex />,
   },
   {
     path: "/dapp",

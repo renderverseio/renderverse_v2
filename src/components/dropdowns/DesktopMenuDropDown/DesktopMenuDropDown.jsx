@@ -8,6 +8,7 @@ import {
   Grid,
   Text,
   Icon,
+  Image,
 } from "@chakra-ui/react";
 
 import { Link as HLink } from "@chakra-ui/react";
@@ -65,7 +66,7 @@ export default function DesktopMenuDropDown({ menu, options }) {
                       justifyContent="space-between"
                       columnGap={"1rem"}
                     >
-                      <Icon></Icon>
+                      <Image maxW={"32px"} src={option.icon} />
                       <Box>
                         <Text fontWeight={"bold"}>{option.title}</Text>
                         <Text fontSize={"sm"}>{option.subText}</Text>

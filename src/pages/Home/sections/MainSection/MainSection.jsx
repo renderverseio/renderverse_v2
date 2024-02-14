@@ -10,7 +10,7 @@ export default function MainSection() {
   return (
     <Grid rowGap={"4rem"} py={12} alignItems={"center"}>
       <MainTitle />
-      <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }}>
+      <Grid templateColumns={{ lg: "1fr 1fr" }}>
         <MainSubtitles />
         <Tilt>
           <Image src={Snap} alt="snappify" />

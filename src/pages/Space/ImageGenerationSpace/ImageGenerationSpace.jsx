@@ -1,14 +1,12 @@
 import React from "react";
 
 import { useCredits } from "@/hooks/common/useCredits";
-import { useImageGenerator } from "@/hooks/space/ImageGeneration/useImageGenerator";
+import { useImageGenerator } from "@/hooks/ImageGeneration/useImageGenerator";
 
-import ImageGenerationForm from "@/components/space/image_generation_space/ImageGenerationForm/ImageGenerationForm";
-import GeneratedImageGrid from "@/components/space/image_generation_space/GeneratedImagesGrid/GeneratedImagesGrid";
+import ImageGenerationForm from "@/components/image_generation_space/ImageGenerationForm/ImageGenerationForm";
 
 import { Box, Container, Flex } from "@chakra-ui/react";
-import DescriptionBox from "@/components/spaces/DescriptionBox/DescriptionBox";
-import CreditsCheckerComponent from "@/components/spaces/CreditsCheckerComponent/CreditsCheckerComponent";
+
 import useUNISatWallet from "@/blockchain/useUNISatWallet";
 import { useWalletStore } from "@/blockchain/useWalletStore";
 

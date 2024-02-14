@@ -3,7 +3,6 @@ import CCard from "@/components/custom/CCard/CCard";
 import CHeading from "@/components/typography/CHeading/CHeading";
 
 import { Box, Button, Flex, Grid } from "@chakra-ui/react";
-import { gradientBgs } from "@/data/home/homeData";
 import { useNavigate } from "react-router";
 import { StakingImages } from "@/data/dapp/dappData";
 
@@ -30,7 +29,11 @@ export default function ProductSuiteSection() {
                 className: "glass_effect",
                 bg: "gray.50",
                 backgroundImage: StakingImages[i],
-                backgroundSize: "cover",
+                backgroundSize: "contain",
+                backgroundPosition: "bottom",
+                backgroundRepeat: "no-repeat",
+                h: "100%",
+                bg: c.bg,
                 display: "flex",
                 flexDir: "column",
                 justifyContent: "space-between",
@@ -45,11 +48,7 @@ export default function ProductSuiteSection() {
                   size={1}
                   title={c.title}
                 />
-                <CText
-                  cprops={{ fontWeight: "bold" }}
-                  size={3}
-                  title={c.desc}
-                />
+                <CText cprops={{}} size={3} title={c.desc} />
               </Grid>
               <Button onClick={() => navigate(c.link)} mt={6}>
                 {c.btnText}
@@ -64,20 +63,20 @@ export default function ProductSuiteSection() {
 
 const data = [
   {
-    bg: gradientBgs[0],
+    bg: "#FFECD9",
     title: "AI Art Generator",
     desc: "Dive into the realm of artistic exploration with our advanced AI Art Generator. We've created a unique platform that allows you to unleash your creativity. We also enable users to easily mint and inscribe your unique creations as BRC-721 tokens instantly on the Bitcoin blockchain.",
     btnText: "Try Now",
     link: "/dapp/image-generation",
   },
   {
-    bg: gradientBgs[1],
+    bg: "#DBFFD9",
     title: "AI Trading Bot",
     desc: "Seize trading opportunities like never before with our AI Trading Bot. We provide AI-driven insights and trends acorss all the coins in top exchanges. Use our intuitive telegram bot to seamlessly trade and maximise profits.",
     btnText: "Get Plan",
   },
   {
-    bg: gradientBgs[1],
+    bg: "#BCFDC3",
     title: "GPT extensions and plugins",
     desc: "Discover our suite of extensions and plugins designed to unlock the full potential of GPT in your endeavors. We provide tools tailored specifically for web3 users to harness the power of GPT technology on the BRC20 ecosystem.",
     btnText: "Coming Soon",

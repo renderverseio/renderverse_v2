@@ -20,7 +20,7 @@ import { Audio } from "react-loader-spinner";
 
 import CCard from "@/components/custom/CCard/CCard";
 import CText from "@/components/typography/CText/CText";
-import CreditsCheckerComponent from "@/components/spaces/CreditsCheckerComponent/CreditsCheckerComponent";
+import CreditsCheckerComponent from "@/components/image_generation_space/CreditsCheckerComponent/CreditsCheckerComponent";
 import axios from "axios";
 import { blobToBase64 } from "@/utils/blobTobase64";
 

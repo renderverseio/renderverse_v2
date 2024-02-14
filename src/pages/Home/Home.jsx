@@ -16,6 +16,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
+
       <HomeContainer
         children={
           <>
