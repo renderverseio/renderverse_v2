@@ -76,26 +76,8 @@ export default function MobileMenuDropDown() {
               w="100%"
               borderRadius={"lg"}
             >
-              <Box
-                onClick={() => navigate("/dapp")}
-                fontWeight={"bold"}
-                p={3}
-                borderRadius="lg"
-                className="btn btn-1"
-                boxShadow={"lg"}
-              >
-                Launch Dapp
-              </Box>
               {desktopMenuItems.map((d, i) => (
-                <Box
-                  onClick={() => {
-                    // navigate(d.menu);
-                    // onClose();
-                  }}
-                  key={i}
-                >
-                  {/* <Icon h={6} w={6} as={d.icon}></Icon> */}
-
+                <Box key={i}>
                   {i === 0 && (
                     <Link href="https://t.me/renderversechat" target={"_blank"}>
                       <Box
@@ -121,6 +103,7 @@ export default function MobileMenuDropDown() {
                           alignItems={"center"}
                           display={"flex"}
                           justifyContent="space-between"
+                          p={4}
                           borderTopRadius={"lg"}
                           border={"none"}
                           bg="gray.50"
@@ -142,7 +125,13 @@ export default function MobileMenuDropDown() {
                         </AccordionButton>
                         <AccordionPanel pb={4}>
                           {d.options.map((option, n) => (
-                            <Box mt={2} key={n}>
+                            <Box
+                              onClick={() => {
+                                onClose();
+                              }}
+                              mt={2}
+                              key={n}
+                            >
                               <Link
                                 href={option.link}
                                 textDecoration={"none"}
@@ -172,6 +161,17 @@ export default function MobileMenuDropDown() {
                   )}
                 </Box>
               ))}
+
+              <Box
+                onClick={() => navigate("/dapp")}
+                fontWeight={"bold"}
+                p={3}
+                borderRadius="lg"
+                className="btn btn-1"
+                boxShadow={"lg"}
+              >
+                Launch Dapp
+              </Box>
             </Flex>
           </DrawerBody>
         </DrawerContent>

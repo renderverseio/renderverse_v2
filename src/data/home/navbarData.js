@@ -30,25 +30,25 @@ export const desktopMenuItems = [
         icon: Mint,
         title: "Mint",
         subText: "Experience one-click minting on BRC-20",
-        link: "/dapp"
+        link: "/dapp/dashboard"
       },
       {
         icon: Trade,
         title: "Trade",
         subText: "Trade NFTs on the BRC-20 ecosystem",
-        link: "/dapp"
+        link: "/dapp/dashboard"
       },
       {
         icon: Develop,
         title: "Develop",
         subText: "Craft your own AI models using our APIs",
-        link: "/dapp"
+        link: "/dapp/dashboard"
       },
       {
         icon: Share,
         title: "Share",
         subText: "Deploy and share your models on our GPU Infra",
-        link: "/dapp"
+        link: "/dapp/dashboard"
       },
     ],
   },
