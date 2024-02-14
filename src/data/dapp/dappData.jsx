@@ -7,9 +7,9 @@ import {
   CiLink,
 } from "react-icons/ci";
 
-import AImage from "@/assets/stakin/1.jpeg";
-import BImage from "@/assets/stakin/2.jpeg";
-import CImage from "@/assets/stakin/3.jpeg";
+import AImage from "@/assets/stakin/1.png";
+import BImage from "@/assets/stakin/2.png";
+import CImage from "@/assets/stakin/3.png";
 
 export const dAppHeaders = [
   {

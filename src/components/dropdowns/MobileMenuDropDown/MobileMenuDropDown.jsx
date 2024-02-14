@@ -1,4 +1,3 @@
-import CCard from "@/components/custom/CCard/CCard";
 import CText from "@/components/typography/CText/CText";
 import { desktopMenuItems } from "@/data/home/navbarData";
 import {

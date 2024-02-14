@@ -33,7 +33,7 @@ export default function ProductSuiteSection() {
                 backgroundPosition: "bottom",
                 backgroundRepeat: "no-repeat",
                 h: "100%",
-                bg: c.bg,
+                bg: "black",
                 display: "flex",
                 flexDir: "column",
                 justifyContent: "space-between",
@@ -44,11 +44,11 @@ export default function ProductSuiteSection() {
             >
               <Grid mt={2} rowGap={"1rem"}>
                 <CText
-                  cprops={{ color: "gray.800" }}
+                  cprops={{ color: "gray.300" }}
                   size={1}
                   title={c.title}
                 />
-                <CText cprops={{}} size={3} title={c.desc} />
+                <CText cprops={{ color: "gray.500" }} size={3} title={c.desc} />
               </Grid>
               <Button onClick={() => navigate(c.link)} mt={6}>
                 {c.btnText}
