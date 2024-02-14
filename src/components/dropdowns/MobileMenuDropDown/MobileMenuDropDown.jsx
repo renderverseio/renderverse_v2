@@ -8,6 +8,7 @@ import {
   AccordionPanel,
   AccordionIcon,
   Link,
+  Text,
 } from "@chakra-ui/react";
 
 import Logo from "@/assets/logos/logo.png";
@@ -140,16 +141,29 @@ export default function MobileMenuDropDown() {
                           <AccordionIcon />
                         </AccordionButton>
                         <AccordionPanel pb={4}>
-                          {d.options.map((s, n) => (
+                          {d.options.map((option, n) => (
                             <Box mt={2} key={n}>
-                              <CText
-                                size={1}
-                                cprops={{
-                                  fontWeight: "bold",
-                                  fontSize: { base: "sm" },
-                                }}
-                                title={s.title}
-                              />
+                              <Link
+                                href={option.link}
+                                textDecoration={"none"}
+                                textDecorationLine="none"
+                              >
+                                <Flex
+                                  alignItems={"center"}
+                                  justifyContent="space-between"
+                                  columnGap={"1rem"}
+                                >
+                                  <Image maxW={"32px"} src={option.icon} />
+                                  <Box>
+                                    <Text fontWeight={"bold"}>
+                                      {option.title}
+                                    </Text>
+                                    <Text fontSize={"sm"}>
+                                      {option.subText}
+                                    </Text>
+                                  </Box>
+                                </Flex>
+                              </Link>
                             </Box>
                           ))}
                         </AccordionPanel>
