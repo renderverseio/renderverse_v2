@@ -2,7 +2,7 @@ import CText from "@/components/typography/CText/CText";
 import CCard from "@/components/custom/CCard/CCard";
 import CHeading from "@/components/typography/CHeading/CHeading";
 
-import { Box, Button, Flex, Grid } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, Image } from "@chakra-ui/react";
 import { useNavigate } from "react-router";
 import { StakingImages } from "@/data/dapp/dappData";
 
@@ -13,12 +13,7 @@ export default function ProductSuiteSection() {
     <Box>
       <Flex rowGap={"2rem"} p={8} flexDir={"column"}>
         <CHeading size={1} title={"Welcome to our bots"} />
-        <Grid
-          rowGap={"2rem"}
-          columnGap={"2rem"}
-          templateColumns={{ base: "1fr", lg: "1fr 1fr 1fr" }}
-          minH="40rem"
-        >
+        <Grid rowGap={"2rem"} columnGap={"2rem"} minH="40rem">
           {data.map((c, i) => (
             <CCard
               key={i}
@@ -30,41 +25,41 @@ export default function ProductSuiteSection() {
                 bg: c.bg,
                 h: "100%",
                 bgImg: c.bgImg,
+                alignItems: "center",
+                justifyContent: "center",
                 display: "flex",
-                flexDir: "column",
-                justifyContent: "space-between",
                 border: "2px",
                 borderColor: "white",
                 boxShadow: "sm",
+                columnGap: "2rem",
               }}
             >
-              <Box
-                zIndex={3}
-                backgroundImage={StakingImages[i]}
-                backgroundSize="contain"
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
-                minH="40rem"
-                pos="absolute"
-                w="94%"
-              ></Box>
-              <Grid mt={2} rowGap={"1rem"}>
+              <Image maxW="320px" src={StakingImages[i]} />
+              <Flex
+                py={4}
+                px={8}
+                flexDir={"column"}
+                justifyContent="center"
+                rowGap={"1rem"}
+              >
                 <CText
                   cprops={{ color: "gray.100" }}
                   size={1}
                   title={c.title}
                 />
                 <CText cprops={{ color: "gray.200" }} size={3} title={c.desc} />
-              </Grid>
-              <Button
-                boxShadow={"lg"}
-                bgImage={c.btnImg}
-                zIndex={4}
-                onClick={() => navigate(c.link)}
-                mt={6}
-              >
-                {c.btnText}
-              </Button>
+                <Flex>
+                  <Button
+                    boxShadow={"lg"}
+                    size="lg"
+                    bgImage={c.btnImg}
+                    zIndex={4}
+                    onClick={() => navigate(c.link)}
+                  >
+                    {c.btnText}
+                  </Button>
+                </Flex>
+              </Flex>
             </CCard>
           ))}
         </Grid>

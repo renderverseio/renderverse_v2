@@ -14,23 +14,6 @@ export default function StakingSection() {
       <Box>
         <Flex rowGap={"2rem"} p={8} flexDir={"column"}>
           <CHeading size={1} title={"Staking"} />
-          <CCard
-            props={{
-              p: 4,
-              className: "glass_effect",
-              bg: "gray.50",
-              border: "2px",
-              borderColor: "white",
-              boxShadow: "sm",
-            }}
-            type="s"
-          >
-            <CText size={1} title="Pool Size" />
-            <CText
-              size={3}
-              title="Leverage the power of compounding by staking your $RDAI tokens and compounding rewards as they accrue"
-            />
-          </CCard>
 
           <Grid
             rowGap={"2rem"}
@@ -42,35 +25,43 @@ export default function StakingSection() {
                 key={i}
                 props={{
                   borderRadius: "lg",
+                  minH: "30rem",
                   p: 4,
                   className: "glass_effect",
                   border: "2px",
                   borderColor: "white",
                   boxShadow: "sm",
+                  display: "grid",
+                  justifyContent: "space-between",
+                  alignItems: "center",
                   bgImg: c.bgImg,
                 }}
               >
-                <CHeading
-                  cprops={{ color: "gray.100" }}
-                  size={2}
-                  title={c.days}
-                />
-                <CText
-                  cprops={{ color: "gray.400" }}
-                  size={1}
-                  title={c.title}
-                />
+                <Box>
+                  <CHeading
+                    cprops={{ color: "gray.100" }}
+                    size={2}
+                    title={c.days}
+                  />
+                  <CText
+                    cprops={{ color: "gray.200" }}
+                    size={1}
+                    title={c.title}
+                  />
+                </Box>
                 <Grid mt={6} rowGap={"1rem"}>
                   {c.apr.map((d, j) => (
                     <Flex key={j}>
                       <Tag
-                        bg="transparent"
-                        boxShadow={"lg"}
-                        borderRadius={"lg"}
+                        bg={"rgba(0,0,0,0.4)"}
+                        border="1px"
+                        borderColor={"white"}
+                        boxShadow={"dark-lg"}
+                        borderRadius={"md"}
                         key={j}
                       >
                         <CText
-                          cprops={{ color: "gray.300" }}
+                          cprops={{ color: "white", fontWeight: "500" }}
                           size={3}
                           title={d}
                         />
@@ -78,7 +69,17 @@ export default function StakingSection() {
                     </Flex>
                   ))}
                 </Grid>
-                <Button bgImage={c.btnImg} mt={6}>
+                <Button
+                  transition="all 300ms ease-in-out"
+                  color="black"
+                  bg="white"
+                  boxShadow={"dark-lg"}
+                  mt={6}
+                  variant="unstyled"
+                  px={4}
+                  border="1px"
+                  borderColor={"white"}
+                >
                   Stake Now
                 </Button>
               </CCard>
@@ -116,9 +117,9 @@ export default function StakingSection() {
 
 const data = [
   {
-    bgImg: `linear-gradient(to right bottom, #222527, #21272c, #212832, #232937, #27293c, #312f50, #3f3463, #513774, #713e9a, #9740bf, #c33ae0, #f423ff);`,
+    bgImg: `radial-gradient( circle farthest-corner at 10% 20%,  rgba(100,43,115,1) 0%, rgba(4,0,4,1) 90% );`,
     btnImg:
-      "linear-gradient(to right bottom, #f423ff, #dc30ff, #c239ff, #a740ff, #8945ff)",
+      "linear-gradient(to right, #95bdff, #68ceff, #20deff, #00edfe, #1ff8e5)",
     days: "30 days",
     title: "ETH Sharing",
     apr: ["1.51% APY", "1.50% APR", "$RDAI/0%"],
@@ -129,14 +130,13 @@ const data = [
     apr: ["1.51% APY", "1.50% APR", "$RDAI/0%"],
     btnImg:
       "linear-gradient(to right bottom, #ff653f, #ff763c, #ff863b, #ff953c, #ffa440);",
-    bgImg: `linear-gradient(to right bottom, #222527, #21272c, #212832, #232937, #27293c, #362f4b, #4a3357, #62355f, #8f3a69, #bc3f67, #e34c59, #ff6640);`,
+    bgImg: `linear-gradient( 109.6deg,  rgba(102,51,153,1) 11.2%, rgba(2,0,4,1) 91.1% )`,
   },
   {
     days: "90 days",
     title: "ETH Sharing",
     apr: ["1.51% APY", "1.50% APR", "$RDAI/0%"],
-    bgImg:
-      "linear-gradient(to right bottom, #222527, #21272c, #212832, #232937, #27293c, #2e2f4b, #36355b, #403a6a, #47498c, #4859b0, #3f6ad6, #177dfe);",
+    bgImg: `linear-gradient( 179deg,  rgba(0,0,0,1) 9.2%, rgba(127,16,16,1) 103.9% );`,
     btnImg:
       "linear-gradient(to right bottom, #1779ff, #008aff, #009aff, #00a9ff, #16b6fe);",
   },
