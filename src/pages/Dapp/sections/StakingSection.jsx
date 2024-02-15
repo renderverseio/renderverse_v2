@@ -1,7 +1,7 @@
 import CCard from "@/components/custom/CCard/CCard";
 import CHeading from "@/components/typography/CHeading/CHeading";
 import CText from "@/components/typography/CText/CText";
-import { gradientBgs } from "@/data/home/homeData";
+import { gradientBgs, gradientBgs2 } from "@/data/home/homeData";
 import { Box, Button, Flex, Grid, Tag } from "@chakra-ui/react";
 
 import { StakingImages } from "@/data/dapp/dappData";
@@ -42,13 +42,12 @@ export default function StakingSection() {
                 key={i}
                 props={{
                   borderRadius: "lg",
-                  bgImg: StakingImages[i],
-                  backgroundSize: "cover",
                   p: 4,
                   className: "glass_effect",
                   border: "2px",
                   borderColor: "white",
                   boxShadow: "sm",
+                  bgImg: gradientBgs[i].bgImg,
                 }}
               >
                 <CHeading

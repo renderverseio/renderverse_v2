@@ -56,7 +56,13 @@ export default function ProductSuiteSection() {
                 />
                 <CText cprops={{ color: "gray.200" }} size={3} title={c.desc} />
               </Grid>
-              <Button zIndex={4} onClick={() => navigate(c.link)} mt={6}>
+              <Button
+                boxShadow={"lg"}
+                bgImage={c.btnImg}
+                zIndex={4}
+                onClick={() => navigate(c.link)}
+                mt={6}
+              >
                 {c.btnText}
               </Button>
             </CCard>
@@ -69,23 +75,29 @@ export default function ProductSuiteSection() {
 
 const data = [
   {
-    bgImg: `linear-gradient(to bottom, #f83600 0%, #f9d423 100%);`,
+    bgImg: `linear-gradient(to right bottom, #222527, #21272c, #212832, #232937, #27293c, #312f50, #3f3463, #513774, #713e9a, #9740bf, #c33ae0, #f423ff);`,
     title: "AI Art Generator",
     desc: "Dive into the realm of artistic exploration with our advanced AI Art Generator. We've created a unique platform that allows you to unleash your creativity. We also enable users to easily mint and inscribe your unique creations as BRC-721 tokens instantly on the Bitcoin blockchain.",
     btnText: "Try Now",
+    btnImg:
+      "linear-gradient(to right bottom, #f423ff, #dc30ff, #c239ff, #a740ff, #8945ff)",
     link: "/dapp/image-generation",
   },
   {
-    bgImg: `linear-gradient(to bottom, #6a11cb 0%, #2575fc 100%);`,
+    bgImg: `linear-gradient(to right bottom, #222527, #21272c, #212832, #232937, #27293c, #362f4b, #4a3357, #62355f, #8f3a69, #bc3f67, #e34c59, #ff6640);`,
     title: "AI Trading Bot",
     desc: "Seize trading opportunities like never before with our AI Trading Bot. We provide AI-driven insights and trends acorss all the coins in top exchanges. Use our intuitive telegram bot to seamlessly trade and maximise profits.",
+    btnImg:
+      "linear-gradient(to right bottom, #ff653f, #ff763c, #ff863b, #ff953c, #ffa440);",
     btnText: "Get Plan",
   },
   {
     bgImg:
-      "linear-gradient(to bottom, #446a46, #5a8d5a, #71b26e, #8bd882, #a6ff96);",
+      "linear-gradient(to right bottom, #222527, #21272c, #212832, #232937, #27293c, #2e2f4b, #36355b, #403a6a, #47498c, #4859b0, #3f6ad6, #177dfe);",
     title: "GPT extensions and plugins",
     desc: "Discover our suite of extensions and plugins designed to unlock the full potential of GPT in your endeavors. We provide tools tailored specifically for web3 users to harness the power of GPT technology on the BRC20 ecosystem.",
+    btnImg:
+      "linear-gradient(to right bottom, #1779ff, #008aff, #009aff, #00a9ff, #16b6fe);",
     btnText: "Coming Soon",
   },
 ];
