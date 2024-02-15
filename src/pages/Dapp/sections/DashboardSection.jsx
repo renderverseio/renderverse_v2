@@ -21,6 +21,7 @@ import {
 
 import { HiBriefcase } from "react-icons/hi";
 import { MdAccountBalance, MdPeople, MdLocalOffer } from "react-icons/md";
+import ComingSoon from "./ComingSoon";
 
 const data = [
   {
@@ -47,7 +48,17 @@ const data = [
 
 export default function DashboardSection() {
   return (
-    <Box p={8}>
+    <Box pos="relative" p={8}>
+      <Flex
+        pos={"absolute"}
+        justifyContent="center"
+        alignItems={"center"}
+        minH="70vh"
+        minW="100%"
+        zIndex={8}
+      >
+        <ComingSoon />
+      </Flex>
       <CCard
         props={{
           p: 8,
@@ -57,6 +68,7 @@ export default function DashboardSection() {
           borderRadius: "lg",
           display: "grid",
           rowGap: "2rem",
+          filter: "blur(5px)",
         }}
       >
         <Grid
@@ -119,7 +131,7 @@ export default function DashboardSection() {
           <Table>
             <Thead>
               <Tr>
-                {["Game", "Fee", "Reward"].map((header, i) => (
+                {["Resource", "Cost", "Used"].map((header, i) => (
                   <Th key={i}>{header}</Th>
                 ))}
               </Tr>
