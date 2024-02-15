@@ -78,7 +78,11 @@ export default function MobileMenuDropDown() {
               {desktopMenuItems.map((d, i) => (
                 <Box key={i}>
                   {i === 0 && (
-                    <Link href="https://t.me/renderversechat" target={"_blank"}>
+                    <Link
+                      textDecor={"none"}
+                      href="https://t.me/renderversechat"
+                      target={"_blank"}
+                    >
                       <Box
                         fontWeight={"bold"}
                         p={3}
@@ -129,12 +133,16 @@ export default function MobileMenuDropDown() {
                                 onClose();
                               }}
                               mt={2}
+                              p={2}
+                              borderRadius="lg"
                               key={n}
+                              _hover={{
+                                bg: "gray.100",
+                              }}
                             >
                               <Link
                                 href={option.link}
-                                textDecoration={"none"}
-                                textDecorationLine="none"
+                                style={{ textDecoration: "none" }}
                               >
                                 <Flex
                                   alignItems={"center"}

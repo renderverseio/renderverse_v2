@@ -195,8 +195,10 @@ export default function ImageGenerationForm({
 
           {status === "fetched" && imgSrc && !blob && (
             <Grid>
-              <Text>Image Generated</Text>
-              <Button onClick={refetch}>Show Image</Button>
+              <Text mb={2}>Image Generated</Text>
+              <Button size="sm" onClick={refetch}>
+                Show Image
+              </Button>
             </Grid>
           )}
         </Flex>

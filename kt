@@ -3,6 +3,7 @@ home page
 sections
 
 basic css
-flex 
+flex
 grid
 media queries
+packages and their usages

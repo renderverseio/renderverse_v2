@@ -58,8 +58,9 @@ export default function DesktopMenuDropDown({ menu, options }) {
                 >
                   <HLink
                     href={option.link}
-                    textDecoration={"none"}
-                    textDecorationLine="none"
+                    style={{
+                      textDecoration: "none",
+                    }}
                   >
                     <Flex
                       alignItems={"center"}
