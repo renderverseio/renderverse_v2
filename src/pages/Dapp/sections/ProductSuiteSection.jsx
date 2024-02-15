@@ -42,11 +42,11 @@ export default function ProductSuiteSection() {
                 zIndex={3}
                 backgroundImage={StakingImages[i]}
                 backgroundSize="contain"
-                backgroundPosition="bottom"
+                backgroundPosition="center"
                 backgroundRepeat="no-repeat"
                 minH="40rem"
                 pos="absolute"
-                w="100%"
+                w="94%"
               ></Box>
               <Grid mt={2} rowGap={"1rem"}>
                 <CText
@@ -69,20 +69,21 @@ export default function ProductSuiteSection() {
 
 const data = [
   {
-    bgImg: "linear-gradient(to right, #0f0c29, #302b63, #24243e)",
+    bgImg: `linear-gradient(to bottom, #f83600 0%, #f9d423 100%);`,
     title: "AI Art Generator",
     desc: "Dive into the realm of artistic exploration with our advanced AI Art Generator. We've created a unique platform that allows you to unleash your creativity. We also enable users to easily mint and inscribe your unique creations as BRC-721 tokens instantly on the Bitcoin blockchain.",
     btnText: "Try Now",
     link: "/dapp/image-generation",
   },
   {
-    bgImg: "linear-gradient(to right, #c31432, #240b36);",
+    bgImg: `linear-gradient(to bottom, #6a11cb 0%, #2575fc 100%);`,
     title: "AI Trading Bot",
     desc: "Seize trading opportunities like never before with our AI Trading Bot. We provide AI-driven insights and trends acorss all the coins in top exchanges. Use our intuitive telegram bot to seamlessly trade and maximise profits.",
     btnText: "Get Plan",
   },
   {
-    bgImg: "linear-gradient(to right, #41295a, #2f0743);",
+    bgImg:
+      "linear-gradient(to bottom, #446a46, #5a8d5a, #71b26e, #8bd882, #a6ff96);",
     title: "GPT extensions and plugins",
     desc: "Discover our suite of extensions and plugins designed to unlock the full potential of GPT in your endeavors. We provide tools tailored specifically for web3 users to harness the power of GPT technology on the BRC20 ecosystem.",
     btnText: "Coming Soon",
