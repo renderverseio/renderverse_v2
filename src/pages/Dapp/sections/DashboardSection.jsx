@@ -21,7 +21,7 @@ import {
 
 import { HiBriefcase } from "react-icons/hi";
 import { MdAccountBalance, MdPeople, MdLocalOffer } from "react-icons/md";
-import ComingSoon from "./ComingSoon";
+import ComingSoon from "@/components/dapp/ComingSoon/ComingSoon";
 
 const data = [
   {

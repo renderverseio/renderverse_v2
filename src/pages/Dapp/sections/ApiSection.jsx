@@ -8,7 +8,7 @@ import CCard from "@/components/custom/CCard/CCard";
 import CText from "@/components/typography/CText/CText";
 import CHeading from "@/components/typography/CHeading/CHeading";
 import { StakingImages } from "@/data/dapp/dappData";
-import ComingSoon from "./ComingSoon";
+import ComingSoon from "@/components/dapp/ComingSoon/ComingSoon";
 
 export default function Models() {
   return (
