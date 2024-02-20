@@ -2,8 +2,6 @@ import { TStatus } from "@/utils/status";
 import { useState } from "react";
 
 import { spacesRequests } from "@/requests/spaces/SpacesRequests";
-import axios from "axios";
-import { blobToBase64 } from "@/utils/blobTobase64";
 
 export const useImageGenerator = ({ address }) => {
   const [input, setInput] = useState("")

@@ -13,16 +13,18 @@ import {
   FormLabel,
   Button,
 } from "@chakra-ui/react";
+
 import React, { useState } from "react";
 
-import { FaBoxes } from "react-icons/fa";
 import { Audio } from "react-loader-spinner";
+
+import axios from "axios";
+import { blobToBase64 } from "@/utils/blobTobase64";
 
 import CCard from "@/components/custom/CCard/CCard";
 import CText from "@/components/typography/CText/CText";
 import CreditsCheckerComponent from "@/components/image_generation_space/CreditsCheckerComponent/CreditsCheckerComponent";
-import axios from "axios";
-import { blobToBase64 } from "@/utils/blobTobase64";
+import { TStatus } from "@/utils/status";
 
 export default function ImageGenerationForm({
   input,
@@ -190,10 +192,9 @@ export default function ImageGenerationForm({
           width="100%"
           justifyContent={"center"}
         >
-          {status === "fetching" && <Audio />}
-          {status === "idle" && <Text>Search!</Text>}
-
-          {status === "fetched" && imgSrc && !blob && (
+          {status === TStatus.fetching && <Audio />}
+          {status === TStatus.idle && <Text>Search!</Text>}
+          {status === TStatus.fetched && imgSrc && !blob && (
             <Grid>
               <Text mb={2}>Image Generated</Text>
               <Button size="sm" onClick={refetch}>
