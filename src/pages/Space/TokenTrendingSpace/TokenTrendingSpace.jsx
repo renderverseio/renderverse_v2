@@ -130,7 +130,7 @@ export default function TokenTrendingSpace() {
                       <span>{String(coin.name).toUpperCase()}</span>
                       <CText
                         size={2}
-                        title={`($${coin.symbol.toUpperCase()})`}
+                        title={`($${String(coin.symbol).toUpperCase()})`}
                       />
                     </>
                   }
