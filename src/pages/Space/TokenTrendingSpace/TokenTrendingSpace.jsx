@@ -46,7 +46,7 @@ export default function TokenTrendingSpace() {
       const { data } = await spacesRequests.getTrendingCoins({
         address,
       });
-      console.log(data.coins);
+      console.log(data);
       if (data) {
         setCoins([...data.coins]);
         setStatus(TStatus.fetched);
@@ -141,7 +141,9 @@ export default function TokenTrendingSpace() {
                   <Tbody>
                     <Tr>
                       <Td>Current Price</Td>
-                      <Td>{coin["current_price"].toLocaleString()} USDT</Td>
+                      <Td>
+                        {String(coin["current_price"]).toLocaleString()} USDT
+                      </Td>
                     </Tr>
                     <Tr>
                       <Td>7d change</Td>
@@ -167,15 +169,17 @@ export default function TokenTrendingSpace() {
                     </Tr>
                     <Tr>
                       <Td>Total Circulating Supply</Td>
-                      <Td>{coin.circulating_supply.toLocaleString()}</Td>
+                      <Td>
+                        {String(coin.circulating_supply).toLocaleString()}
+                      </Td>
                     </Tr>
                     <Tr>
                       <Td>Total Supply</Td>
-                      <Td>{coin.total_supply.toLocaleString()}</Td>
+                      <Td>{String(coin.total_supply).toLocaleString()}</Td>
                     </Tr>
                     <Tr>
                       <Td>Marketcap</Td>
-                      <Td>{coin.market_cap.toLocaleString()}</Td>
+                      <Td>{String(coin.market_cap).toLocaleString()}</Td>
                     </Tr>
                   </Tbody>
                 </Table>

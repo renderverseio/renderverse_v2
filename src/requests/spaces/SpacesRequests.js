@@ -37,7 +37,7 @@ const generateChatPrompt = async ({ text }) => {
 const getTopCoins = async ({ address }) => await axios.post("https://opai.renderverse.io/scores", {
   wallet_address: address,
 }, {})
-const getTrendingCoins = async ({ address }) => await axios.post("https://opai.renderverse.io/scores", { wallet_address: address })
+const getTrendingCoins = async ({ address }) => await axios.post("https://opai.renderverse.io/trending", { wallet_address: address })
 
 export const spacesRequests = {
   getCredits,
