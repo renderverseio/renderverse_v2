@@ -9,6 +9,8 @@ import { Box, Container, Flex } from "@chakra-ui/react";
 
 import useUNISatWallet from "@/blockchain/useUNISatWallet";
 import { useWalletStore } from "@/blockchain/useWalletStore";
+import DescriptionBox from "@/components/custom/DescriptionBox/DescriptionBox";
+import Back from "@/components/common/Back/Back";
 
 export default function ImageGenerationSpace() {
   const { connectWallet, disconnect } = useUNISatWallet();
@@ -26,6 +28,11 @@ export default function ImageGenerationSpace() {
   return (
     <React.Fragment>
       <Container display={"grid"} rowGap={"2rem"} mt={12} maxW="90%" mx="auto">
+        <Back />
+        <DescriptionBox
+          title="Art GPT"
+          desc={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptatem quo veritatis unde ipsa voluptate possimus odio ipsum sequi, vero sit autem! Minus vero expedita sed provident non optio aut.`}
+        />
         {isConnected && (
           <>
             <ImageGenerationForm

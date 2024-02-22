@@ -12,11 +12,13 @@ import {
 } from "@chakra-ui/react";
 
 import { Link as HLink } from "@chakra-ui/react";
+import { Navigate, useNavigate } from "react-router";
 
 export default function DesktopMenuDropDown({ menu, options }) {
+  const navigate = useNavigate();
   return (
     <Popover trigger="hover" boxShadow={"none"} outline="none" border="none">
-      <PopoverTrigger>
+      <PopoverTrigger onClick={() => navigate("/revshare")}>
         <Text fontWeight={"bold"}>{menu}</Text>
       </PopoverTrigger>
       {options.length > 0 && (

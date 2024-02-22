@@ -44,4 +44,12 @@ export const dAppHeaders = [
   },
 ];
 
-export const StakingImages = [AImage, BImage, CImage];
+export const StakingImages = [
+  AImage,
+  BImage,
+  CImage,
+  AImage,
+  BImage,
+  CImage,
+  AImage,
+];

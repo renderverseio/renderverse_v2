@@ -53,7 +53,7 @@ export default function WalletMenuDropDown() {
   ];
 
   let routeComponent = null;
-  if (path.pathname === "/")
+  if (path.pathname === "/" || path.pathname === "/revshare")
     routeComponent = (
       <Box
         minW="160px"

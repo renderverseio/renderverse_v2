@@ -20,7 +20,7 @@ import Email from '@/assets/navbar/Mail.svg'
 
 export const desktopMenuItems = [
   {
-    menu: "Pricing",
+    menu: "Revshare",
     options: [],
   },
   {
@@ -142,7 +142,7 @@ export const desktopMenuItems = [
 ];
 
 export const mobileMenuItems = [
-  `Pricing`,
+  `Revshare`,
   `Dashboard`,
   `Templates`,
   `Documentation`,

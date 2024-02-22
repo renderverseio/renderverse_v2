@@ -1,16 +1,5 @@
 import axios from "axios"
 
-const generatedImages = async ({ address }) => {
-  try {
-    return await axios.post(
-      "https://api.renderverse.io/renderscan/v1/users/op/generate-img/gens",
-      { walletAddress: address, walletaddress: address }
-    )
-  } catch (error) {
-    throw error
-  }
-}
-
 const generateImage = async ({ address, input, model }) => {
   return await axios
     .post("https://opai.renderverse.io/image-gen", {
@@ -29,23 +18,34 @@ const getCredits = async ({ address }) => {
     })
 }
 
-const generateChatPrompt = async ({ input, person, address }) => {
-  console.log(input, person, address)
+const generateChatPromptEntry = async ({ address }) => {
   return await axios
     .post("https://opai.renderverse.io/chat-gen", {
-      question: input,
-      person: person,
-      walletAddress: address,
-      wallet_address: address,
+      wallet_address: address
     })
+}
 
+const localHost = 'http://localhost:5000/'
+const generateChatPrompt = async ({ text }) => {
+  return await axios
+    .post(localHost + "chat-gen", {
+      // .post("https://opai.renderverse.io/chat-gen", {
+      text: text
+    })
 }
 
 
+const getTopCoins = async ({ address }) => await axios.post(localHost + "scores", {
+  wallet_address: address,
+}, {})
+const getTrendingCoins = async ({ address }) => await axios.post(localHost + "trending", { wallet_address: address })
 
 export const spacesRequests = {
   getCredits,
+  getTopCoins,
   generateImage,
-  generatedImages,
+  getTrendingCoins,
+  generateChatPrompt,
+  generateChatPromptEntry
 }
 

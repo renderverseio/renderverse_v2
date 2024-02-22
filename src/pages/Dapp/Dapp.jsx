@@ -32,7 +32,9 @@ export default function Dapp() {
             <DappMobileDrawer />
             <WalletMenuDropDown />
           </Flex>
-          <Outlet />
+          <Box>
+            <Outlet />
+          </Box>
         </Box>
       </Grid>
     </Box>

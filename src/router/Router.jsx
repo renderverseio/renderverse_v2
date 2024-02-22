@@ -2,6 +2,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
 import Home from "@/pages/Home/Home";
 import Dapp from "@/pages/Dapp/Dapp";
+import Revshare from "@/pages/Revshare/Revshare";
 import StakingSection from "@/pages/Dapp/sections/StakingSection";
 import DocsSection from "@/pages/Dapp/sections/DocsSection";
 import ProductSuiteSection from "@/pages/Dapp/sections/ProductSuiteSection";
@@ -9,9 +10,9 @@ import DashboardSection from "@/pages/Dapp/sections/DashboardSection";
 import ImageGenerationSpace from "@/pages/Space/ImageGenerationSpace/ImageGenerationSpace";
 import ApiSection from "@/pages/Dapp/sections/ApiSection";
 import AffiliateProgramSection from "@/pages/Dapp/sections/AffiliateProgramSection";
-
-import KtGrid from "@/pages/KT/KtGrid";
-import KtFlex from "@/pages/KT/KtFlex";
+import TokenTopSpace from "@/pages/Space/TokenTopSpace/TokenTopSpace";
+import TokenTrendingSpace from "@/pages/Space/TokenTrendingSpace/TokenTrendingSpace";
+import ChatAssistanceSpace from "@/pages/Space/ChatAssitanceSpace/ChatAssistanceSpace";
 
 const router = createBrowserRouter([
   {
@@ -19,12 +20,8 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/grid",
-    element: <Home />,
-  },
-  {
-    path: "/flex",
-    element: <KtFlex />,
+    path: "/revshare",
+    element: <Revshare />,
   },
   {
     path: "/dapp",
@@ -35,6 +32,7 @@ const router = createBrowserRouter([
         path: "dashboard",
         element: <DashboardSection />,
       },
+
       {
         path: "api",
         element: <ApiSection />,
@@ -56,7 +54,19 @@ const router = createBrowserRouter([
         element: <DocsSection />,
       },
       {
-        path: "image-generation",
+        path: "products/trade",
+        element: <TokenTopSpace />,
+      },
+      {
+        path: "products/trending",
+        element: <TokenTrendingSpace />,
+      },
+      {
+        path: "products/ai-assitant",
+        element: <ChatAssistanceSpace />,
+      },
+      {
+        path: "products/image-generation",
         element: <ImageGenerationSpace />,
       },
     ],

@@ -16,7 +16,7 @@ import {
 
 import React, { useState } from "react";
 
-import { Audio } from "react-loader-spinner";
+import { Grid as GridLoader } from "react-loader-spinner";
 
 import axios from "axios";
 import { blobToBase64 } from "@/utils/blobTobase64";
@@ -192,7 +192,7 @@ export default function ImageGenerationForm({
           width="100%"
           justifyContent={"center"}
         >
-          {status === TStatus.fetching && <Audio />}
+          {status === TStatus.fetching && <GridLoader color="gray" />}
           {status === TStatus.idle && <Text>Search!</Text>}
           {status === TStatus.fetched && imgSrc && !blob && (
             <Grid>
