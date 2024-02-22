@@ -1,14 +1,14 @@
 import { Box, Divider, Flex, Grid, Image } from "@chakra-ui/react";
 
-import { modelsData } from "@/data/models/ModelsData";
-
 import Logo from "@/assets/logos/logo.png";
 
 import CCard from "@/components/custom/CCard/CCard";
 import CText from "@/components/typography/CText/CText";
 import CHeading from "@/components/typography/CHeading/CHeading";
-import { StakingImages } from "@/data/dapp/dappData";
 import ComingSoon from "@/components/dapp/ComingSoon/ComingSoon";
+
+import { StakingImages } from "@/data/dapp/dappData";
+import { modelsData } from "@/data/models/modelsData";
 
 export default function Models() {
   return (
