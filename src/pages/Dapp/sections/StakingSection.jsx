@@ -1,14 +1,10 @@
 import CCard from "@/components/custom/CCard/CCard";
-import CHeading from "@/components/typography/CHeading/CHeading";
 import CText from "@/components/typography/CText/CText";
-import { gradientBgs, gradientBgs2 } from "@/data/home/homeData";
+import CHeading from "@/components/typography/CHeading/CHeading";
+
 import { Box, Button, Flex, Grid, Tag } from "@chakra-ui/react";
 
-import { StakingImages } from "@/data/dapp/dappData";
-import { useNavigate } from "react-router";
-
 export default function StakingSection() {
-  const navigate = useNavigate();
   return (
     <Box>
       <Box>

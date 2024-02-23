@@ -2,10 +2,10 @@ import CText from "@/components/typography/CText/CText";
 import CCard from "@/components/custom/CCard/CCard";
 import CHeading from "@/components/typography/CHeading/CHeading";
 
-import { Box, Button, Flex, Grid, Image } from "@chakra-ui/react";
 import { useNavigate } from "react-router";
 import { StakingImages } from "@/data/dapp/dappData";
 import { productsData } from "@/data/dapp/productsData";
+import { Box, Button, Flex, Grid, Image } from "@chakra-ui/react";
 
 export default function ProductSuiteSection() {
   const navigate = useNavigate();

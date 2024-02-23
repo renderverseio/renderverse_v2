@@ -7,8 +7,10 @@ import { desktopMenuItems } from "@/data/home/navbarData";
 import WalletMenuDropDown from "@/components/dropdowns/WalletMenuDropDown/WalletMenuDropDown";
 import MobileMenuDropDown from "@/components/dropdowns/MobileMenuDropDown/MobileMenuDropDown";
 import DesktopMenuDropDown from "@/components/dropdowns/DesktopMenuDropDown/DesktopMenuDropDown";
+import { useNavigate } from "react-router";
 
 export default function Navbar() {
+  const navigate = useNavigate();
   return (
     <Box minH={{ base: "10vh" }}>
       <Flex
@@ -22,7 +24,7 @@ export default function Navbar() {
           alignItems={"center"}
           justifyContent="flex-start"
           cursor={"pointer"}
-          onClick={() => (window.location.href = "https://renderverse.io")}
+          onClick={() => navigate("/")}
         >
           <Image maxW={"220px"} src={Logo} />
         </Flex>

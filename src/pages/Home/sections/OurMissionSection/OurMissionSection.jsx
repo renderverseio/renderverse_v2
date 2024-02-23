@@ -1,8 +1,9 @@
 import { Image, Grid } from "@chakra-ui/react";
 
-import OurMissionLogo from "@/assets/home/ourmission.jpeg";
-import CHeading from "@/components/typography/CHeading/CHeading";
 import CText from "@/components/typography/CText/CText";
+import CHeading from "@/components/typography/CHeading/CHeading";
+
+import OurMissionLogo from "@/assets/home/ourmission.jpeg";
 
 export default function OurMissionSection() {
   return (

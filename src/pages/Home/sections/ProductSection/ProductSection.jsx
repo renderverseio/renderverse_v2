@@ -2,8 +2,8 @@ import { Box, Flex, Grid } from "@chakra-ui/react";
 
 import { productsData } from "@/data/home/homeData";
 
-import ProductCard from "@/components/home/ProductCard/ProductCard";
 import CHeading from "@/components/typography/CHeading/CHeading";
+import ProductCard from "@/components/home/ProductCard/ProductCard";
 
 export default function ProductsSection() {
   return (

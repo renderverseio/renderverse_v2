@@ -1,18 +1,18 @@
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Home from "@/pages/Home/Home";
 import Dapp from "@/pages/Dapp/Dapp";
 import Revshare from "@/pages/Revshare/Revshare";
-import StakingSection from "@/pages/Dapp/sections/StakingSection";
-import DocsSection from "@/pages/Dapp/sections/DocsSection";
-import ProductSuiteSection from "@/pages/Dapp/sections/ProductSuiteSection";
 import DashboardSection from "@/pages/Dapp/sections/DashboardSection";
-import ImageGenerationSpace from "@/pages/Space/ImageGenerationSpace/ImageGenerationSpace";
+import ProductSuiteSection from "@/pages/Dapp/sections/ProductSuiteSection";
+import StakingSection from "@/pages/Dapp/sections/StakingSection";
 import ApiSection from "@/pages/Dapp/sections/ApiSection";
 import AffiliateProgramSection from "@/pages/Dapp/sections/AffiliateProgramSection";
+
+import ChatAssistanceSpace from "@/pages/Space/ChatAssitanceSpace/ChatAssistanceSpace";
+import ImageGenerationSpace from "@/pages/Space/ImageGenerationSpace/ImageGenerationSpace";
 import TokenTopSpace from "@/pages/Space/TokenTopSpace/TokenTopSpace";
 import TokenTrendingSpace from "@/pages/Space/TokenTrendingSpace/TokenTrendingSpace";
-import ChatAssistanceSpace from "@/pages/Space/ChatAssitanceSpace/ChatAssistanceSpace";
 
 const router = createBrowserRouter([
   {
@@ -50,10 +50,6 @@ const router = createBrowserRouter([
         element: <StakingSection />,
       },
       {
-        path: "docs",
-        element: <DocsSection />,
-      },
-      {
         path: "products/trade",
         element: <TokenTopSpace />,
       },
@@ -76,7 +72,3 @@ const router = createBrowserRouter([
 export default function Router() {
   return <RouterProvider router={router} />;
 }
-
-// image gen ai url
-// logo
-// links

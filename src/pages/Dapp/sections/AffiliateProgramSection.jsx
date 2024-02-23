@@ -1,11 +1,10 @@
-import CCard from "@/components/custom/CCard/CCard";
-import CHeading from "@/components/typography/CHeading/CHeading";
-import CText from "@/components/typography/CText/CText";
 import Logo from "@/assets/logos/icon.png";
+import CCard from "@/components/custom/CCard/CCard";
+import CText from "@/components/typography/CText/CText";
+import CHeading from "@/components/typography/CHeading/CHeading";
 
 import {
   Box,
-  Button,
   Flex,
   Grid,
   Icon,
@@ -13,13 +12,13 @@ import {
   Table,
   TableCaption,
   Tbody,
-  Td,
   Th,
   Thead,
   Tr,
 } from "@chakra-ui/react";
 
 import { MdAccountBalance, MdPeople } from "react-icons/md";
+
 import ComingSoon from "@/components/dapp/ComingSoon/ComingSoon";
 
 const data = [

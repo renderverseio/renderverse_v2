@@ -57,25 +57,25 @@ export const desktopMenuItems = [
     options: [
       {
         icon: AIArt,
-        title: "AI Art Generator",
+        title: "Art GPT",
         subText: "Create 3D BRC-20 NFTs for free",
         link: "/dapp/image-generation"
       },
       {
         icon: AITrade,
-        title: "AI Trading Bot",
+        title: "Trade GPT",
         subText: "Maximize profits with AI-driven trading insights",
         link: "/dapp/dashboard"
       },
       {
         icon: GPT,
-        title: "GPT Plugins",
+        title: "Token GPT",
         subText: "Harness the power of GPT through our plugins",
         link: "/dapp/products"
       },
       {
         icon: APIs,
-        title: "Inference APIs",
+        title: "Cloud GPT",
         subText: "Build advanced community products using our APIs",
         link: "/dapp/api"
       },

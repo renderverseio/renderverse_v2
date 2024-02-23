@@ -1,6 +1,7 @@
 import { gallery } from "@/data/home/galleryData";
-import Marquee from "react-fast-marquee";
 import { Box, Image, Flex } from "@chakra-ui/react";
+
+import Marquee from "react-fast-marquee";
 import CHeading from "@/components/typography/CHeading/CHeading";
 
 export default function GallerySection() {

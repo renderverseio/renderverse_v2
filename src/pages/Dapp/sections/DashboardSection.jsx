@@ -1,11 +1,10 @@
+import Logo from "@/assets/logos/icon.png";
+import CText from "@/components/typography/CText/CText";
 import CCard from "@/components/custom/CCard/CCard";
 import CHeading from "@/components/typography/CHeading/CHeading";
-import CText from "@/components/typography/CText/CText";
-import Logo from "@/assets/logos/icon.png";
 
 import {
   Box,
-  Button,
   Flex,
   Grid,
   Icon,
@@ -13,7 +12,6 @@ import {
   Table,
   TableCaption,
   Tbody,
-  Td,
   Th,
   Thead,
   Tr,
@@ -21,6 +19,7 @@ import {
 
 import { HiBriefcase } from "react-icons/hi";
 import { MdAccountBalance, MdPeople, MdLocalOffer } from "react-icons/md";
+
 import ComingSoon from "@/components/dapp/ComingSoon/ComingSoon";
 
 const data = [

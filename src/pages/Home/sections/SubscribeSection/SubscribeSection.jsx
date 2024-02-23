@@ -1,4 +1,4 @@
-import { Box, Flex, Button } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 
 import CText from "@/components/typography/CText/CText";
 import CHeading from "@/components/typography/CHeading/CHeading";

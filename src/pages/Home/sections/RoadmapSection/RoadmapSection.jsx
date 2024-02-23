@@ -1,10 +1,9 @@
 import { Box, Flex } from "@chakra-ui/react";
-
 import { roadMapData } from "@/data/home/homeData";
 
 import SvgLine from "@/components/home/SvgLine/SvgLine";
-import RoadmapCard from "@/components/home/RoadmapCard/RoadMapCard";
 import CHeading from "@/components/typography/CHeading/CHeading";
+import RoadmapCard from "@/components/home/RoadmapCard/RoadMapCard";
 
 export default function RoadmapSection() {
   return (

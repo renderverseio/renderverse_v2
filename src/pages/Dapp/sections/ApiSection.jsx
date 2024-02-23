@@ -7,8 +7,8 @@ import CText from "@/components/typography/CText/CText";
 import CHeading from "@/components/typography/CHeading/CHeading";
 import ComingSoon from "@/components/dapp/ComingSoon/ComingSoon";
 
-import { StakingImages } from "@/data/dapp/dappData";
 import { modelsData } from "@/data/models/modelsData";
+import { StakingImages } from "@/data/dapp/dappData";
 
 export default function Models() {
   return (

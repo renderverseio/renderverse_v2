@@ -19,7 +19,20 @@ export default function DesktopMenuDropDown({ menu, options }) {
   return (
     <Popover trigger="hover" boxShadow={"none"} outline="none" border="none">
       <PopoverTrigger onClick={() => navigate("/revshare")}>
-        <Text fontWeight={"bold"}>{menu}</Text>
+        <Box>
+          {menu === "Revshare" && (
+            <HLink
+              href={"/revshare"}
+              style={{
+                textDecoration: "none",
+                fontWeight: "bold",
+              }}
+            >
+              {menu}
+            </HLink>
+          )}
+          {menu !== "Revshare" && <Text fontWeight={"bold"}>{menu}</Text>}
+        </Box>
       </PopoverTrigger>
       {options.length > 0 && (
         <PopoverContent

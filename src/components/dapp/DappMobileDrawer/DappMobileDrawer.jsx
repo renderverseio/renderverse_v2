@@ -54,7 +54,7 @@ export default function DappMobileDrawer() {
               alignItems={"center"}
               justifyContent="center"
               cursor={"pointer"}
-              onClick={() => (window.location.href = "https://renderverse.io")}
+              onClick={() => navigate("/")}
             >
               <Image maxW={"80%"} src={Logo} />
             </Flex>
