@@ -48,7 +48,7 @@ export const productsData = [
 		title: "SmartContract Audit GPT",
 		desc: "Seize trading opportunities like never before with our AI Trading Bot. We provide AI-driven insights and trends acorss all the coins in top exchanges. Use our intuitive telegram bot to seamlessly trade and maximise profits.",
 		btnImg:
-			"linear-gradient( 135deg, #3B2667 10%, #BC78EC 100%);",
+			"linear-gradient( 135deg, #E2B0FF 10%, #9F44D3 100%);",
 		bgImg: `linear-gradient( 109.6deg,  rgba(102,51,153,1) 11.2%, rgba(2,0,4,1) 91.1% );`,
 		btnText: "Get Plan",
 	},

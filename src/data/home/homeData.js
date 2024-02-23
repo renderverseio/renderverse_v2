@@ -97,7 +97,7 @@ export const roadMapData = [
 
 export const productsData = [
   {
-    title: `AI Art Generator`,
+    title: `Art GPT`,
     note1: `Say goodbye to boring NFTs created by other platforms. Renderverse enables you to create stunning AI Arts for absolutely free.`,
     note2: `Users can easily mint and inscribe unique creations as BRC-721 tokens instantly on the Bitcoin blockchain.`,
     link: ``,
@@ -127,7 +127,7 @@ export const productsData = [
     }
   },
   {
-    title: `AI Trading Bot`,
+    title: `Trade GPT`,
     note1: `Seize trading opportunities like never before with our AI Trading Bot. We provide AI-driven insights and trends acorss all the coins in top exchanges.`,
     note2: `Users can seamlessly trade through our telegram bot and maximize profits.`,
     link: ``,
@@ -155,7 +155,7 @@ export const productsData = [
     }
   },
   {
-    title: `GPT Plugins and Extensions`,
+    title: `Token GPT`,
     note1: `Discover our suite of extensions and plugins designed to unlock the full potential of GPT in your endeavors. `,
     note2: `We provide tools tailored specifically for web3 users to harness the power of GPT technology on the BRC20 ecosystem.`,
     link: ``,
@@ -183,7 +183,7 @@ export const productsData = [
     }
   },
   {
-    title: `Inference APIs`,
+    title: `Cloud GPT`,
     note1: `Unleash the potential of our Inference APIs to build revolutionary products within the Renderverse ecosystem.`,
     note2: `We provide extensive API models and GPU Infrastrucutre for developers and creators to build on top of our advanced models.`,
     link: ``,

@@ -25,6 +25,7 @@ import DescriptionBox from "@/components/custom/DescriptionBox/DescriptionBox";
 import useUNISatWallet from "@/blockchain/useUNISatWallet";
 import Back from "@/components/common/Back/Back";
 import CCard from "@/components/custom/CCard/CCard";
+import { gradientBgs } from "@/data/home/homeData";
 
 export default function TokenTopSpace() {
   const { wallet } = useWalletStore((state) => state);
@@ -96,7 +97,6 @@ export default function TokenTopSpace() {
             props={{
               minH: "100%",
               borderRadius: "lg",
-              p: 4,
               h: "100%",
               alignItems: "center",
               justifyContent: "center",
@@ -106,9 +106,10 @@ export default function TokenTopSpace() {
               bg: "gray.50",
               boxShadow: "sm",
               columnGap: "2rem",
+              bgImg: gradientBgs[4].bgImg,
             }}
           >
-            <Table p={8}>
+            <Table>
               <Thead>
                 <Tr>
                   <Th>{`name`}</Th>

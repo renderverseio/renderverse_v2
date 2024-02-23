@@ -121,9 +121,7 @@ export default function ChatAssistanceSpace() {
                   h={12}
                   color="gray.600"
                   w={12}
-                  bgImg={
-                    i % 2 === 0 ? gradientBgs[0].bgImg : gradientBgs[1].bgImg
-                  }
+                  bg={i % 2 === 0 ? "green.100" : "blue.100"}
                   as={i % 2 === 0 ? SiProbot : FaUserAstronaut}
                 />
                 <Box
@@ -132,9 +130,7 @@ export default function ChatAssistanceSpace() {
                   alignItems="flex-end"
                   p={2}
                   boxShadow="lg"
-                  bgImg={
-                    i % 2 === 0 ? gradientBgs[0].bgImg : gradientBgs[1].bgImg
-                  }
+                  bg={i % 2 === 0 ? "green.100" : "blue.100"}
                   border="2px"
                   borderColor="white"
                   borderRadius={"2xl"}
@@ -176,7 +172,6 @@ export default function ChatAssistanceSpace() {
                   }
                 }}
                 bg="gray.100"
-                bgImage={gradientBgs[1].bgImg}
                 border="2px"
                 boxShadow="lg"
                 color="gray.600"
