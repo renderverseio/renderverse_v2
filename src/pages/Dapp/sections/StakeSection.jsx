@@ -1,5 +1,6 @@
 import Navbar from "@/components/common/Navbar/Navbar";
 import CCard from "@/components/custom/CCard/CCard";
+import ComingSoon from "@/components/dapp/ComingSoon/ComingSoon";
 import CHeading from "@/components/typography/CHeading/CHeading";
 import CText from "@/components/typography/CText/CText";
 import { gradientBgs } from "@/data/home/homeData";
@@ -24,8 +25,19 @@ export default function StakeSection() {
   return (
     <Box>
       <Navbar />
-      <Container>
-        <Flex alignItems={"center"} rowGap={"2rem"} p={8} flexDir={"column"}>
+      <Flex
+        pos={"absolute"}
+        justifyContent="center"
+        alignItems={"center"}
+        minH="70vh"
+        minW="100%"
+        zIndex={8}
+      >
+        <ComingSoon />
+      </Flex>
+
+      <Container filter={"blur(4px)"}>
+        <Flex alignItems={"center"} rowGap={"2rem"} p={2} flexDir={"column"}>
           <CHeading size={1} title={"Staking"} />
           <Box>
             <Tabs variant="soft-rounded" colorScheme="green">
@@ -33,10 +45,18 @@ export default function StakeSection() {
                 <Flex p={1} borderRadius="3xl" boxShadow={"lg"}>
                   <TabList>
                     <Tab mr={1} boxShadow={"lg"}>
-                      <CHeading size={3} title={`Flexible`} />
+                      <CText
+                        size={2}
+                        cprops={{ fontWeight: "bold" }}
+                        title={`Flexible`}
+                      />
                     </Tab>
                     <Tab boxShadow={"lg"}>
-                      <CHeading size={3} title={`Locked`} />
+                      <CText
+                        cprops={{ fontWeight: "bold" }}
+                        size={2}
+                        title={`Locked`}
+                      />
                     </Tab>
                   </TabList>
                 </Flex>
@@ -45,7 +65,7 @@ export default function StakeSection() {
                 <TabPanel>
                   <Grid w="100%">
                     <Flex my={4} justifyContent={"center"}>
-                      <CHeading size={2} title={`FLEXIBLE STAKING`} />
+                      <CText size={2} title={`FLEXIBLE STAKING`} />
                     </Flex>
                     <Flex
                       mx="auto"
@@ -81,19 +101,19 @@ export default function StakeSection() {
                           <CText
                             cprops={{ color: "white", fontWeight: "bold" }}
                             size={2}
-                            title={`Unstake`}
+                            title={`STAKE`}
                           />{" "}
                         </Flex>
                         <Box display={"grid"} rowGap="2rem" p={3}>
                           <Box>
                             <Flex justifyContent={"space-between"}>
                               <CText
-                                cprops={{ color: "white", fontWeight: "bold" }}
+                                cprops={{ color: "white", fontWeight: "500" }}
                                 size={3}
                                 title={`Amount`}
                               />{" "}
                               <CText
-                                cprops={{ color: "white", fontWeight: "bold" }}
+                                cprops={{ color: "white", fontWeight: "500" }}
                                 size={3}
                                 title={`~Staked RDAI: 0.000`}
                               />{" "}
@@ -102,7 +122,7 @@ export default function StakeSection() {
                               <InputGroup>
                                 <InputLeftAddon
                                   boxShadow={"md"}
-                                  fontWeight="bold"
+                                  fontWeight="500"
                                   cursor={"pointer"}
                                   bgImg={data[0].bgImg}
                                   color="white"
@@ -119,7 +139,7 @@ export default function StakeSection() {
                                 />
                                 <InputRightAddon
                                   boxShadow={"md"}
-                                  fontWeight="bold"
+                                  fontWeight="500"
                                   cursor={"pointer"}
                                   bgImg={data[0].bgImg}
                                   color="white"
@@ -134,49 +154,19 @@ export default function StakeSection() {
                               fontWeight="bold"
                               boxShadow={"lg"}
                               borderRadius="lg"
-                              bgImage={data[0].btnImg}
+                              bgImage={data[1].btnImg}
                               p={3}
                             >
-                              Unstake $RDAI
+                              Stake $RDAI
                             </Box>
                           </Flex>
                         </Box>
                       </CCard>
                     </Flex>
-                    <Box>
-                      <Flex my={12} justifyContent={"center"}>
-                        <Flex
-                          bgImg={data[2].bgImg}
-                          p={4}
-                          cprops={{ color: "white" }}
-                          boxShadow={"lg"}
-                          borderRadius="lg"
-                          justifyContent={"center"}
-                          alignItems="center"
-                          columnGap={"1rem"}
-                          border="1px"
-                          borderColor="gray"
-                        >
-                          <Box
-                            p={2}
-                            boxShadow="lg"
-                            bg="white"
-                            borderRadius="3xl"
-                          >
-                            <Icon size={12} as={FaInfo} />
-                          </Box>
-                          <CText
-                            cprops={{ fontWeight: "bold", color: "white" }}
-                            size={3}
-                            title={`Going forward, only Locked Staking for 360 days will be
-                      available.`}
-                          />
-                        </Flex>
-                      </Flex>
-                    </Box>
 
                     <Flex
                       mx="auto"
+                      mt={12}
                       w={{
                         base: "100%",
                         md: "80%",
@@ -221,7 +211,7 @@ export default function StakeSection() {
                             >
                               <Box>
                                 <CText
-                                  cprops={{ color: "white" }}
+                                  cprops={{ color: "white", fontWeight: "500" }}
                                   size={3}
                                   title={`Total Staked Amount`}
                                 />{" "}
@@ -233,7 +223,7 @@ export default function StakeSection() {
                               </Box>
                               <Box>
                                 <CText
-                                  cprops={{ color: "white" }}
+                                  cprops={{ color: "white", fontWeight: "500" }}
                                   size={3}
                                   title={`Total Rewards`}
                                 />{" "}
@@ -250,6 +240,7 @@ export default function StakeSection() {
                               boxShadow={"lg"}
                               borderRadius="lg"
                               className="btn btn-2"
+                              fontWeight={"bold"}
                               p={3}
                             >
                               WITHDRAW REWARDS
@@ -263,7 +254,7 @@ export default function StakeSection() {
                 <TabPanel>
                   <Grid w="100%">
                     <Flex my={4} justifyContent={"center"}>
-                      <CHeading size={2} title={`LOCKED STAKING APY : 15%`} />
+                      <CText size={2} title={`LOCKED STAKING APY : 15%`} />
                     </Flex>
                     <Flex
                       mx="auto"
@@ -306,12 +297,12 @@ export default function StakeSection() {
                           <Box>
                             <Flex justifyContent={"space-between"}>
                               <CText
-                                cprops={{ fontWeight: "bold", color: "white" }}
+                                cprops={{ fontWeight: "500", color: "white" }}
                                 size={3}
                                 title={`Amount`}
                               />{" "}
                               <CText
-                                cprops={{ fontWeight: "bold", color: "white" }}
+                                cprops={{ fontWeight: "500", color: "white" }}
                                 size={3}
                                 title={`~My balance: 0.000 RDAI`}
                               />{" "}
@@ -320,7 +311,7 @@ export default function StakeSection() {
                               <InputGroup>
                                 <InputLeftAddon
                                   boxShadow={"md"}
-                                  fontWeight="bold"
+                                  fontWeight="500"
                                   cursor={"pointer"}
                                   bgImg={data[0].bgImg}
                                   color="white"
@@ -337,7 +328,7 @@ export default function StakeSection() {
                                 <InputRightAddon
                                   color="white"
                                   boxShadow={"md"}
-                                  fontWeight="bold"
+                                  fontWeight="500"
                                   cursor={"pointer"}
                                   bgImg={data[0].bgImg}
                                 >
@@ -360,38 +351,10 @@ export default function StakeSection() {
                         </Box>
                       </CCard>
                     </Flex>
-                    <Box>
-                      <Flex my={12} justifyContent={"center"}>
-                        <Flex
-                          bgImg={data[2].bgImg}
-                          p={4}
-                          boxShadow={"lg"}
-                          borderRadius="lg"
-                          justifyContent={"center"}
-                          alignItems="center"
-                          columnGap={"1rem"}
-                          border="1px"
-                          borderColor="gray"
-                        >
-                          <Box
-                            p={2}
-                            boxShadow="lg"
-                            bg="white"
-                            borderRadius="3xl"
-                          >
-                            <Icon size={12} as={FaInfo} />
-                          </Box>
-                          <CText
-                            cprops={{ fontWeight: "bold", color: "white" }}
-                            size={3}
-                            title={`Going forward, only Locked Staking for 360 days will be available. You can still withdraw your IBAT from the previous staking periods.`}
-                          />
-                        </Flex>
-                      </Flex>
-                    </Box>
 
                     <Flex
                       mx="auto"
+                      mt={12}
                       w={{
                         base: "100%",
                         md: "80%",
