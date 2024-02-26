@@ -1,4 +1,4 @@
-import { Box, Flex, GridItem, Link, Image, Button } from "@chakra-ui/react";
+import { Box, Flex, GridItem, Link, Image } from "@chakra-ui/react";
 
 import Logo from "@/assets/logos/white.png";
 

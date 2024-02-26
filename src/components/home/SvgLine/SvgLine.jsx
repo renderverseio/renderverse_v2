@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
 import { Container } from "@chakra-ui/react";
-import { useState } from "react";
 
 export default function SvgLine({ alignLeft }) {
-  const [strokes, setStrokes] = useState({ stroke1: "gray", stroke2: "gray" });
+  const strokes = { stroke1: "gray", stroke2: "gray" };
 
   return (
     <Container>

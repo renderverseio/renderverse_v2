@@ -4,8 +4,6 @@ import CText from "@/components/typography/CText/CText";
 import { gradientBgs } from "@/data/home/homeData";
 import { Box, Flex, Grid } from "@chakra-ui/react";
 
-const items = [0, 1, 2, 3, 4, 5, 6];
-
 export default function Revshare() {
   return (
     <Box>

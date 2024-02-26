@@ -1,7 +1,6 @@
-import CHeading from "@/components/typography/CHeading/CHeading";
 import CText from "@/components/typography/CText/CText";
 import { gradientBgs2 } from "@/data/home/homeData";
-import { Box, Divider, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Image } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 import CheckMark from "@/assets/roadmap/checkmark.png";
@@ -78,7 +77,7 @@ export default function RoadmapCard(props) {
   );
 }
 
-function RoadmapMileStone({ phase, title, i }) {
+function RoadmapMileStone({ phase, i }) {
   return (
     <motion.div
       initial="hidden"

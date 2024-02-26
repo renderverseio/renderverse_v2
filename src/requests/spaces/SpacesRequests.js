@@ -20,7 +20,7 @@ const getCredits = async ({ address }) => {
 
 const generateChatPromptEntry = async ({ address }) => {
   return await axios
-    .post("https://opai.renderverse.io/chat-gen", {
+    .post("https://opai.renderverse.io/chat-gen-entry", {
       wallet_address: address
     })
 }
@@ -31,7 +31,6 @@ const generateChatPrompt = async ({ text }) => {
       text: text
     })
 }
-
 
 
 const getTopCoins = async ({ address }) => await axios.post("https://opai.renderverse.io/scores", {

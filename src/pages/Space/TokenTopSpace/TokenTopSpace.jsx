@@ -2,7 +2,6 @@ import {
   Box,
   Container,
   Flex,
-  Grid,
   Table,
   Tbody,
   Td,
@@ -29,8 +28,8 @@ import { gradientBgs } from "@/data/home/homeData";
 
 export default function TokenTopSpace() {
   const { wallet } = useWalletStore((state) => state);
-  const { address, isConnected, balance } = wallet;
-  const { connectWallet, disconnect } = useUNISatWallet();
+  const { address, isConnected } = wallet;
+  const { connectWallet } = useUNISatWallet();
   const { hasCredits } = useCredits({ address, isConnected });
 
   const [coins, setCoins] = useState([]);

@@ -3,8 +3,10 @@ import CText from "@/components/typography/CText/CText";
 import CHeading from "@/components/typography/CHeading/CHeading";
 
 import { Box, Button, Flex, Grid, Tag } from "@chakra-ui/react";
+import { useNavigate } from "react-router";
 
 export default function StakingSection() {
+  const navigate = useNavigate();
   return (
     <Box>
       <Box>
@@ -75,6 +77,7 @@ export default function StakingSection() {
                   px={4}
                   border="1px"
                   borderColor={"white"}
+                  onClick={() => navigate("/dapp/stake")}
                 >
                   Stake Now
                 </Button>

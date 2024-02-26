@@ -1,74 +1,127 @@
+import { Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Home from "@/pages/Home/Home";
-import Dapp from "@/pages/Dapp/Dapp";
-import Revshare from "@/pages/Revshare/Revshare";
-import DashboardSection from "@/pages/Dapp/sections/DashboardSection";
-import ProductSuiteSection from "@/pages/Dapp/sections/ProductSuiteSection";
-import StakingSection from "@/pages/Dapp/sections/StakingSection";
-import ApiSection from "@/pages/Dapp/sections/ApiSection";
-import AffiliateProgramSection from "@/pages/Dapp/sections/AffiliateProgramSection";
-
-import ChatAssistanceSpace from "@/pages/Space/ChatAssitanceSpace/ChatAssistanceSpace";
-import ImageGenerationSpace from "@/pages/Space/ImageGenerationSpace/ImageGenerationSpace";
-import TokenTopSpace from "@/pages/Space/TokenTopSpace/TokenTopSpace";
-import TokenTrendingSpace from "@/pages/Space/TokenTrendingSpace/TokenTrendingSpace";
+import Apploader from "@/components/common/Apploader/Apploader";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    async lazy() {
+      const component = await import("@/pages/Home/Home");
+      return { Component: component.default };
+    },
+  },
+  {
+    path: "/stake",
+    async lazy() {
+      const component = await import("@/pages/Dapp/sections/StakeSection");
+      return { Component: component.default };
+    },
   },
   {
     path: "/revshare",
-    element: <Revshare />,
+    async lazy() {
+      const component = await import("@/pages/Revshare/Revshare");
+      return { Component: component.default };
+    },
   },
   {
     path: "/dapp",
-    element: <Dapp />,
+    async lazy() {
+      const component = await import("@/pages/Dapp/Dapp");
+      return { Component: component.default };
+    },
     children: [
       {
         index: true,
         path: "dashboard",
-        element: <DashboardSection />,
+        async lazy() {
+          const component = await import(
+            "@/pages/Dapp/sections/DashboardSection"
+          );
+          return { Component: component.default };
+        },
       },
 
       {
         path: "api",
-        element: <ApiSection />,
+        async lazy() {
+          const component = await import("@/pages/Dapp/sections/ApiSection");
+          return { Component: component.default };
+        },
       },
       {
         path: "products",
-        element: <ProductSuiteSection />,
+        async lazy() {
+          const component = await import(
+            "@/pages/Dapp/sections/ProductSuiteSection"
+          );
+          return { Component: component.default };
+        },
       },
       {
         path: "affiliate",
-        element: <AffiliateProgramSection />,
+        async lazy() {
+          const component = await import(
+            "@/pages/Dapp/sections/AffiliateProgramSection"
+          );
+          return { Component: component.default };
+        },
       },
       {
         path: "staking",
-        element: <StakingSection />,
+        async lazy() {
+          const component = await import(
+            "@/pages/Dapp/sections/StakingSection"
+          );
+          return { Component: component.default };
+        },
       },
+
       {
         path: "products/trade",
-        element: <TokenTopSpace />,
+        async lazy() {
+          const component = await import(
+            "@/pages/Space/TokenTopSpace/TokenTopSpace"
+          );
+          return { Component: component.default };
+        },
       },
       {
         path: "products/trending",
-        element: <TokenTrendingSpace />,
+        async lazy() {
+          const component = await import(
+            "@/pages/Space/TokenTrendingSpace/TokenTrendingSpace"
+          );
+          return { Component: component.default };
+        },
       },
       {
         path: "products/ai-assitant",
-        element: <ChatAssistanceSpace />,
+        async lazy() {
+          const component = await import(
+            "@/pages/Space/ChatAssitanceSpace/ChatAssistanceSpace"
+          );
+          return { Component: component.default };
+        },
       },
       {
         path: "products/image-generation",
-        element: <ImageGenerationSpace />,
+        async lazy() {
+          const component = await import(
+            "@/pages/Space/ImageGenerationSpace/ImageGenerationSpace"
+          );
+          return { Component: component.default };
+        },
       },
     ],
   },
 ]);
 
 export default function Router() {
-  return <RouterProvider router={router} />;
+  return (
+    <Suspense fallback={<Apploader />}>
+      <RouterProvider router={router} />
+    </Suspense>
+  );
 }

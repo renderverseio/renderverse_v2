@@ -13,9 +13,9 @@ import DescriptionBox from "@/components/custom/DescriptionBox/DescriptionBox";
 import Back from "@/components/common/Back/Back";
 
 export default function ImageGenerationSpace() {
-  const { connectWallet, disconnect } = useUNISatWallet();
+  const { connectWallet } = useUNISatWallet();
   const { wallet } = useWalletStore((state) => state);
-  const { address, isConnected, balance } = wallet;
+  const { address, isConnected } = wallet;
   const { hasCredits } = useCredits({ address, isConnected });
 
   const { generateImage, imgSrc, input, setInput, status, model, setModel } =

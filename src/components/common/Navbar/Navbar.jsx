@@ -1,6 +1,6 @@
 import Logo from "@/assets/logos/logo.png";
 
-import { Box, Flex, Heading, Image } from "@chakra-ui/react";
+import { Box, Flex, Image } from "@chakra-ui/react";
 
 import { desktopMenuItems } from "@/data/home/navbarData";
 

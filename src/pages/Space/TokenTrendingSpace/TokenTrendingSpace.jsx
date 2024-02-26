@@ -9,8 +9,6 @@ import {
   Tag,
   Tbody,
   Td,
-  Th,
-  Thead,
   Tr,
 } from "@chakra-ui/react";
 
@@ -32,10 +30,10 @@ import Back from "@/components/common/Back/Back";
 
 export default function TokenTrendingSpace() {
   const { wallet } = useWalletStore((state) => state);
-  const { address, isConnected, balance } = wallet;
+  const { address, isConnected } = wallet;
   const { hasCredits } = useCredits({ address, isConnected });
 
-  const { connectWallet, disconnect } = useUNISatWallet();
+  const { connectWallet } = useUNISatWallet();
 
   const [coins, setCoins] = useState([]);
   const [status, setStatus] = useState(TStatus.idle);

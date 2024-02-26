@@ -7,12 +7,11 @@ import {
   Flex,
   Grid,
   Text,
-  Icon,
   Image,
 } from "@chakra-ui/react";
 
 import { Link as HLink } from "@chakra-ui/react";
-import { Navigate, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 
 export default function DesktopMenuDropDown({ menu, options }) {
   const navigate = useNavigate();
