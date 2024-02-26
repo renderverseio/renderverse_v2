@@ -1,7 +1,7 @@
 import Tilt from "react-parallax-tilt";
 import Snap from "@/assets/home/home_image.png";
 
-import { Box, Flex, Grid, Image } from "@chakra-ui/react";
+import { Grid, Image } from "@chakra-ui/react";
 
 import MainTitle from "@/components/home/MainTitle/MainTitle";
 import MainSubtitles from "@/components/home/MainSubtitles/MainSubtitles";

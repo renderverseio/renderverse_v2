@@ -1,5 +1,4 @@
 import {
-  Box,
   Flex,
   FormControl,
   Image,
@@ -14,7 +13,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 
-import React, { useState } from "react";
+import { useState } from "react";
 
 import { Grid as GridLoader } from "react-loader-spinner";
 

@@ -1,5 +1,5 @@
 import CText from "@/components/typography/CText/CText";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import Typewriter from "typewriter-effect";
 
 export default function MainSubtitles() {
@@ -43,7 +43,7 @@ export default function MainSubtitles() {
               display: "inline-block",
               fontWeight: "bold",
             }}
-            title={`AI Art Generator`}
+            title={`Art GPT`}
           />
         </Box>
       </Flex>

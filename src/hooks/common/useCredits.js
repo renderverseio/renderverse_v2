@@ -7,18 +7,14 @@ export const useCredits = ({ isConnected, address }) => {
 
   useEffect(() => {
     const credits = async () => {
-      try {
-        if (isConnected && address) {
-          const creds = await spacesRequests.getCredits({ address })
-          if (creds.status === 200) {
-            console.log(creds)
-            const c = creds.data.credits
-            setCredits(c)
-            if (c > 0) setHasCredits(true)
-          }
+      if (isConnected && address) {
+        const creds = await spacesRequests.getCredits({ address })
+        if (creds.status === 200) {
+          console.log(creds)
+          const c = creds.data.credits
+          setCredits(c)
+          if (c > 0) setHasCredits(true)
         }
-      } catch (error) {
-        throw error;
       }
     }
     credits()

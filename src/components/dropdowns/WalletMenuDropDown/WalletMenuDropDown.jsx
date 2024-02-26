@@ -18,7 +18,7 @@ import useUNISatWallet from "@/blockchain/useUNISatWallet";
 import { useWalletStore } from "@/blockchain/useWalletStore";
 
 export default function WalletMenuDropDown() {
-  const { connectWallet, sendBitcoin, disconnect } = useUNISatWallet();
+  const { connectWallet, disconnect } = useUNISatWallet();
 
   const { wallet } = useWalletStore((state) => state);
   const { isConnected, address, balance } = wallet;
