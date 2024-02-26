@@ -12,6 +12,13 @@ const router = createBrowserRouter([
     },
   },
   {
+    path: "/stake",
+    async lazy() {
+      const component = await import("@/pages/Dapp/sections/StakeSection");
+      return { Component: component.default };
+    },
+  },
+  {
     path: "/revshare",
     async lazy() {
       const component = await import("@/pages/Revshare/Revshare");
@@ -70,6 +77,7 @@ const router = createBrowserRouter([
           return { Component: component.default };
         },
       },
+
       {
         path: "products/trade",
         async lazy() {

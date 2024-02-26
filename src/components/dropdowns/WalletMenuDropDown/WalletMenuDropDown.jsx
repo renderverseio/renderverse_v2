@@ -53,7 +53,11 @@ export default function WalletMenuDropDown() {
   ];
 
   let routeComponent = null;
-  if (path.pathname === "/" || path.pathname === "/revshare")
+  if (
+    path.pathname === "/" ||
+    path.pathname === "/revshare" ||
+    path.pathname === "/stake"
+  )
     routeComponent = (
       <Box
         minW="160px"
@@ -67,7 +71,7 @@ export default function WalletMenuDropDown() {
         Launch Dapp
       </Box>
     );
-  if (path.pathname.includes("/dapp")) {
+  if (path.pathname.includes("/dapp") || path.pathname.includes("/stake")) {
     let component = null;
     if (!isConnected)
       component = (
@@ -76,6 +80,7 @@ export default function WalletMenuDropDown() {
           borderRadius={"lg"}
           boxShadow={"lg"}
           fontWeight={"bold"}
+          minW="180px"
           className="btn btn-1"
           onClick={connectWallet}
         >
