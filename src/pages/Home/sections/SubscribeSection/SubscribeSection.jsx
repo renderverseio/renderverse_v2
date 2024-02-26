@@ -2,6 +2,7 @@ import { Box, Flex } from "@chakra-ui/react";
 
 import CText from "@/components/typography/CText/CText";
 import CHeading from "@/components/typography/CHeading/CHeading";
+import { gradientBgs } from "@/data/home/homeData";
 
 export default function SubscribeSection() {
   return (
@@ -10,9 +11,6 @@ export default function SubscribeSection() {
       rowGap="2rem"
       justifyContent={"center"}
       alignItems="center"
-      bgImg={
-        "linear-gradient(112.9deg, #FFFAEE -0.14%, #FFF0EE 45.98%, #FFEEFC 100.47%)"
-      }
       p={16}
     >
       <CHeading

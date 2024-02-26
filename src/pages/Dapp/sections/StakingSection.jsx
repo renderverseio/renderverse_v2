@@ -1,6 +1,17 @@
 import CCard from "@/components/custom/CCard/CCard";
-import CText from "@/components/typography/CText/CText";
 import CHeading from "@/components/typography/CHeading/CHeading";
+import CText from "@/components/typography/CText/CText";
+import {
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
+  InputGroup,
+  InputLeftAddon,
+  Input,
+  InputRightAddon,
+} from "@chakra-ui/react";
 
 import { Box, Button, Flex, Grid, Tag } from "@chakra-ui/react";
 
@@ -10,101 +21,92 @@ export default function StakingSection() {
       <Box>
         <Flex rowGap={"2rem"} p={8} flexDir={"column"}>
           <CHeading size={1} title={"Staking"} />
-
-          <Grid
-            rowGap={"2rem"}
-            columnGap={"2rem"}
-            templateColumns={{ base: "1fr", lg: "1fr 1fr 1fr" }}
-          >
-            {data.map((c, i) => (
-              <CCard
-                key={i}
-                props={{
-                  borderRadius: "lg",
-                  minH: "30rem",
-                  p: 4,
-                  className: "glass_effect",
-                  border: "2px",
-                  borderColor: "white",
-                  boxShadow: "sm",
-                  display: "grid",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  bgImg: c.bgImg,
-                }}
-              >
-                <Box>
-                  <CHeading
-                    cprops={{ color: "gray.100" }}
-                    size={2}
-                    title={c.days}
-                  />
-                  <CText
-                    cprops={{ color: "gray.200" }}
-                    size={1}
-                    title={c.title}
-                  />
-                </Box>
-                <Grid mt={6} rowGap={"1rem"}>
-                  {c.apr.map((d, j) => (
-                    <Flex key={j}>
-                      <Tag
-                        bg={"rgba(0,0,0,0.4)"}
-                        border="1px"
-                        borderColor={"white"}
-                        boxShadow={"dark-lg"}
-                        borderRadius={"md"}
-                        key={j}
+          <Box>
+            <Tabs variant="soft-rounded" colorScheme="green">
+              <Flex justifyContent={"center"} alignItems="center">
+                <Flex p={1} borderRadius="3xl" boxShadow={"lg"}>
+                  <TabList>
+                    <Tab mr={1} boxShadow={"lg"}>
+                      Flexible
+                    </Tab>
+                    <Tab boxShadow={"lg"}>Locked</Tab>
+                  </TabList>
+                </Flex>
+              </Flex>
+              <TabPanels>
+                <TabPanel>
+                  <Grid w="100%">
+                    <CHeading size={3} title={`FLEXIBLE STAKING`} />
+                    <Flex
+                      mx="auto"
+                      mt={12}
+                      w={{ base: "100%", md: "80%", lg: "60%", xl: "50%" }}
+                      justifyContent={"center"}
+                      alignItems="center"
+                    >
+                      <CCard
+                        props={{
+                          display: "grid",
+                          rowGap: "1rem",
+                          borderBottomRadius: "lg",
+                          border: "2px",
+                          w: "100%",
+                        }}
+                        type="s"
                       >
-                        <CText
-                          cprops={{ color: "white", fontWeight: "500" }}
-                          size={3}
-                          title={d}
-                        />
-                      </Tag>
+                        <Flex
+                          justifyContent={"center"}
+                          borderTopRadius={"lg"}
+                          borderBottom="2px"
+                          p={3}
+                        >
+                          <CText size={2} title={`Unstake`} />{" "}
+                        </Flex>
+                        <Box display={"grid"} rowGap="2rem" p={3}>
+                          <Box>
+                            <Flex justifyContent={"space-between"}>
+                              <CText size={3} title={`Amount`} />{" "}
+                              <CText size={3} title={`~Staked RDAI: 0.000`} />{" "}
+                            </Flex>
+                            <Flex>
+                              <InputGroup>
+                                <InputLeftAddon
+                                  boxShadow={"md"}
+                                  cursor={"pointer"}
+                                >
+                                  $RDAI
+                                </InputLeftAddon>
+                                <Input boxShadow={"md"} placeholder="0" />
+                                <InputRightAddon
+                                  boxShadow={"md"}
+                                  cursor={"pointer"}
+                                >
+                                  MAX
+                                </InputRightAddon>
+                              </InputGroup>
+                            </Flex>
+                          </Box>
+                          <Flex justifyContent={"center"}>
+                            <Box
+                              boxShadow={"lg"}
+                              borderRadius="lg"
+                              className="btn btn-1"
+                              p={3}
+                            >
+                              Unstake $RDAI
+                            </Box>
+                          </Flex>
+                        </Box>
+                      </CCard>
                     </Flex>
-                  ))}
-                </Grid>
-                <Button
-                  transition="all 300ms ease-in-out"
-                  color="black"
-                  bg="white"
-                  boxShadow={"dark-lg"}
-                  mt={6}
-                  variant="unstyled"
-                  px={4}
-                  border="1px"
-                  borderColor={"white"}
-                >
-                  Stake Now
-                </Button>
-              </CCard>
-            ))}
-          </Grid>
-
-          <CCard
-            props={{
-              p: 4,
-              bg: "gray.50",
-              className: "glass_effect",
-              border: "2px",
-              borderColor: "white",
-              boxShadow: "sm",
-            }}
-            type="s"
-          >
-            <Flex
-              columnGap={"6rem"}
-              justifyContent={"space-between"}
-              alignItems={"center"}
-            >
-              <Box>
-                <CText size={1} title="My Stakes & Rewards" />
-                <CText size={3} title="You have no staked $RDAI" />
-              </Box>
-              <Button>Stake</Button>
-            </Flex>
-          </CCard>
+                  </Grid>
+                </TabPanel>
+                <TabPanel>
+                  <p>two!</p>
+                </TabPanel>
+              </TabPanels>
+            </Tabs>
+          </Box>
         </Flex>
       </Box>
     </Box>
@@ -137,3 +139,98 @@ const data = [
       "linear-gradient(to right bottom, #1779ff, #008aff, #009aff, #00a9ff, #16b6fe);",
   },
 ];
+
+// <Grid
+//   rowGap={"2rem"}
+//   columnGap={"2rem"}
+//   templateColumns={{ base: "1fr", lg: "1fr 1fr 1fr" }}
+// >
+//   {data.map((c, i) => (
+//     <CCard
+//       key={i}
+//       props={{
+//         borderRadius: "lg",
+//         minH: "30rem",
+//         p: 4,
+//         className: "glass_effect",
+//         border: "2px",
+//         borderColor: "white",
+//         boxShadow: "sm",
+//         display: "grid",
+//         justifyContent: "space-between",
+//         alignItems: "center",
+//         bgImg: c.bgImg,
+//       }}
+//     >
+//       <Box>
+//         <CHeading
+//           cprops={{ color: "gray.100" }}
+//           size={2}
+//           title={c.days}
+//         />
+//         <CText
+//           cprops={{ color: "gray.200" }}
+//           size={1}
+//           title={c.title}
+//         />
+//       </Box>
+//       <Grid mt={6} rowGap={"1rem"}>
+//         {c.apr.map((d, j) => (
+//           <Flex key={j}>
+//             <Tag
+//               bg={"rgba(0,0,0,0.4)"}
+//               border="1px"
+//               borderColor={"white"}
+//               boxShadow={"dark-lg"}
+//               borderRadius={"md"}
+//               key={j}
+//             >
+//               <CText
+//                 cprops={{ color: "white", fontWeight: "500" }}
+//                 size={3}
+//                 title={d}
+//               />
+//             </Tag>
+//           </Flex>
+//         ))}
+//       </Grid>
+//       <Button
+//         transition="all 300ms ease-in-out"
+//         color="black"
+//         bg="white"
+//         boxShadow={"dark-lg"}
+//         mt={6}
+//         variant="unstyled"
+//         px={4}
+//         border="1px"
+//         borderColor={"white"}
+//       >
+//         Stake Now
+//       </Button>
+//     </CCard>
+//   ))}
+// </Grid>
+
+// <CCard
+//   props={{
+//     p: 4,
+//     bg: "gray.50",
+//     className: "glass_effect",
+//     border: "2px",
+//     borderColor: "white",
+//     boxShadow: "sm",
+//   }}
+//   type="s"
+// >
+//   <Flex
+//     columnGap={"6rem"}
+//     justifyContent={"space-between"}
+//     alignItems={"center"}
+//   >
+//     <Box>
+//       <CText size={1} title="My Stakes & Rewards" />
+//       <CText size={3} title="You have no staked $RDAI" />
+//     </Box>
+//     <Button>Stake</Button>
+//   </Flex>
+// </CCard>
