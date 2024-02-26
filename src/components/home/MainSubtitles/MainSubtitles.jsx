@@ -27,14 +27,6 @@ export default function MainSubtitles() {
             }}
             title={`New featured GPTs every week!`}
           />
-          <CText
-            size={2}
-            cprops={{
-              display: "inline-block",
-              fontWeight: "bold",
-            }}
-            title={`Art GPT`}
-          />
         </Box>
       </Flex>
 
