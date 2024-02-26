@@ -63,7 +63,7 @@ export default function TokenTrendingSpace() {
         <Back />
         <DescriptionBox
           title="Crypto Trend GPT"
-          desc={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptatem quo veritatis unde ipsa voluptate possimus odio ipsum sequi, vero sit autem! Minus vero expedita sed provident non optio aut.`}
+          desc={`Discover latest trends on various tokens across all exchanges with our AI Trading analysis Bot. We provide AI-driven insights and trends acorss all the coins in top exchanges. Use our intuitive telegram bot to seamlessly trade and maximise profits.`}
         />
         <Flex
           alignItems={"center"}

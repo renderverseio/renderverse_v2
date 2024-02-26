@@ -86,7 +86,7 @@ export default function ChatAssistanceSpace() {
         <Back />
         <DescriptionBox
           title="Brain GPT"
-          desc={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptatem quo veritatis unde ipsa voluptate possimus odio ipsum sequi, vero sit autem! Minus vero expedita sed provident non optio aut.`}
+          desc={`Have a conversation with our personalized AI chat assistant and ask for suggestions on hot coins, market trends, trading strategies, technical analysis and much more.`}
         />
 
         <CCard

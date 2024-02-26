@@ -58,7 +58,7 @@ export default function TokenTopSpace() {
       <Container display={"grid"} rowGap={"2rem"} my={12} maxW="90%" mx="auto">
         <Back />
         <DescriptionBox
-          desc={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio assumenda minima optio quia sint error fugit cupiditate laborum tenetur eos eius ut non eveniet quo, quae deserunt accusamus? Placeat, quis.`}
+          desc={`Seize trading opportunities like never before with our AI Trading Bot. We provide AI-driven insights and trends acorss all the coins in top exchanges. Use our intuitive telegram bot to seamlessly trade and maximise profits.`}
           title={`Crypto Trade GPT`}
         />
 

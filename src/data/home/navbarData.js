@@ -35,19 +35,19 @@ export const desktopMenuItems = [
       {
         icon: Trade,
         title: "Trade",
-        subText: "Trade NFTs on the BRC-20 ecosystem",
+        subText: "Trade tokens and NFTs across all chains",
         link: "/dapp/dashboard"
       },
       {
         icon: Develop,
         title: "Develop",
-        subText: "Craft your own AI models using our APIs",
+        subText: "Craft your own GPTs using our APIs",
         link: "/dapp/dashboard"
       },
       {
         icon: Share,
         title: "Share",
-        subText: "Deploy and share your models on our GPU Infra",
+        subText: "Deploy and share your GPTs on our GPU Infra",
         link: "/dapp/dashboard"
       },
     ],
@@ -70,7 +70,7 @@ export const desktopMenuItems = [
       {
         icon: GPT,
         title: "Token GPT",
-        subText: "Harness the power of GPT through our plugins",
+        subText: "Find the latest trends across the coins on all exchanges",
         link: "/dapp/products"
       },
       {

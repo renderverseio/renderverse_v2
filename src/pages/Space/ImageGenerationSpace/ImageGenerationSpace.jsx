@@ -31,7 +31,7 @@ export default function ImageGenerationSpace() {
         <Back />
         <DescriptionBox
           title="Art GPT"
-          desc={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptatem quo veritatis unde ipsa voluptate possimus odio ipsum sequi, vero sit autem! Minus vero expedita sed provident non optio aut.`}
+          desc={`Dive into the realm of artistic exploration with our advanced AI Art Generator. We've created a unique platform that allows you to unleash your creativity. We also enable users to easily mint and inscribe your unique creations as BRC-721 tokens instantly on the Bitcoin blockchain.`}
         />
         {isConnected && (
           <>

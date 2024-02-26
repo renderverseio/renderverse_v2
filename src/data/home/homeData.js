@@ -156,8 +156,8 @@ export const productsData = [
   },
   {
     title: `Token GPT`,
-    note1: `Discover our suite of extensions and plugins designed to unlock the full potential of GPT in your endeavors. `,
-    note2: `We provide tools tailored specifically for web3 users to harness the power of GPT technology on the BRC20 ecosystem.`,
+    note1: `Discover latest trends across tokens on multiple exchanges at one place and perform automated technical analysis`,
+    note2: `We provide tools tailored specifically for web3 traders to harness the power of GPT technology in trading crypto tokens.`,
     link: ``,
     img: GPT,
     p: 6,

@@ -25,17 +25,7 @@ export default function MainSubtitles() {
               display: "inline-block",
               fontWeight: "bold",
             }}
-            title={`New`}
-          />
-          <CText
-            size={2}
-            cprops={{
-              color: "green.600",
-              display: "inline-block",
-              fontWeight: "bold",
-              mx: 2,
-            }}
-            title={`-`}
+            title={`New featured GPTs every week!`}
           />
           <CText
             size={2}
@@ -43,7 +33,7 @@ export default function MainSubtitles() {
               display: "inline-block",
               fontWeight: "bold",
             }}
-            title={`AI Art Generator`}
+            title={``}
           />
         </Box>
       </Flex>
@@ -79,6 +69,7 @@ export default function MainSubtitles() {
           px={6}
           borderRadius="md"
           boxShadow={"md"}
+          onClick={() => navigate("/dapp/dashboard")}
           cursor={"pointer"}
           className="btn btn-2"
           display={"block"}
@@ -110,7 +101,7 @@ export default function MainSubtitles() {
       <Box>
         <CText
           size={3}
-          title={`Take your imagination to another level with our powerful AI models.`}
+          title={`Discover what’s trending in the store`}
         />
       </Box>
     </Flex>
