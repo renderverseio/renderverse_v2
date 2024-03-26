@@ -90,12 +90,12 @@ export default function MobileMenuDropDown() {
                         className="btn btn-2"
                         boxShadow={"lg"}
                       >
-                        {d.menu}
+                        {"Join our community"}
                       </Box>
                     </Link>
                   )}
 
-                  {i !== 0 && (
+                  {i+1 !== 0 && i+1!==4 && (
                     <Accordion allowToggle={true}>
                       <AccordionItem
                         border="none"
