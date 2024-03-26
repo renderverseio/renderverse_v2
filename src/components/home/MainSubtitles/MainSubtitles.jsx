@@ -60,7 +60,7 @@ export default function MainSubtitles() {
       <Flex>
         <Box
           py={2}
-          px={6}
+          px={3}
           borderRadius="md"
           boxShadow={"md"}
           onClick={() => navigate("/dapp/dashboard")}
@@ -68,6 +68,7 @@ export default function MainSubtitles() {
           className="btn btn-2"
           display={"block"}
           flex={"block"}
+          marginRight={"4"}
         >
           <CText
             cprops={{
@@ -75,28 +76,37 @@ export default function MainSubtitles() {
               display: "inline-block",
               fontWeight: "bold",
             }}
-            size={1}
+            size={2}
             title={`Get Started`}
           />
 
           <CText
             cprops={{ color: "white", display: "inline-block", mx: 1 }}
-            size={1}
+            size={2}
             title={`-`}
           />
           <CText
             cprops={{ color: "white", display: "inline-block" }}
-            size={1}
+            size={2}
             title={`It's Free`}
           />
+        </Box>
+        <Box
+          as="a"
+          href="https://t.me/RenderverseAI_bot"
+          target="_blank"
+          fontWeight={"bold"}
+          p={3}
+          borderRadius="lg"
+          className="btn btn-1"
+          boxShadow={"lg"}
+        >
+          Try Our TG Bot
         </Box>
       </Flex>
 
       <Box>
-        <CText
-          size={3}
-          title={`Discover what’s trending in the store`}
-        />
+        <CText size={3} title={`Discover what’s trending in the store`} />
       </Box>
     </Flex>
   );

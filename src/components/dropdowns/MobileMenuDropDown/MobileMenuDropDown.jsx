@@ -77,25 +77,7 @@ export default function MobileMenuDropDown() {
             >
               {desktopMenuItems.map((d, i) => (
                 <Box key={i}>
-                  {i === 0 && (
-                    <Link
-                      textDecor={"none"}
-                      href="https://t.me/renderversechat"
-                      target={"_blank"}
-                    >
-                      <Box
-                        fontWeight={"bold"}
-                        p={3}
-                        borderRadius="lg"
-                        className="btn btn-2"
-                        boxShadow={"lg"}
-                      >
-                        {"Join our community"}
-                      </Box>
-                    </Link>
-                  )}
-
-                  {i+1 !== 0 && i+1!==4 && (
+                  {i + 1 !== 0 && i + 1 !== 4 && (
                     <Accordion allowToggle={true}>
                       <AccordionItem
                         border="none"
@@ -168,6 +150,19 @@ export default function MobileMenuDropDown() {
                   )}
                 </Box>
               ))}
+
+              <Box
+                as="a"
+                href="https://t.me/renderversechat"
+                target="_blank"
+                fontWeight={"bold"}
+                p={3}
+                borderRadius="lg"
+                className="btn btn-2"
+                boxShadow={"lg"}
+              >
+                Join Our Community
+              </Box>
 
               <Box
                 onClick={() => navigate("/dapp")}
