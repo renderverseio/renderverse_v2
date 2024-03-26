@@ -19,6 +19,18 @@ import {
 } from "@chakra-ui/react";
 import CText from "@/components/typography/CText/CText";
 
+function formatNumber(num) {
+  if (num >= 1000 && num < 1000000) {
+    return (num / 1000).toFixed(0) + 'k';
+  } else if (num >= 1000000 && num < 1000000000) {
+    return (num / 1000000).toFixed(0) + 'M';
+  } else if (num >= 1000000000) {
+    return (num / 1000000000).toFixed(0) + 'B';
+  }else {
+    return num.toString();
+  }
+}
+
 export default function TokenTrendingSection() {
   const [trending, setTrending] = useState([]);
 
@@ -41,7 +53,7 @@ export default function TokenTrendingSection() {
       pb={12}
     >
       <Flex my={6} py={6} justifyContent="center">
-        <CHeading title={`Trending Coins`} size={1} />
+        <CHeading title={`AI Generated Crypto Trending`} size={1} />
       </Flex>
 
       <Marquee>
@@ -104,15 +116,15 @@ export default function TokenTrendingSection() {
                 </Tr>
                 <Tr>
                   <Td>Total Circulating Supply</Td>
-                  <Td>{String(coin.circulating_supply).toLocaleString()}</Td>
+                  <Td>{String(formatNumber(coin.circulating_supply)).toLocaleString()}</Td>
                 </Tr>
                 <Tr>
                   <Td>Total Supply</Td>
-                  <Td>{String(coin.total_supply).toLocaleString()}</Td>
+                  <Td>{String(formatNumber(coin.total_supply)).toLocaleString()}</Td>
                 </Tr>
                 <Tr>
                   <Td>Marketcap</Td>
-                  <Td>{String(coin.market_cap).toLocaleString()}</Td>
+                  <Td>{String(formatNumber(coin.market_cap)).toLocaleString()}</Td>
                 </Tr>
               </Tbody>
             </Table>

@@ -1,8 +1,10 @@
 import CText from "@/components/typography/CText/CText";
 import { Box, Flex } from "@chakra-ui/react";
 import Typewriter from "typewriter-effect";
+import { useNavigate } from "react-router";
 
 export default function MainSubtitles() {
+  const navigate = useNavigate();
   return (
     <Flex w="100%" justifyContent={"center"} rowGap={"1rem"} flexDir={"column"}>
       <Flex>

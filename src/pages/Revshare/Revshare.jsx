@@ -13,24 +13,21 @@ export default function Revshare() {
           <CHeading size={1} title={`Wave goodbye to gas fees.`} />
           <CText
             size={2}
-            title={`With $PALM's new revenue sharing solution, you will be airdropped as long as you prove ownership of your $PALM tokens.`}
+            title={`With $RDAI's new revenue sharing solution, you will be airdropped as long as you prove ownership of your $RDAI tokens.`}
           />
           <CText
             size={2}
-            title={`All $PALM holders are eligible for the program and you pay no fees at any point, nor send your tokens. Designed with security & adaptability in mind, experience the PaLM AI Team's version of easy revenue share. $30,700 Revenue Distributed 57.48% of circ. Supply Staked`}
+            title={`All $RDAI holders are eligible for the program and you pay no fees at any point, nor send your tokens. Designed with security & adaptability in mind, experience the PaLM AI Team's version of easy revenue share.`}
           />
         </Grid>
 
         <Flex px={6}>
           <Grid rowGap={"1rem"}>
             <Box textAlign={"center"}>
-              <CHeading size={1} title={`$30,700`} />
-              <CText size={2} title={`Revenue Distributed`} />
+              <CHeading size={1} title={`$200,000`} />
+              <CText size={2} title={`Revenue To be Distributed`} />
             </Box>
-            <Box textAlign={"center"}>
-              <CHeading size={1} title={`54.58%`} />
-              <CText size={2} title={`of circ. Supply Staked`} />
-            </Box>
+            
           </Grid>
         </Flex>
 
@@ -44,10 +41,12 @@ export default function Revshare() {
             bgImg={gradientBgs[3].bgImg}
           >
             <Box textAlign={"center"}>
-              <CHeading size={3} title={`Join the Revenue Share Program`} />
+              <CHeading size={3} cprops={{
+                    color: "black",
+                  }} title={`Join the Revenue Share Program`} />
               <CText
                 size={3}
-                title={`Please read the following instructions carefully to join the program. Only for $PALM holders.`}
+                title={`Please read the following instructions carefully to join the program. Only for $RDAI holders.`}
               />
             </Box>
             <Flex>

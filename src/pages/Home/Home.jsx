@@ -24,19 +24,13 @@ export default function Home() {
         <ProductsSection />
       </HomeContainer>
       <GallerySection />
+      <TokenTrendingSection />
       <HomeContainer>
         <RoadmapSection />
       </HomeContainer>
 
-      <TokenTrendingSection />
       {/* <SubscribeSection /> */}
       <ResearchSection />
-
-      <Box py={24} bg="white">
-        <HomeContainer>
-          <OurMissionSection />
-        </HomeContainer>
-      </Box>
 
       <Footer />
     </>

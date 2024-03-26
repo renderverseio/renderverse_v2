@@ -20,10 +20,6 @@ import Email from '@/assets/navbar/Mail.svg'
 
 export const desktopMenuItems = [
   {
-    menu: "Revshare",
-    options: [],
-  },
-  {
     menu: "Use Cases",
     options: [
       {
@@ -109,6 +105,10 @@ export const desktopMenuItems = [
         link: "/dapp/dashboard"
       },
     ],
+  },
+  {
+    menu: "Revshare",
+    options: [],
   },
   {
     menu: "Socials",

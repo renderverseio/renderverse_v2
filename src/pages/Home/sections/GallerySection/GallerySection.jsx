@@ -14,7 +14,7 @@ export default function GallerySection() {
       pb={12}
     >
       <Flex py={6} justifyContent="center">
-        <CHeading title={`Gallery`} size={1} />
+        <CHeading title={`Our Sample AI Collection`} size={1} />
       </Flex>
 
       {gallery.map((row, i) => (
