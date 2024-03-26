@@ -14,7 +14,7 @@ export default function GallerySection() {
       pb={12}
     >
       <Flex py={6} justifyContent="center">
-        <CHeading title={`Our Sample AI Collection`} size={1} />
+        <CHeading title={`AI-Gen Collection`} size={1} />
       </Flex>
 
       {gallery.map((row, i) => (
@@ -30,7 +30,7 @@ export default function GallerySection() {
               transition={"all 300ms ease-in-out"}
               borderRadius={"lg"}
               boxShadow={"lg"}
-              maxW={"320px"}
+              maxW={ {base: "120px", lg: "320px"}}
               key={j}
               src={col}
             />

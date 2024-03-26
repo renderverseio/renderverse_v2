@@ -53,7 +53,7 @@ export default function TokenTrendingSection() {
       pb={12}
     >
       <Flex my={6} py={6} justifyContent="center">
-        <CHeading title={`AI Generated Crypto Trending`} size={1} />
+        <CHeading title={`AI-Gen Trending`} size={1} />
       </Flex>
 
       <Marquee>

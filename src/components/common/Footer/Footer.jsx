@@ -94,6 +94,7 @@ export default function Footer() {
                   cprops={{
                     my: 2,
                     color: "white",
+                    fontStyle: "italic",
                   }}
                 />
                 {d.options.map((o, k) => (
@@ -102,7 +103,7 @@ export default function Footer() {
                       <CText
                         cprops={{
                           color: "white",
-                          fontSize: { base: "lg" },
+                          fontSize: { base: "md" },
                         }}
                         size={3}
                         title={o}

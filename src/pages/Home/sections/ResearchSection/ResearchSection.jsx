@@ -62,7 +62,7 @@ const data = [
 
 export default function ResearchSection() {
   return (
-    <Box bg="white" pt={6} pb={12}>
+    <Box bg="white" pt={6} pb={12} display={{ base: "none", lg: "block" }}>
       <Flex py={6} justifyContent="center">
         <CHeading title={`Related research`} size={1} />
       </Flex>
